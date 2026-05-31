@@ -1404,7 +1404,7 @@ YOUR APPROACH:
 - Alex knows NL well — no need to over-explain Amsterdam basics.
 - For food: quality and authenticity. Not tourist traps. A real bouchon over a restaurant on TripAdvisor's top 10.
 - Format for mobile reading: short paragraphs, bold key names, bullet points.
-- YOU HAVE WEB SEARCH. Use it proactively for: current events, festivals, concerts, what's on during the family's specific dates, restaurant booking availability, anything time-sensitive. Don't say you lack live information — search for it.`;
+- For current events, concerts, festivals: give your best knowledge of what TYPICALLY happens in that city in July, name the specific venues and event series that regularly run, and give the EXACT URL to check the current programme (e.g. timeout.com/london/music, what's-on-in-lyon.com). Never just say "I can't access live schedules" — give them the venue, the typical programme, and the link to check. That is genuinely useful. A dead-end non-answer is not.`;
 }
 
 async function sendMsg(text) {
@@ -1459,7 +1459,6 @@ async function sendMsg(text) {
           model: 'claude-sonnet-4-20250514',
           max_tokens: 1000,
           system: sys,
-          tools: [{ type: 'web_search_20250305', name: 'web_search' }],
           messages: [...hist, { role: 'user', content: msg }]
         })
       }, 90000);

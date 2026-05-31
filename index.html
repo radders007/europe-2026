@@ -52,18 +52,15 @@ body{background:var(--bg);color:var(--text);font-family:'Outfit',sans-serif;disp
   flex-direction:column;
   justify-content:flex-end;
   padding:1rem 1rem 0.85rem;
+  background:linear-gradient(135deg, #1a6b5a 0%, #0d4038 100%);
+  transition:background 0.6s ease;
 }
-.topbar-hero-img{
-  position:absolute;
-  inset:0;
-  width:100%;height:100%;
-  object-fit:cover;
-  object-position:center 60%;
-}
+/* topbar-hero-img removed */
 .topbar-hero-overlay{
   position:absolute;
   inset:0;
-  background:linear-gradient(to bottom, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.55) 100%);
+  background:linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.4) 100%);
+  pointer-events:none;
 }
 .topbar-hero-content{
   position:relative;
@@ -197,28 +194,29 @@ body{background:var(--bg);color:var(--text);font-family:'Outfit',sans-serif;disp
 .guide-body::-webkit-scrollbar{width:0;}
 .guide-hero{
   position:relative;
-  height:180px;
+  height:160px;
   overflow:hidden;
   margin-bottom:0;
+  background:linear-gradient(135deg, #1a6b5a 0%, #0d4038 100%);
+  transition:background 0.4s ease;
+  display:flex;
+  align-items:flex-end;
 }
-.guide-hero img{
-  width:100%;height:100%;
-  object-fit:cover;
-  object-position:center center;
-  display:block;
-}
+/* guide-hero img removed */
 .guide-hero-overlay{
   position:absolute;
   inset:0;
-  background:linear-gradient(to bottom, transparent 40%, rgba(247,245,240,0.95) 100%);
+  background:linear-gradient(to bottom, rgba(0,0,0,0) 30%, rgba(0,0,0,0.35) 100%);
+  pointer-events:none;
 }
 .guide-hero-label{
-  position:absolute;
-  bottom:0.75rem;left:0.85rem;
+  position:relative;
+  z-index:1;
+  padding:0 0.85rem 0.85rem;
   font-family:'Libre Baskerville',serif;
   font-size:1.4rem;font-style:italic;
-  color:var(--text);
-  text-shadow:0 1px 8px rgba(255,255,255,0.8);
+  color:#fff;
+  text-shadow:0 1px 4px rgba(0,0,0,0.3);
 }
 .guide-content{padding:0.75rem 0.75rem 0;}
 .guide-section{margin-bottom:1.25rem;}
@@ -350,13 +348,8 @@ body{background:var(--bg);color:var(--text);font-family:'Outfit',sans-serif;disp
 
 
 <div class="topbar">
-  <div class="topbar-hero" id="topbarHero">
-    <img class="topbar-hero-img" id="heroImg" 
-      src="https://europe-2026-api.onrender.com/img/SYBLkjltGRo"
-      alt="Europe"
-      
-      onerror="this.style.display='none'">
-    <div class="topbar-hero-overlay"></div>
+  <div class="topbar-hero" id="topbarHero" style="background:linear-gradient(135deg, #1a6b5a 0%, #0d4038 100%)">
+    <div class="topbar-hero-overlay" id="heroOverlay"></div>
     <div class="topbar-hero-content">
       <div class="topbar-left">
         <div class="wordmark">The Radfords' <em>Europe</em> ʼ26</div>
@@ -488,6 +481,18 @@ body{background:var(--bg);color:var(--text);font-family:'Outfit',sans-serif;disp
 // Update this to your Render URL once deployed
 // e.g. 'https://europe-2026-api.onrender.com/api/chat'
 const API_URL = 'https://europe-2026-api.onrender.com/api/chat';
+
+// ── CITY COLOURS ──
+const CITY_COLOURS = {
+  london1:    'linear-gradient(135deg, #2c3e6b 0%, #1a2540 100%)',
+  corsica:    'linear-gradient(135deg, #1a6b5a 0%, #0d4038 100%)',
+  lyon:       'linear-gradient(135deg, #8b2a1a 0%, #5c1a0f 100%)',
+  strasbourg: 'linear-gradient(135deg, #6b3d1a 0%, #4a2710 100%)',
+  freiburg:   'linear-gradient(135deg, #2a5c2a 0%, #1a3d1a 100%)',
+  amsterdam:  'linear-gradient(135deg, #1a4a6b 0%, #0f2d45 100%)',
+  england:    'linear-gradient(135deg, #4a2a6b 0%, #2d1845 100%)',
+};
+
 
 const MONTHS = ['','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 const DAYS_SHORT = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
@@ -711,8 +716,6 @@ const PLACES = {
 // ══════════════════════════════════════════════
 const GUIDES = {
   london1: {
-    photo: 'https://europe-2026-api.onrender.com/img/Oja2ty_9ZLM',
-    photoPos: 'center 40%',
     character: `London is vast, layered, and endlessly contradictory — simultaneously the most formal and the most chaotic city in Europe. It runs on understatement and irony. Nobody will be impressed that you've come from the other side of the world; they'll just get out of your way on the Tube. The city rewards curiosity over itineraries.`,
     sections: [
       { title: 'History worth knowing', content: `London has been continuously inhabited for two thousand years — Roman Londinium, medieval trading city, imperial capital, bombed-out wartime survivor, and now a global financial and cultural hub that still isn't quite sure what it is post-Brexit. The East End Alex knew in the 2000s has been comprehensively gentrified; Shoreditch, once derelict warehouses, is now hedge fund territory. The London of 2026 is more expensive and more diverse than ever, and better to eat in than at any point in its history.` },
@@ -731,8 +734,6 @@ const GUIDES = {
     ]
   },
   corsica: {
-    photo: 'https://europe-2026-api.onrender.com/img/ZIk-1uTnbJ4',
-    photoPos: 'center 50%',
     character: `Corsica is France, but only technically. The island has its own language, its own nationalist movement, its own pride, and a cultural stubbornness that is entirely its own. The French who holiday here are acutely aware they are guests. The landscape is extreme — granite mountains running straight into turquoise water, dense maquis scrubland that smells of wild herbs in the heat. The south, where you're staying, is the most arid and dramatic part of the island.`,
     sections: [
       { title: 'History worth knowing', content: `Corsica was Genoese for centuries, then sold to France in 1768 — one year before Napoleon was born there. Napoleonic pride is everywhere (slightly overdone). The FLNC independence movement was active for decades, though largely dormant now. The Corsicans don't particularly identify as French, and you'll see the moor's head flag — the Tête de Maure — everywhere. Respect it; it's not a tourist souvenir.` },
@@ -752,8 +753,6 @@ const GUIDES = {
     ]
   },
   lyon: {
-    photo: 'https://europe-2026-api.onrender.com/img/6tcJQYz--jU',
-    photoPos: 'center 50%',
     character: `Lyon is the anti-Paris. Smaller, more confident, less interested in impressing you, and — by general agreement — better to eat in. It sits at the confluence of the Rhône and the Saône, and it has the feel of a city that knows exactly what it is: the gastronomic, silk-trading, pharmaceutical capital of France, without any of Paris's neuroses. The Lyonnais are warmer than Parisians and more sardonic. Alex's French will be genuinely useful and appreciated here.`,
     sections: [
       { title: 'History worth knowing', content: `Lyon was Roman Lugdunum — the capital of Gaul, and for a while effectively the capital of the Roman west. The silk trade made it extraordinarily wealthy in the Renaissance. The Lumière brothers invented cinema here in 1895. During the occupation it was a centre of both Nazi brutality (Klaus Barbie was the Gestapo chief) and of the Resistance — this history is taken very seriously and the Musée de la Résistance is worth your time. Paul Bocuse ran his restaurant here for decades; his legacy is everywhere.` },
@@ -771,8 +770,6 @@ const GUIDES = {
     ]
   },
   strasbourg: {
-    photo: 'https://europe-2026-api.onrender.com/img/zYCToy6IUkM',
-    photoPos: 'center 60%',
     character: `Strasbourg is the most unusual city in France — a place that has been French, then German, then French, then German, then French again, and has ended up being both and neither. The architecture is Alsatian: half-timbered houses, stork nests on cathedral spires, geraniums on every windowsill. The food is German in generosity, French in refinement. It's the seat of the European Parliament, which gives it an unusually international, multilingual feel. Alex's French will work perfectly; German is understood everywhere.`,
     sections: [
       { title: 'History worth knowing', content: `Strasbourg changed nationality four times between 1870 and 1945 — German Empire, then French after WWI, then Nazi Germany after 1940, then French again from 1944. The scars of this are real but the city has made its dual identity its strength. It hosted the Council of Europe and the European Court of Human Rights after WWII — a deliberate choice to put Europe's democratic institutions in a city that had suffered most from nationalism. Gutenberg invented the printing press here in the 1440s.` },
@@ -790,8 +787,6 @@ const GUIDES = {
     ]
   },
   freiburg: {
-    photo: 'https://europe-2026-api.onrender.com/img/oP5lrsthuRQ',
-    photoPos: 'center 50%',
     character: `Freiburg is Germany's sunniest city — more sunshine hours than anywhere else in the country — and it knows it. It's a university city of 230,000 people with a disproportionate sense of environmental conscience (Germany's Green movement was partly born here), a beautiful medieval centre that survived WWII largely intact, and an immediate, accessible connection to the Black Forest. It's the most relaxed city in Germany, which is saying something.`,
     sections: [
       { title: 'History worth knowing', content: `Freiburg was founded in 1120, became a Habsburg city in the 13th century, and switched between French and German control several times before permanently becoming German in 1871. It was heavily bombed in November 1944 — largely destroyed — but the Münster cathedral survived. The Bächle, the small streams running through the city's gutters, are medieval in origin (used for fire-fighting and to water livestock) and have become an unofficial symbol of the city. Accidentally falling in one is said to mean you'll marry a Freiburger.` },
@@ -809,8 +804,6 @@ const GUIDES = {
     ]
   },
   amsterdam: {
-    photo: 'https://europe-2026-api.onrender.com/img/2Hs8zbwOLDA',
-    photoPos: 'center 50%',
     character: `Amsterdam is a city built on tolerance, trade, and water — and it shows in everything. The canals are genuinely beautiful (and genuinely smelly in summer). The city is small enough to feel navigable but dense enough to reward exploration. It has a justified reputation for liberal permissiveness, an unjustified reputation for being wild, and an underrated reputation for serious culture. Alex knows the Netherlands well from Rotterdam — a useful frame, though Amsterdam is considerably more precious and tourist-conscious than Rotterdam.`,
     sections: [
       { title: 'History worth knowing', content: `Amsterdam's 17th-century Golden Age — when it was the richest city on earth, the centre of world trade, and a haven for religious refugees — produced the art, the architecture, and the canal ring you'll be walking through. The East India Company (VOC) was headquartered here; the Amsterdam exchange invented modern financial instruments. The Nazi occupation and the deportation of 75% of Amsterdam's Jewish population (the highest proportion of any western European city) is a wound the city still carries; the Anne Frank House and the Hollandsche Schouwburg are the most direct encounters with this history.` },
@@ -829,8 +822,6 @@ const GUIDES = {
     ]
   },
   england: {
-    photo: 'https://europe-2026-api.onrender.com/img/yDmZmfZzAbU',
-    photoPos: 'center 40%',
     character: `You know England. But coming back to it after five weeks in Europe — jet-lagged on the way in, browned and relaxed on the way back — it'll look different. These final days are decompression. London in late July is warm, long-daylight, and expensive. The energy is different from June; Wimbledon is over, the summer is in full swing. You have five nights to use well before the long haul home.`,
     sections: [
       { title: 'What these days are for', content: `You've done the intense itinerary. England is the wind-down. Resist the urge to pack it — a few good meals, some familiar territory, and the kind of ease that comes from speaking the language and knowing how things work. Alex knows London; Sophie and Ollie know it less. The balance is probably one or two genuinely good things per day, not an itinerary.` },
@@ -974,14 +965,9 @@ function jumpToSeg(segId) {
 }
 
 function updateHeroImage(segId) {
-  const g = GUIDES[segId];
-  const img = document.getElementById('heroImg');
-  if (!img) return;
-  if (g && g.photo) {
-    img.referrerPolicy = 'no-referrer';
-    img.src = g.photo;
-    img.style.objectPosition = g.photoPos || 'center';
-  }
+  const col = CITY_COLOURS[segId];
+  const hero = document.getElementById('topbarHero');
+  if (hero && col) hero.style.background = col;
 }
 
 function goToday() {
@@ -1041,16 +1027,12 @@ function renderGuide() {
     return;
   }
   let html = '';
-  // Hero image
-  if (g.photo) {
-    html += `<div class="guide-hero">
-      <img src="${g.photo}" alt="${placesSeg.city}" style="object-position:${g.photoPos||'center'}"
-        
-        onerror="this.parentElement.style.display='none'">
-      <div class="guide-hero-overlay"></div>
-      <div class="guide-hero-label">${placesSeg.flag} ${placesSeg.city}</div>
-    </div>`;
-  }
+  // City colour hero
+  const cityCol = CITY_COLOURS[placesSeg.id] || 'linear-gradient(135deg, #2c3e6b, #1a2540)';
+  html += `<div class="guide-hero" style="background:${cityCol}">
+    <div class="guide-hero-overlay"></div>
+    <div class="guide-hero-label">${placesSeg.flag} ${placesSeg.city}</div>
+  </div>`;
   html += '<div class="guide-content">';
   // Character intro
   html += `<div class="guide-highlight"><p>${g.character}</p></div>`;

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<meta name="referrer" content="no-referrer-when-downgrade">
+<meta name="referrer" content="no-referrer">
 <title>Europe 2026 · Radford Family</title>
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
@@ -352,10 +352,10 @@ body{background:var(--bg);color:var(--text);font-family:'Outfit',sans-serif;disp
 
 <div class="topbar">
   <div class="topbar-hero" id="topbarHero">
-    <img class="topbar-hero-img" id="heroImg"
+    <img class="topbar-hero-img" id="heroImg" crossorigin="anonymous"
       src="https://images.unsplash.com/photo-SYBLkjltGRo?w=800&q=80&auto=format&fit=crop&ixlib=rb-4.0.3"
       alt="Europe"
-      referrerpolicy="no-referrer-when-downgrade"
+      referrerpolicy="no-referrer"
       onerror="this.style.display='none'">
     <div class="topbar-hero-overlay"></div>
     <div class="topbar-hero-content">
@@ -979,6 +979,7 @@ function updateHeroImage(segId) {
   const img = document.getElementById('heroImg');
   if (!img) return;
   if (g && g.photo) {
+    img.referrerPolicy = 'no-referrer';
     img.src = g.photo;
     img.style.objectPosition = g.photoPos || 'center';
   }
@@ -1045,7 +1046,7 @@ function renderGuide() {
   if (g.photo) {
     html += `<div class="guide-hero">
       <img src="${g.photo}" alt="${placesSeg.city}" style="object-position:${g.photoPos||'center'}"
-        referrerpolicy="no-referrer-when-downgrade"
+        referrerpolicy="no-referrer"
         onerror="this.parentElement.style.display='none'">
       <div class="guide-hero-overlay"></div>
       <div class="guide-hero-label">${placesSeg.flag} ${placesSeg.city}</div>

@@ -18,7 +18,7 @@
   --s3:#e8e4dc;
   --border:#ddd9d0;
   --text:#1a1814;
-  --muted:#8a8278;
+  --muted:#6b6058;
   --dim:#b0aa9f;
   --accent:#c47a2a;
   --green:#3d8a5c;
@@ -36,8 +36,8 @@ body{background:var(--bg);color:var(--text);font-family:'Outfit',sans-serif;disp
 .topbar{background:var(--s1);border-bottom:1px solid var(--border);padding:1rem 1rem 0.8rem;flex-shrink:0;display:flex;align-items:center;justify-content:space-between;}
 .wordmark{font-family:'Libre Baskerville',serif;font-size:1.15rem;font-weight:400;color:var(--text);line-height:1;}
 .wordmark em{font-style:italic;color:var(--accent);}
-.topbar-sub{font-family:'DM Mono',monospace;font-size:0.56rem;letter-spacing:0.13em;color:var(--muted);margin-top:0.3rem;text-transform:uppercase;}
-.today-btn{background:var(--accent);color:#fff;border:none;border-radius:20px;padding:0.38rem 0.9rem;font-family:'Outfit',sans-serif;font-size:0.7rem;font-weight:500;cursor:pointer;letter-spacing:0.03em;}
+.topbar-sub{font-family:'DM Mono',monospace;font-size:0.65rem;letter-spacing:0.13em;color:var(--muted);margin-top:0.3rem;text-transform:uppercase;}
+.today-btn{background:var(--accent);color:#fff;border:none;border-radius:20px;padding:0.45rem 1rem;font-family:'Outfit',sans-serif;font-size:0.7rem;font-weight:500;cursor:pointer;letter-spacing:0.03em;}
 
 /* VIEWS */
 .view{display:none;flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;}
@@ -49,24 +49,24 @@ body{background:var(--bg);color:var(--text);font-family:'Outfit',sans-serif;disp
 .nav-btn{flex:1;background:none;border:none;padding:0.7rem 0.25rem 0.55rem;display:flex;flex-direction:column;align-items:center;gap:0.18rem;cursor:pointer;color:var(--dim);transition:color 0.15s;font-family:'Outfit',sans-serif;}
 .nav-btn.active{color:var(--accent);}
 .nav-icon{font-size:1.1rem;line-height:1;}
-.nav-label{font-size:0.56rem;letter-spacing:0.08em;text-transform:uppercase;font-weight:500;}
+.nav-label{font-size:0.65rem;letter-spacing:0.08em;text-transform:uppercase;font-weight:500;}
 
 /* PRE-HOLIDAY BANNER */
 .preholiday-banner{background:linear-gradient(135deg,#fff8ee,#f5f9f6);border-bottom:1px solid var(--border);padding:0.75rem 1rem;display:flex;align-items:center;justify-content:space-between;gap:0.75rem;flex-shrink:0;}
-.ph-label{font-family:'DM Mono',monospace;font-size:0.56rem;letter-spacing:0.13em;color:var(--accent);text-transform:uppercase;margin-bottom:0.2rem;}
+.ph-label{font-family:'DM Mono',monospace;font-size:0.65rem;letter-spacing:0.13em;color:var(--accent);text-transform:uppercase;margin-bottom:0.2rem;}
 .ph-countdown{font-family:'Libre Baskerville',serif;font-size:1.4rem;font-style:italic;color:var(--text);line-height:1;}
 .ph-countdown em{color:var(--accent);}
-.ph-sub{font-family:'DM Mono',monospace;font-size:0.58rem;color:var(--muted);margin-top:0.2rem;}
-.ph-right{font-family:'DM Mono',monospace;font-size:0.62rem;color:var(--muted);text-align:right;line-height:1.7;flex-shrink:0;}
-.ph-right strong{color:var(--text);display:block;font-size:0.68rem;}
+.ph-sub{font-family:'DM Mono',monospace;font-size:0.65rem;color:var(--muted);margin-top:0.2rem;}
+.ph-right{font-family:'DM Mono',monospace;font-size:0.7rem;color:var(--muted);text-align:right;line-height:1.7;flex-shrink:0;}
+.ph-right strong{color:var(--text);display:block;font-size:0.72rem;}
 
 /* TRIP VIEW */
 #tripView{padding:0;}
 .trip-cities{background:var(--s1);border-bottom:1px solid var(--border);padding:0.65rem 0.75rem;flex-shrink:0;}
-.trip-cities-label{font-family:'DM Mono',monospace;font-size:0.55rem;letter-spacing:0.13em;color:var(--muted);text-transform:uppercase;margin-bottom:0.45rem;}
+.trip-cities-label{font-family:'DM Mono',monospace;font-size:0.65rem;letter-spacing:0.13em;color:var(--muted);text-transform:uppercase;margin-bottom:0.45rem;}
 .city-scroller{display:flex;gap:0.4rem;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
 .city-scroller::-webkit-scrollbar{display:none;}
-.city-pill{background:var(--s2);border:1px solid var(--border);border-radius:20px;padding:0.3rem 0.75rem;font-size:0.68rem;font-weight:500;color:var(--muted);cursor:pointer;white-space:nowrap;flex-shrink:0;transition:all 0.15s;}
+.city-pill{background:var(--s2);border:1px solid var(--border);border-radius:20px;padding:0.4rem 0.85rem;font-size:0.72rem;font-weight:500;color:var(--muted);cursor:pointer;white-space:nowrap;flex-shrink:0;transition:all 0.15s;}
 .city-pill.active{background:var(--accent);border-color:var(--accent);color:#fff;}
 .timeline{padding:0.75rem 0.75rem 1.5rem;}
 .seg-block{margin-bottom:0.25rem;}
@@ -74,9 +74,9 @@ body{background:var(--bg);color:var(--text);font-family:'Outfit',sans-serif;disp
 .seg-banner-line{width:2px;background:var(--accent);border-radius:2px;flex-shrink:0;opacity:0.5;}
 .seg-banner-body{flex:1;padding:0.6rem 0.85rem;background:linear-gradient(135deg,rgba(196,122,42,0.05),transparent);border:1px solid rgba(196,122,42,0.15);border-left:none;border-radius:0 8px 8px 0;}
 .seg-city{font-family:'Libre Baskerville',serif;font-size:1.05rem;font-weight:400;font-style:italic;color:var(--accent);line-height:1;}
-.seg-meta{font-family:'DM Mono',monospace;font-size:0.58rem;letter-spacing:0.07em;color:var(--muted);margin-top:0.25rem;}
+.seg-meta{font-family:'DM Mono',monospace;font-size:0.65rem;letter-spacing:0.07em;color:var(--muted);margin-top:0.25rem;}
 .day-group{margin-bottom:0.25rem;}
-.day-label{font-family:'DM Mono',monospace;font-size:0.58rem;letter-spacing:0.1em;color:var(--muted);text-transform:uppercase;padding:0.5rem 0 0.3rem 2.4rem;}
+.day-label{font-family:'DM Mono',monospace;font-size:0.65rem;letter-spacing:0.1em;color:var(--muted);text-transform:uppercase;padding:0.5rem 0 0.3rem 2.4rem;}
 .day-label.is-today{color:var(--accent);font-weight:500;}
 .tl-row{display:flex;gap:0;margin-bottom:0.25rem;cursor:pointer;}
 .tl-spine{width:2.4rem;flex-shrink:0;display:flex;flex-direction:column;align-items:center;}
@@ -91,10 +91,10 @@ body{background:var(--bg);color:var(--text);font-family:'Outfit',sans-serif;disp
 .tl-line{width:1px;flex:1;background:var(--border);margin:0 auto;}
 .tl-card{flex:1;background:var(--s1);border:1px solid var(--border);border-radius:8px;padding:0.55rem 0.75rem;transition:border-color 0.15s;margin-bottom:0.1rem;}
 .tl-row:hover .tl-card{border-color:var(--accent);}
-.tl-time{font-family:'DM Mono',monospace;font-size:0.58rem;color:var(--accent);margin-bottom:0.1rem;}
+.tl-time{font-family:'DM Mono',monospace;font-size:0.65rem;color:var(--accent);margin-bottom:0.1rem;}
 .tl-title{font-size:0.78rem;font-weight:500;color:var(--text);line-height:1.3;}
-.tl-detail{font-size:0.68rem;color:var(--muted);margin-top:0.12rem;line-height:1.45;}
-.tl-conf{font-family:'DM Mono',monospace;font-size:0.56rem;color:var(--dim);margin-top:0.2rem;word-break:break-all;}
+.tl-detail{font-size:0.72rem;color:var(--muted);margin-top:0.12rem;line-height:1.45;}
+.tl-conf{font-family:'DM Mono',monospace;font-size:0.65rem;color:var(--dim);margin-top:0.2rem;word-break:break-all;}
 .tl-conf span{color:var(--accent);}
 
 /* PLACES VIEW */
@@ -109,11 +109,11 @@ body{background:var(--bg);color:var(--text);font-family:'Outfit',sans-serif;disp
 .subtab.active{color:var(--accent);border-bottom-color:var(--accent);}
 .cat-bar{display:flex;gap:0.35rem;padding:0.5rem 0.75rem;border-bottom:1px solid var(--border);overflow-x:auto;scrollbar-width:none;}
 .cat-bar::-webkit-scrollbar{display:none;}
-.cat-chip{background:var(--s2);border:1px solid var(--border);border-radius:20px;padding:0.25rem 0.65rem;font-size:0.66rem;color:var(--muted);cursor:pointer;white-space:nowrap;flex-shrink:0;transition:all 0.15s;font-family:'Outfit',sans-serif;}
+.cat-chip{background:var(--s2);border:1px solid var(--border);border-radius:20px;padding:0.25rem 0.65rem;font-size:0.72rem;color:var(--muted);cursor:pointer;white-space:nowrap;flex-shrink:0;transition:all 0.15s;font-family:'Outfit',sans-serif;}
 .cat-chip.active{background:var(--accent);border-color:var(--accent);color:#fff;}
 .ai-bar{margin:0.6rem 0.75rem 0;background:linear-gradient(135deg,#fff8ee,#f5f9f6);border:1px solid rgba(196,122,42,0.2);border-radius:8px;padding:0.55rem 0.75rem;display:flex;align-items:center;justify-content:space-between;gap:0.5rem;}
 .ai-bar-text{font-size:0.72rem;color:var(--muted);}
-.ai-bar-btn{background:var(--accent);color:#fff;border:none;border-radius:6px;padding:0.28rem 0.65rem;font-size:0.67rem;cursor:pointer;font-family:'Outfit',sans-serif;font-weight:500;white-space:nowrap;flex-shrink:0;}
+.ai-bar-btn{background:var(--accent);color:#fff;border:none;border-radius:6px;padding:0.28rem 0.65rem;font-size:0.72rem;cursor:pointer;font-family:'Outfit',sans-serif;font-weight:500;white-space:nowrap;flex-shrink:0;}
 .places-list{padding:0.6rem 0.75rem 1.5rem;display:flex;flex-direction:column;gap:0.45rem;}
 .place-card{background:var(--s1);border:1px solid var(--border);border-radius:10px;padding:0.75rem;transition:border-color 0.15s;}
 .place-card.is-saved{border-color:rgba(61,138,92,0.4);}
@@ -125,25 +125,39 @@ body{background:var(--bg);color:var(--text);font-family:'Outfit',sans-serif;disp
 .pcat.bar{background:rgba(122,90,168,0.1);color:var(--violet);}
 .pcat.activity{background:rgba(58,111,168,0.1);color:var(--blue);}
 .pcat.museum{background:rgba(58,111,168,0.1);color:var(--blue);}
-.place-desc{font-size:0.73rem;color:var(--muted);margin-top:0.35rem;line-height:1.55;}
+.pcat.shopping{background:rgba(168,58,122,0.1);color:#a83a7a;}
+.place-desc{font-size:0.76rem;color:var(--muted);margin-top:0.35rem;line-height:1.55;}
 .place-footer{display:flex;gap:0.75rem;margin-top:0.35rem;flex-wrap:wrap;}
-.place-area{font-size:0.66rem;color:var(--dim);}
-.place-book{font-size:0.66rem;color:var(--red);}
+.place-area{font-size:0.72rem;color:var(--dim);}
+.place-book{font-size:0.72rem;color:var(--red);}
 .place-actions{display:flex;gap:0.4rem;margin-top:0.55rem;}
-.pa-btn{background:none;border:1px solid var(--border);border-radius:6px;padding:0.28rem 0.6rem;font-size:0.66rem;color:var(--muted);cursor:pointer;font-family:'Outfit',sans-serif;transition:all 0.15s;}
+.pa-btn{background:none;border:1px solid var(--border);border-radius:6px;padding:0.28rem 0.6rem;font-size:0.72rem;color:var(--muted);cursor:pointer;font-family:'Outfit',sans-serif;transition:all 0.15s;}
 .pa-btn:hover{border-color:var(--accent);color:var(--accent);}
 .pa-btn.saved{border-color:var(--green);color:var(--green);}
-.place-note{margin-top:0.5rem;background:var(--s2);border:1px solid var(--border);border-radius:6px;padding:0.4rem 0.6rem;font-size:0.71rem;color:var(--text);font-family:'Outfit',sans-serif;resize:none;width:100%;min-height:46px;outline:none;transition:border-color 0.15s;}
+.place-note{margin-top:0.5rem;background:var(--s2);border:1px solid var(--border);border-radius:6px;padding:0.4rem 0.6rem;font-size:0.76rem;color:var(--text);font-family:'Outfit',sans-serif;resize:none;width:100%;min-height:46px;outline:none;transition:border-color 0.15s;}
 .place-note:focus{border-color:var(--accent);}
 .place-note::placeholder{color:var(--dim);}
 .add-btn{background:var(--s1);border:1px dashed var(--border);border-radius:10px;padding:0.75rem;text-align:center;cursor:pointer;font-size:0.75rem;color:var(--muted);transition:all 0.15s;width:100%;font-family:'Outfit',sans-serif;}
 .add-btn:hover{border-color:var(--accent);color:var(--accent);}
 
+/* Inline add place form */
+.add-place-form{background:var(--s1);border:1px solid var(--accent);border-radius:10px;padding:0.85rem;margin-bottom:0.45rem;}
+.add-place-form-title{font-family:'DM Mono',monospace;font-size:0.6rem;letter-spacing:0.12em;color:var(--accent);text-transform:uppercase;margin-bottom:0.65rem;}
+.apf-field{margin-bottom:0.5rem;}
+.apf-label{font-family:'DM Mono',monospace;font-size:0.65rem;letter-spacing:0.08em;color:var(--muted);text-transform:uppercase;display:block;margin-bottom:0.25rem;}
+.apf-input{width:100%;background:var(--s2);border:1px solid var(--border);border-radius:6px;padding:0.5rem 0.65rem;font-family:'Outfit',sans-serif;font-size:0.8rem;color:var(--text);outline:none;-webkit-appearance:none;transition:border-color 0.15s;}
+.apf-input:focus{border-color:var(--accent);}
+.apf-select{width:100%;background:var(--s2);border:1px solid var(--border);border-radius:6px;padding:0.5rem 0.65rem;font-family:'Outfit',sans-serif;font-size:0.8rem;color:var(--text);outline:none;-webkit-appearance:none;transition:border-color 0.15s;}
+.apf-select:focus{border-color:var(--accent);}
+.apf-actions{display:flex;gap:0.5rem;margin-top:0.65rem;}
+.apf-save{flex:1;background:var(--accent);color:#fff;border:none;border-radius:6px;padding:0.5rem;font-family:'Outfit',sans-serif;font-size:0.78rem;font-weight:500;cursor:pointer;}
+.apf-cancel{background:none;border:1px solid var(--border);border-radius:6px;padding:0.5rem 0.75rem;font-family:'Outfit',sans-serif;font-size:0.78rem;color:var(--muted);cursor:pointer;}
+
 /* GUIDE */
 .guide-body{flex:1;overflow-y:auto;padding:0.75rem 0.75rem 1.5rem;-webkit-overflow-scrolling:touch;}
 .guide-body::-webkit-scrollbar{width:0;}
 .guide-section{margin-bottom:1.25rem;}
-.guide-section-title{font-family:'DM Mono',monospace;font-size:0.58rem;letter-spacing:0.14em;color:var(--accent);text-transform:uppercase;margin-bottom:0.5rem;padding-bottom:0.35rem;border-bottom:1px solid rgba(196,122,42,0.15);}
+.guide-section-title{font-family:'DM Mono',monospace;font-size:0.65rem;letter-spacing:0.14em;color:var(--accent);text-transform:uppercase;margin-bottom:0.5rem;padding-bottom:0.35rem;border-bottom:1px solid rgba(196,122,42,0.15);}
 .guide-section p{font-size:0.78rem;color:var(--muted);line-height:1.75;margin-bottom:0.5rem;}
 .guide-section p strong{color:var(--text);font-weight:500;}
 .guide-section p em{color:var(--accent);font-style:italic;}
@@ -153,7 +167,7 @@ body{background:var(--bg);color:var(--text);font-family:'Outfit',sans-serif;disp
 .guide-highlight{background:linear-gradient(135deg,#fff8ee,var(--s2));border:1px solid rgba(196,122,42,0.15);border-radius:8px;padding:0.75rem 0.85rem;margin-bottom:0.75rem;}
 .guide-highlight p{margin-bottom:0;color:var(--text);}
 .guide-ollie{background:rgba(61,138,92,0.06);border:1px solid rgba(61,138,92,0.2);border-radius:8px;padding:0.65rem 0.8rem;margin-top:0.5rem;}
-.guide-ollie-label{font-family:'DM Mono',monospace;font-size:0.55rem;letter-spacing:0.1em;color:var(--green);text-transform:uppercase;margin-bottom:0.3rem;}
+.guide-ollie-label{font-family:'DM Mono',monospace;font-size:0.65rem;letter-spacing:0.1em;color:var(--green);text-transform:uppercase;margin-bottom:0.3rem;}
 .guide-ollie p{color:var(--muted);margin-bottom:0;}
 
 /* MAP VIEW */
@@ -162,7 +176,7 @@ body{background:var(--bg);color:var(--text);font-family:'Outfit',sans-serif;disp
 .map-legend{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,var(--s1) 65%,transparent);padding:1.5rem 0.75rem 0.75rem;z-index:1000;pointer-events:none;}
 .map-legend-inner{display:flex;gap:0.4rem;overflow-x:auto;scrollbar-width:none;pointer-events:all;-webkit-overflow-scrolling:touch;}
 .map-legend-inner::-webkit-scrollbar{display:none;}
-.map-city-chip{background:var(--s1);border:1px solid var(--border);border-radius:20px;padding:0.3rem 0.7rem;font-size:0.68rem;font-weight:500;color:var(--muted);cursor:pointer;white-space:nowrap;flex-shrink:0;transition:all 0.2s;font-family:'Outfit',sans-serif;pointer-events:all;box-shadow:0 1px 4px rgba(0,0,0,0.1);}
+.map-city-chip{background:var(--s1);border:1px solid var(--border);border-radius:20px;padding:0.3rem 0.7rem;font-size:0.72rem;font-weight:500;color:var(--muted);cursor:pointer;white-space:nowrap;flex-shrink:0;transition:all 0.2s;font-family:'Outfit',sans-serif;pointer-events:all;box-shadow:0 1px 4px rgba(0,0,0,0.1);}
 .map-city-chip.active{background:var(--accent);border-color:var(--accent);color:#fff;}
 .leaflet-container{background:var(--s2) !important;}
 .leaflet-popup-content-wrapper{background:var(--s1) !important;border:1px solid var(--border) !important;border-radius:8px !important;box-shadow:0 4px 20px rgba(0,0,0,0.12) !important;}
@@ -179,13 +193,13 @@ body{background:var(--bg);color:var(--text);font-family:'Outfit',sans-serif;disp
 .ask-city-btn{background:none;border:none;border-bottom:2px solid transparent;padding:0.55rem 0.7rem;font-family:'Outfit',sans-serif;font-size:0.7rem;font-weight:500;color:var(--muted);cursor:pointer;white-space:nowrap;flex-shrink:0;transition:all 0.15s;}
 .ask-city-btn.active{color:var(--accent);border-bottom-color:var(--accent);}
 .ask-modes{display:flex;gap:0.4rem;padding:0.5rem 0.75rem;}
-.mode-btn{background:var(--s2);border:1px solid var(--border);border-radius:20px;padding:0.28rem 0.75rem;font-size:0.67rem;color:var(--muted);cursor:pointer;transition:all 0.15s;font-family:'Outfit',sans-serif;font-weight:500;}
+.mode-btn{background:var(--s2);border:1px solid var(--border);border-radius:20px;padding:0.28rem 0.75rem;font-size:0.72rem;color:var(--muted);cursor:pointer;transition:all 0.15s;font-family:'Outfit',sans-serif;font-weight:500;}
 .mode-btn.active{background:var(--accent);border-color:var(--accent);color:#fff;}
 .quick-chips{display:flex;gap:0.35rem;padding:0.4rem 0.75rem 0.55rem;overflow-x:auto;scrollbar-width:none;}
 .quick-chips::-webkit-scrollbar{display:none;}
-.qchip{background:var(--s2);border:1px solid var(--border);border-radius:20px;padding:0.26rem 0.65rem;font-size:0.66rem;color:var(--muted);cursor:pointer;white-space:nowrap;flex-shrink:0;transition:all 0.15s;font-family:'Outfit',sans-serif;}
+.qchip{background:var(--s2);border:1px solid var(--border);border-radius:20px;padding:0.26rem 0.65rem;font-size:0.72rem;color:var(--muted);cursor:pointer;white-space:nowrap;flex-shrink:0;transition:all 0.15s;font-family:'Outfit',sans-serif;}
 .qchip:hover{border-color:var(--accent);color:var(--accent);}
-.context-strip{background:var(--s2);border-bottom:1px solid var(--border);padding:0.4rem 0.75rem;font-size:0.68rem;color:var(--muted);display:flex;align-items:center;gap:0.5rem;flex-shrink:0;}
+.context-strip{background:var(--s2);border-bottom:1px solid var(--border);padding:0.4rem 0.75rem;font-size:0.72rem;color:var(--muted);display:flex;align-items:center;gap:0.5rem;flex-shrink:0;}
 .context-strip .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);flex-shrink:0;opacity:0.7;}
 .chat-body{flex:1;overflow-y:auto;padding:0.75rem;display:flex;flex-direction:column;gap:0.7rem;-webkit-overflow-scrolling:touch;}
 .chat-body::-webkit-scrollbar{width:0;}
@@ -205,24 +219,24 @@ body{background:var(--bg);color:var(--text);font-family:'Outfit',sans-serif;disp
 .bub p+p{margin-top:0.45rem;}
 .bub strong{font-weight:600;color:var(--text);}
 .bub em{font-style:italic;color:var(--accent);}
-.book-flag{display:inline-flex;align-items:center;gap:0.25rem;background:rgba(168,58,58,0.08);border:1px solid rgba(168,58,58,0.2);color:var(--red);font-size:0.62rem;font-family:'DM Mono',monospace;letter-spacing:0.06em;padding:0.18rem 0.4rem;border-radius:3px;margin:0.15rem 0.1rem;text-transform:uppercase;}
+.book-flag{display:inline-flex;align-items:center;gap:0.25rem;background:rgba(168,58,58,0.08);border:1px solid rgba(168,58,58,0.2);color:var(--red);font-size:0.7rem;font-family:'DM Mono',monospace;letter-spacing:0.06em;padding:0.18rem 0.4rem;border-radius:3px;margin:0.15rem 0.1rem;text-transform:uppercase;}
 .typing-wrap{display:flex;gap:3px;align-items:center;padding:0.15rem 0;}
 .typing-wrap span{width:4px;height:4px;background:var(--muted);border-radius:50%;animation:tp 1.2s infinite;}
 .typing-wrap span:nth-child(2){animation-delay:.2s;}
 .typing-wrap span:nth-child(3){animation-delay:.4s;}
 @keyframes tp{0%,80%,100%{transform:translateY(0);opacity:.3;}40%{transform:translateY(-4px);opacity:1;}}
 .input-row{background:var(--s1);border-top:1px solid var(--border);padding:0.6rem 0.75rem;display:flex;gap:0.5rem;align-items:flex-end;flex-shrink:0;}
-.chat-ta{flex:1;background:var(--s2);border:1px solid var(--border);border-radius:8px;padding:0.55rem 0.75rem;font-family:'Outfit',sans-serif;font-size:0.81rem;color:var(--text);resize:none;min-height:38px;max-height:90px;line-height:1.5;outline:none;-webkit-appearance:none;transition:border-color 0.15s;}
+.chat-ta{flex:1;background:var(--s2);border:1px solid var(--border);border-radius:8px;padding:0.55rem 0.75rem;font-family:'Outfit',sans-serif;font-size:0.81rem;color:var(--text);resize:none;min-height:44px;max-height:90px;line-height:1.5;outline:none;-webkit-appearance:none;transition:border-color 0.15s;}
 .chat-ta:focus{border-color:var(--accent);}
 .chat-ta::placeholder{color:var(--dim);}
 .chat-ta:disabled{opacity:0.4;}
-.send-btn{background:var(--accent);color:#fff;border:none;border-radius:8px;width:38px;height:38px;cursor:pointer;font-size:1rem;flex-shrink:0;transition:background 0.15s;display:flex;align-items:center;justify-content:center;}
+.send-btn{background:var(--accent);color:#fff;border:none;border-radius:8px;width:44px;height:44px;cursor:pointer;font-size:1rem;flex-shrink:0;transition:background 0.15s;display:flex;align-items:center;justify-content:center;}
 .send-btn:hover{background:#a8661e;}
 .send-btn:disabled{background:var(--border);cursor:not-allowed;}
 
 /* BOOKINGS */
 #bookingsView{padding:0.75rem 0.75rem 1.5rem;flex-direction:column;gap:0;}
-.bk-section-title{font-family:'DM Mono',monospace;font-size:0.57rem;letter-spacing:0.13em;color:var(--muted);text-transform:uppercase;padding:0.75rem 0.25rem 0.35rem;}
+.bk-section-title{font-family:'DM Mono',monospace;font-size:0.65rem;letter-spacing:0.13em;color:var(--muted);text-transform:uppercase;padding:0.75rem 0.25rem 0.35rem;}
 .bk-card{background:var(--s1);border:1px solid var(--border);border-radius:10px;padding:0.7rem 0.85rem;margin-bottom:0.4rem;}
 .bk-top{display:flex;justify-content:space-between;align-items:flex-start;gap:0.5rem;}
 .bk-name{font-size:0.8rem;font-weight:600;color:var(--text);}
@@ -233,9 +247,37 @@ body{background:var(--bg);color:var(--text);font-family:'Outfit',sans-serif;disp
 .bk-tag.car{background:rgba(122,90,168,0.1);color:var(--violet);}
 .bk-tag.ferry{background:rgba(58,111,168,0.1);color:var(--blue);}
 .bk-detail{font-size:0.7rem;color:var(--muted);margin-top:0.25rem;line-height:1.6;}
-.bk-conf{font-family:'DM Mono',monospace;font-size:0.62rem;color:var(--accent);margin-top:0.3rem;word-break:break-all;}
-.bk-conf-label{color:var(--dim);font-size:0.56rem;}
+.bk-conf{font-family:'DM Mono',monospace;font-size:0.7rem;color:var(--accent);margin-top:0.3rem;word-break:break-all;}
+.bk-conf-label{color:var(--dim);font-size:0.65rem;}
 .bk-divider{height:1px;background:var(--border);margin:0.35rem 0 0.5rem;}
+
+/* Emergency strip in bookings */
+.emergency-strip{
+  background:linear-gradient(135deg,#fff8f8,#fff5ee);
+  border:1px solid rgba(168,58,58,0.2);
+  border-radius:10px;margin-bottom:0.5rem;
+  padding:0.75rem 0.85rem;
+}
+.emergency-strip-title{
+  font-family:'DM Mono',monospace;font-size:0.65rem;
+  letter-spacing:0.12em;color:var(--red);text-transform:uppercase;
+  margin-bottom:0.45rem;
+}
+.emergency-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.3rem 0.75rem;}
+.emergency-item{}
+.emergency-country{font-family:'DM Mono',monospace;font-size:0.62rem;color:var(--muted);margin-bottom:0.1rem;}
+.emergency-numbers{font-size:0.78rem;font-weight:600;color:var(--text);}
+
+/* Offline banner */
+.offline-banner{
+  background:#fff3cd;border-bottom:1px solid #e8c84a;
+  padding:0.5rem 0.75rem;
+  font-size:0.75rem;color:#7a5f00;
+  display:none;flex-shrink:0;
+  align-items:center;gap:0.5rem;
+  font-family:'Outfit',sans-serif;
+}
+.offline-banner.visible{display:flex;}
 
 </style>
 </head>
@@ -263,6 +305,11 @@ body{background:var(--bg);color:var(--text);font-family:'Outfit',sans-serif;disp
   </div>
 </div>
 
+<!-- OFFLINE BANNER -->
+<div class="offline-banner" id="offlineBanner">
+  ⚡ No connection — Trip, Places, Guide and Bookings still work offline.
+</div>
+
 <!-- TRIP -->
 <div class="view active" id="tripView">
   <div class="trip-cities">
@@ -287,6 +334,7 @@ body{background:var(--bg);color:var(--text);font-family:'Outfit',sans-serif;disp
       <button class="cat-chip" onclick="setCat(this,'bar')">🍷 Bars</button>
       <button class="cat-chip" onclick="setCat(this,'activity')">🎯 Activities</button>
       <button class="cat-chip" onclick="setCat(this,'museum')">🏛 Museums</button>
+      <button class="cat-chip" onclick="setCat(this,'shopping')">🛍 Shopping</button>
     </div>
   </div>
   <div class="ai-bar" id="aiBarWrap">
@@ -361,6 +409,11 @@ body{background:var(--bg);color:var(--text);font-family:'Outfit',sans-serif;disp
 // ══════════════════════════════════════════════
 // DATA
 // ══════════════════════════════════════════════
+// ── API ENDPOINT ──
+// Update this to your Render URL once deployed
+// e.g. 'https://europe-2026-api.onrender.com/api/chat'
+const API_URL = 'https://europe-2026-api.onrender.com/api/chat';
+
 const MONTHS = ['','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 const DAYS_SHORT = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
 
@@ -488,6 +541,12 @@ const PLACES = {
     {id:'l1_6',name:'Borough Market',cat:'activity',desc:'Best food market in London. Go late morning on a weekday to avoid the worst crowds.',area:'London Bridge',book:'Free entry'},
     {id:'l1_7',name:'The Wigmore',cat:'bar',desc:'Marylebone pub. All-day, excellent food, no pretension. Close to the hotel.',area:'Marylebone'},
     {id:'l1_8',name:'V&A Museum',cat:'museum',desc:'Free. Architecture, fashion, design. The café alone is worth the visit. Ollie may find it more interesting than expected.',area:'South Kensington',book:'Free'},
+    {id:'l1_sh1',name:'Dover Street Market',cat:'shopping',desc:'For Ollie — the definitive streetwear concept store. Stüssy, Kith, Palace, Supreme, CDG across multiple floors. Worth an hour of anyone\'s time.',area:'Haymarket',book:''},
+    {id:'l1_sh2',name:'Daunt Books',cat:'shopping',desc:'For Alex — the most beautiful bookshop in London. Edwardian galleried interior, superb travel section. Marylebone flagship.',area:'Marylebone',book:''},
+    {id:'l1_sh3',name:'Liberty London',cat:'shopping',desc:'For Sophie — jewellery, accessories, scarves, independent designers. The Tudor mock building is extraordinary. Best for jewellery and fashion accessories.',area:'Soho',book:''},
+    {id:'l1_sh4',name:'Slam City Skates',cat:'shopping',desc:'For Ollie — London\'s original streetwear and skate shop. Nike SB, New Balance, Stüssy. Very Soho.',area:'Soho',book:''},
+    {id:'l1_sh5',name:'Paul Smith — Floral Street',cat:'shopping',desc:'For Alex — the Covent Garden flagship. British tailoring with wit and colour. Worth browsing even without buying.',area:'Covent Garden',book:''},
+    {id:'l1_sh6',name:'Chiltern Street',cat:'shopping',desc:'For Sophie and Alex — best street in London for independent boutiques. Emma Willis shirts, Trunk Clothiers, Wolf & Badger for independent jewellery.',area:'Marylebone',book:''},
   ],
   corsica:[
     {id:'co_1',name:'Gorges de la Restonica',cat:'activity',desc:'Day trip — spectacular river gorge with rock pools for swimming. Ollie will love it. ~2hr drive from Serra-di-Ferro. Go early.',area:'Near Corte',book:'Early start'},
@@ -496,6 +555,8 @@ const PLACES = {
     {id:'co_4',name:'Col de Bavella',cat:'activity',desc:'Dramatic mountain pass — granite needles, pine forests. Easy walks available. Worth a half-day.',area:'Alta Rocca'},
     {id:'co_5',name:'A Cantina di l\'Orriu',cat:'restaurant',desc:'Local Corsican charcuterie, cheese, wine. Rustic and excellent. Typical of the south.',area:'Porto-Vecchio area'},
     {id:'co_6',name:'Domaine Torraccia',cat:'activity',desc:'Excellent Corsican wine estate near Porto-Vecchio. Nielluccio red is outstanding. Worth a visit.',area:'Lecci',book:'Check opening hours'},
+    {id:'co_sh1',name:'Corsican Markets — Porto-Vecchio',cat:'shopping',desc:'For Sophie — local artisan jewellery in coral, gold and Corsican granite. The morning market in Porto-Vecchio has the best independent makers. Not tourist tat — genuinely good.',area:'Porto-Vecchio',book:'Morning only'},
+    {id:'co_sh2',name:'Corsican food to take home',cat:'shopping',desc:'For Alex — figatellu, lonzu, coppa, brocciu. The best charcuterie is from a proper butcher or farm shop, not an airport concession. Stock up before the ferry.',area:'Local butchers',book:''},
   ],
   lyon:[
     {id:'ly_1',name:'Burgundy by Matthieu',cat:'restaurant',desc:'Already booked — Thu 9 Jul at 19:15. 24 Quai Saint-Antoine. Modern Burgundian cooking on the riverbank.',area:'Presqu\'île',book:'BOOKED ✓'},
@@ -505,6 +566,10 @@ const PLACES = {
     {id:'ly_5',name:'Musée des Confluences',cat:'museum',desc:'Science and anthropology. Spectacular Coop Himmelb(l)au building at the confluence of the Rhône and Saône. Good for all ages.',area:'Confluence',book:'Book online'},
     {id:'ly_6',name:'Café Mokxa',cat:'coffee',desc:'Best specialty coffee in Lyon. Roasters, serious about their sourcing.',area:'6th arrondissement'},
     {id:'ly_7',name:'Le Sucre',cat:'bar',desc:'Rooftop bar on a former sugar factory. Panoramic views over the city. Good aperitivo spot.',area:'Confluence'},
+    {id:'ly_sh1',name:'Rue de la République',cat:'shopping',desc:'Lyon\'s main shopping street. Maje, Sandro, The Kooples, Comptoir des Cotonniers — all strong for Sophie. Good concentration in a walkable strip.',area:'Presqu\'île',book:''},
+    {id:'ly_sh2',name:'Passage de l\'Argue',cat:'shopping',desc:'For Alex — covered 19th-century arcade with independent bookshops, design shops, and print dealers. Quiet, unhurried, excellent browsing.',area:'Presqu\'île',book:''},
+    {id:'ly_sh3',name:'Cave Mathivat',cat:'shopping',desc:'For Alex — outstanding wine merchant. Burgundy and Rhône specialists. Good to visit even if just for browsing and a recommendation to drink that evening.',area:'Presqu\'île',book:''},
+    {id:'ly_sh4',name:'Printemps Lyon',cat:'shopping',desc:'For Sophie — strong accessories and jewellery floor. French department store at its best, less hectic than Paris. Good independent brands alongside the majors.',area:'Presqu\'île',book:''},
   ],
   strasbourg:[
     {id:'st_1',name:'Au Crocodile',cat:'restaurant',desc:'Benchmark Alsatian fine dining. Exceptional wine cellar, strong on Alsace whites. Book now — this is the one.',area:'Centre',book:'Essential — book now'},
@@ -514,6 +579,10 @@ const PLACES = {
     {id:'st_5',name:'Terres à Café',cat:'coffee',desc:'Excellent specialty coffee roaster. Multiple locations in the city.',area:'Centre'},
     {id:'st_6',name:'Bastille Day eve — 13 Jul',cat:'activity',desc:'You leave on 13 Jul. Fireworks and festivities often begin the evening of the 13th across Alsace. Ask locally what\'s on.',area:'City-wide'},
     {id:'st_7',name:'Alsace wine route',cat:'activity',desc:'Day trip south into the vineyard villages — Riquewihr, Ribeauvillé. Stunning and very driveable from Strasbourg if you hire a car for a day.',area:'Route des Vins'},
+    {id:'st_sh1',name:'Alsatian textiles & linens',cat:'shopping',desc:'For Sophie — Alsace has a strong tradition of printed linens, tablecloths, and household textiles in distinctive regional patterns. Galeries Lafayette Strasbourg has a good selection, as do specialist shops on the Grande Île.',area:'Grande Île',book:''},
+    {id:'st_sh2',name:'Librairie Kléber',cat:'shopping',desc:'For Alex — the best bookshop in Alsace. Large French and German sections, excellent design and architecture shelves. On Place Kléber.',area:'Place Kléber',book:''},
+    {id:'st_sh3',name:'Alsace wine to take home',cat:'shopping',desc:'For Alex — buy a case of Riesling or Gewurztraminer direct from the wine route rather than airport shops. Cave de Ribeauvillé is a reliable cooperative. Worth shipping.',area:'Route des Vins',book:''},
+    {id:'st_sh4',name:'Marché de Noël shops',cat:'shopping',desc:'For Sophie — Strasbourg\'s Christmas market tradition means year-round craft shops on the Grande Île selling quality handmade jewellery, ceramics, and accessories.',area:'Grande Île',book:''},
   ],
   freiburg:[
     {id:'fr_1',name:'Hausbrauerei Feierling',cat:'bar',desc:'Beer garden in the city centre. Local Badisches beer, good food, Ollie-friendly garden. The classic Freiburg experience.',area:'Gerberau',book:'Walk-in'},
@@ -521,6 +590,9 @@ const PLACES = {
     {id:'fr_3',name:'Freiburger Münster market',cat:'activity',desc:'Daily market in front of the red sandstone Minster. Best produce market in southern Germany. The cathedral itself is free.',area:'Münsterplatz',book:'Free'},
     {id:'fr_4',name:'Titisee',cat:'activity',desc:'Black Forest lake, 30 min by direct train. Swimming, pedal boats, forest walks. Easy and excellent half-day for Ollie.',area:'Black Forest',book:'Train from Hbf'},
     {id:'fr_5',name:'Café Großmann',cat:'coffee',desc:'Proper Black Forest coffee and cake tradition. Schwarzwälder Kirschtorte in situ. Do it.',area:'Altstadt'},
+    {id:'fr_sh1',name:'Outdoor & hiking gear — Intersport / Globetrotter',cat:'shopping',desc:'For Ollie — Freiburg is an outdoor city and has excellent outdoor retailers. Globetrotter is the best: multi-floor, technical gear, camping, climbing. Good for anything Ollie needs for the trip.',area:'Altstadt/Bertoldstrasse',book:''},
+    {id:'fr_sh2',name:'Münsterplatz market',cat:'shopping',desc:'For Alex — the market has local Black Forest producers selling honey, schnapps, cured meats, and handcraft. Good for browsing and buying something to take on the train.',area:'Münsterplatz',book:'Daily'},
+    {id:'fr_sh3',name:'Kaiser-Joseph-Strasse boutiques',cat:'shopping',desc:'For Sophie — Freiburg\'s main shopping street has independent fashion boutiques with more character than the chains. Smaller than Lyon or Amsterdam but worth a browse.',area:'Altstadt',book:''},
   ],
   amsterdam:[
     {id:'am_1',name:'Anne Frank House',cat:'museum',desc:'Essential. Book online well in advance — timed entry, sells out months ahead. Genuinely moving and very right for an 11-year-old.',area:'Jordaan',book:'BOOK IN ADVANCE — online only'},
@@ -531,6 +603,12 @@ const PLACES = {
     {id:'am_6',name:'Brouwerij \'t IJ',cat:'bar',desc:'Windmill brewery. Award-winning craft beers, beer garden. Ollie-friendly — the windmill alone is worth it.',area:'Oost'},
     {id:'am_7',name:'Café de Jaren',cat:'coffee',desc:'Grand café on the Amstel. Three floors, terrace on the river. All-day, all ages, reliably good.',area:'Centrum'},
     {id:'am_8',name:'Cycling the canals',cat:'activity',desc:'Hire bikes and ride with Ollie through Jordaan and out along the canals. Matt will know the best routes. This is the best thing you can do in Amsterdam.',area:'City-wide',book:'Hire near Centraal'},
+    {id:'am_sh1',name:'Patta',cat:'shopping',desc:'For Ollie — Amsterdam\'s most respected streetwear store. Nike collaborations, Stüssy, Carhartt WIP. The Patta x Nike Air Max 1 is their signature. Multiple locations, Jordaan is the flagship.',area:'Jordaan',book:''},
+    {id:'am_sh2',name:'Concrete Matter',cat:'shopping',desc:'For Ollie — serious streetwear and sneaker boutique. Kith, Stone Island, C.P. Company. Well curated, not a tourist shop.',area:'Centrum',book:''},
+    {id:'am_sh3',name:'Hutspot',cat:'shopping',desc:'For Sophie — concept store with independent Dutch designers, jewellery, ceramics, fashion accessories. Three floors. One of the best multi-brand stores in the city.',area:'Weteringschans',book:''},
+    {id:'am_sh4',name:'De 9 Straatjes (Nine Streets)',cat:'shopping',desc:'For Sophie — nine cross-streets in the canal ring packed with independent boutiques, vintage, jewellery, and design shops. The best shopping neighbourhood in Amsterdam. Spend a morning here.',area:'Jordaan canal ring',book:''},
+    {id:'am_sh5',name:'Mendo',cat:'shopping',desc:'For Alex — design, architecture, photography, and art books. One of the finest design bookshops in Europe. Beautifully curated. On Berenstraat.',area:'Jordaan',book:''},
+    {id:'am_sh6',name:'Van Ravenstein',cat:'shopping',desc:'For Sophie — Belgian and Dutch high fashion. Ann Demeulemeester, Dries Van Noten. Considered, serious, excellent quality. Keizersgracht.',area:'Keizersgracht',book:''},
   ],
   england:[
     {id:'en_1',name:'The River Café',cat:'restaurant',desc:'Italian institution on the Thames at Hammersmith. Ruth Rogers. One of the great London restaurants. A proper final dinner. Book well ahead.',area:'Hammersmith',book:'Essential — book now'},
@@ -543,6 +621,13 @@ const PLACES = {
     {id:'en_8',name:'Tate Modern',cat:'museum',desc:'Free. Bankside. Walk across Millennium Bridge from St Paul\'s. Two hours, no pressure.',area:'Bankside',book:'Free'},
     {id:'en_9',name:'Monmouth Coffee',cat:'coffee',desc:'Proper send-off coffee before flying. Borough Market or Covent Garden.',area:'Borough / Covent Garden'},
     {id:'en_10',name:'Hyde Park / Kensington Gardens',cat:'activity',desc:'Wind-down morning. Serpentine, Diana playground for Ollie. Good before packing for the airport.',area:'Kensington',book:'Free'},
+    {id:'en_sh1',name:'Dover Street Market',cat:'shopping',desc:'For Ollie — the best streetwear concept store in London. Comme des Garçons, Stüssy, Kith, Palace, Supreme all under one roof. Multi-floor, worth an hour. Alex will find it interesting too.',area:'Haymarket',book:''},
+    {id:'en_sh2',name:'The Kooples / Sandro / Maje — King\'s Road',cat:'shopping',desc:'Strong French mid-market fashion for Sophie along King\'s Road. Better here than in Paris for availability and less pressure.',area:'Chelsea',book:''},
+    {id:'en_sh3',name:'Daunt Books',cat:'shopping',desc:'For Alex — the most beautiful bookshop in London. Edwardian galleried interior, exceptional travel and literary sections. Marylebone branch is the flagship.',area:'Marylebone',book:''},
+    {id:'en_sh4',name:'Liberty London',cat:'shopping',desc:'For Sophie — jewellery, accessories, scarves, beauty. The Tudor mock-up building is extraordinary. Particularly good for independent jewellery designers.',area:'Soho',book:''},
+    {id:'en_sh5',name:'Slam City Skates',cat:'shopping',desc:'For Ollie — London\'s original streetwear and skate shop. Stüssy, Nike SB, New Balance. Soho location.',area:'Soho',book:''},
+    {id:'en_sh6',name:'Paul Smith',cat:'shopping',desc:'For Alex — Floral Street flagship, Covent Garden. Classic British tailoring with colour and wit. Made-to-measure available.',area:'Covent Garden',book:''},
+    {id:'en_sh7',name:'Tracey Neuls',cat:'shopping',desc:'For Sophie — beautifully designed shoes and accessories by a Canadian designer based in London. Marylebone. Distinctive, worth seeking out.',area:'Marylebone',book:''},
   ]
 };
 
@@ -903,6 +988,7 @@ function renderPlaces() {
     const note = notes[p.id] || '';
     const card = document.createElement('div');
     card.className = 'place-card' + (isSaved ? ' is-saved' : '');
+    card.id = 'pc_' + p.id;
     card.innerHTML = `
       <div class="place-card-top">
         <div class="place-name">${p.name}</div>
@@ -966,17 +1052,80 @@ function aiSuggest() {
 }
 
 function addPlace(segId) {
-  const name = prompt('Place name?');
-  if (!name || !name.trim()) return;
-  const cat = prompt('Category? restaurant / coffee / bar / activity / museum', 'restaurant') || 'activity';
-  const desc = prompt('Brief description:', '') || '';
-  const area = prompt('Neighbourhood / area:', '') || '';
+  // Remove any existing form first
+  const existing = document.getElementById('addPlaceForm');
+  if (existing) { existing.remove(); return; }
+
+  const list = document.getElementById('placesList');
+  const addBtn = list.querySelector('.add-btn');
+
+  const form = document.createElement('div');
+  form.className = 'add-place-form';
+  form.id = 'addPlaceForm';
+  form.innerHTML = `
+    <div class="add-place-form-title">Add a place</div>
+    <div class="apf-field">
+      <label class="apf-label">Name</label>
+      <input class="apf-input" id="apfName" type="text" placeholder="e.g. Le Comptoir du Bœuf" autocomplete="off">
+    </div>
+    <div class="apf-field">
+      <label class="apf-label">Category</label>
+      <select class="apf-select" id="apfCat">
+        <option value="restaurant">🍽 Restaurant</option>
+        <option value="coffee">☕ Coffee</option>
+        <option value="bar">🍷 Bar</option>
+        <option value="activity">🎯 Activity</option>
+        <option value="museum">🏛 Museum</option>
+      </select>
+    </div>
+    <div class="apf-field">
+      <label class="apf-label">Description (optional)</label>
+      <input class="apf-input" id="apfDesc" type="text" placeholder="Why you want to go…" autocomplete="off">
+    </div>
+    <div class="apf-field">
+      <label class="apf-label">Area / neighbourhood</label>
+      <input class="apf-input" id="apfArea" type="text" placeholder="e.g. Vieux Lyon" autocomplete="off">
+    </div>
+    <div class="apf-actions">
+      <button class="apf-save" onclick="saveNewPlace('${segId}')">Save place</button>
+      <button class="apf-cancel" onclick="document.getElementById('addPlaceForm').remove()">Cancel</button>
+    </div>
+  `;
+
+  // Insert before the add button
+  list.insertBefore(form, addBtn);
+
+  // Focus name field
+  setTimeout(() => {
+    const nameField = document.getElementById('apfName');
+    if (nameField) nameField.focus();
+  }, 100);
+}
+
+function saveNewPlace(segId) {
+  const name = (document.getElementById('apfName')?.value || '').trim();
+  if (!name) {
+    const field = document.getElementById('apfName');
+    if (field) { field.style.borderColor = '#a83a3a'; field.focus(); }
+    return;
+  }
+  const cat = document.getElementById('apfCat')?.value || 'activity';
+  const desc = (document.getElementById('apfDesc')?.value || '').trim();
+  const area = (document.getElementById('apfArea')?.value || '').trim();
+
   if (!PLACES[segId]) PLACES[segId] = [];
   const id = 'custom_' + Date.now();
-  PLACES[segId].push({ id, name: name.trim(), cat, desc, area, book: '' });
+  PLACES[segId].push({ id, name, cat, desc, area, book: '' });
   saved[id] = true;
   persist();
   renderPlaces();
+  // Scroll to the new card after render
+  setTimeout(() => {
+    const newCard = document.getElementById('pc_' + id);
+    if (newCard && typeof newCard.scrollIntoView === 'function') {
+      newCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  }, 150);
 }
 
 // ══════════════════════════════════════════════
@@ -1000,6 +1149,15 @@ const TRIP_Q = [
   {l:'🌤 Weather', q:'What\'s the weather typically like here in July and what should we plan around it?'},
   {l:'🛒 Need to know', q:'What do we need to know practically today — shops, pharmacies, local customs?'},
 ];
+// England final-week specific prompts
+const ENGLAND_Q = [
+  {l:'📅 Plan our 5 nights', q:'We have 5 nights in England (London base) before flying home on 22 Jul. We\'ve just done 5 weeks in Europe. Suggest a relaxed but rewarding plan — a couple of good meals, things Ollie will enjoy, and some time for Alex and Sophie. Nothing too hectic.'},
+  {l:'🍽 Final dinner', q:'Recommend the best dinner for our last night in London before flying home. Should be special — somewhere Alex and Sophie will love that also works for Ollie. Worth booking now.'},
+  {l:'🛍 Shopping day', q:'Best areas for a shopping day in London for the three of us — Alex likes books and tailoring, Sophie likes jewellery and fashion, Ollie wants streetwear (Stüssy, Kith, that world).'},
+  {l:'✈ Heathrow logistics', q:'We fly MH3 from LHR Terminal 4 at 11:00 on Wednesday 22 Jul. Three people with luggage. What\'s the best way to get to Heathrow and when should we leave?'},
+  {l:'☕ Best of London', q:'If we only have time for a few things in London at the end of the trip, what are the absolute must-dos?'},
+  {l:'🏖 Day trip?', q:'Is it worth doing a day trip from London in the last few days — Brighton, the Cotswolds, somewhere else? What\'s realistic with an 11-year-old?'},
+];
 
 function renderAsk() {
   // city tabs
@@ -1013,10 +1171,15 @@ function renderAsk() {
     ac.appendChild(btn);
   });
 
-  // quick chips
+  // quick chips — context aware
   const qc = document.getElementById('quickChips');
   qc.innerHTML = '';
-  const qs = askMode === 'pre' ? PRE_Q : TRIP_Q;
+  let qs;
+  if (askSeg.id === 'england') {
+    qs = ENGLAND_Q;
+  } else {
+    qs = askMode === 'pre' ? PRE_Q : TRIP_Q;
+  }
   qs.forEach(q => {
     const btn = document.createElement('button');
     btn.className = 'qchip';
@@ -1168,20 +1331,21 @@ async function sendMsg(text) {
   const hist = histories[key].slice(0, -1).map(m => ({ role: m.role, content: m.content }));
 
   try {
-    const res = await fetch('https://api.anthropic.com/v1/messages', {
+    const res = await fetch(API_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         model: 'claude-sonnet-4-20250514',
         max_tokens: 1000,
         system: sys,
-        tools: [{ type: 'web_search_20250305', name: 'web_search' }],
         messages: [...hist, { role: 'user', content: msg }]
       })
     });
     const data = await res.json();
     let reply = '';
-    if (data.content && Array.isArray(data.content)) {
+    if (data.error) {
+      reply = 'Error: ' + data.error + ' — please try again.';
+    } else if (data.content && Array.isArray(data.content)) {
       for (const block of data.content) {
         if (block.type === 'text') reply += block.text;
       }
@@ -1283,6 +1447,37 @@ function initMap() {
 function renderBookings() {
   const list = document.getElementById('bookingsList');
   list.innerHTML = '';
+
+  // Emergency numbers strip
+  const emergency = document.createElement('div');
+  emergency.className = 'emergency-strip';
+  emergency.innerHTML = `
+    <div class="emergency-strip-title">⚑ Emergency Numbers</div>
+    <div class="emergency-grid">
+      <div class="emergency-item">
+        <div class="emergency-country">🇬🇧 UK</div>
+        <div class="emergency-numbers">999</div>
+      </div>
+      <div class="emergency-item">
+        <div class="emergency-country">🇫🇷 France / Corsica</div>
+        <div class="emergency-numbers">112 · 15 · 17</div>
+      </div>
+      <div class="emergency-item">
+        <div class="emergency-country">🇩🇪 Germany</div>
+        <div class="emergency-numbers">112 · 110</div>
+      </div>
+      <div class="emergency-item">
+        <div class="emergency-country">🇳🇱 Netherlands</div>
+        <div class="emergency-numbers">112</div>
+      </div>
+    </div>
+    <div style="font-size:0.68rem;color:var(--muted);margin-top:0.45rem;">112 works everywhere in Europe · Medical 15 (FR) · Police 110 (DE)</div>
+  `;
+  list.appendChild(emergency);
+  const div0 = document.createElement('div');
+  div0.className = 'bk-divider';
+  list.appendChild(div0);
+
   SEGS.forEach(seg => {
     const segBks = BOOKINGS.filter(b => b.seg === seg.id);
     if (!segBks.length) return;
@@ -1405,11 +1600,27 @@ function firePlanPrompt() {
 }
 
 // ══════════════════════════════════════════════
+// OFFLINE DETECTION
+// ══════════════════════════════════════════════
+function updateOnlineStatus() {
+  const banner = document.getElementById('offlineBanner');
+  if (!banner) return;
+  if (navigator.onLine) {
+    banner.classList.remove('visible');
+  } else {
+    banner.classList.add('visible');
+  }
+}
+window.addEventListener('online', updateOnlineStatus);
+window.addEventListener('offline', updateOnlineStatus);
+
+// ══════════════════════════════════════════════
 // INIT
 // ══════════════════════════════════════════════
 buildTrip();
 initPreHolidayMode();
 renderAsk();
+updateOnlineStatus();
 
 </script>
 </body>

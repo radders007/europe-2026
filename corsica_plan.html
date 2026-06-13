@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="apple-mobile-web-app-title" content="Radfords ʼ26">
+<title>Corsica Guide — Radfords ʼ26</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;500;600&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+/* ── SHARED NAV ── */
+:root {
+  --bg: #f7f5f0;
+  --s1: #ffffff;
+  --s2: #f2f0eb;
+  --s3: #e8e4dc;
+  --border: #ddd9d0;
+  --text: #1a1814;
+  --muted: #6b6058;
+  --dim: #b0aa9f;
+  --accent: #c47a2a;
+  --green: #3d8a5c;
+  --blue: #3a6fa8;
+  --red: #a83a3a;
+  --corsica: #1a6b5a;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* NAV BAR */
+.site-nav {
+  background: var(--s1);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.site-nav-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: 0 1rem;
+}
+.site-nav-inner::-webkit-scrollbar { display: none; }
+.nav-home {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 0.85rem;
+  font-style: italic;
+  color: var(--accent);
+  text-decoration: none;
+  padding: 0.75rem 0.85rem 0.75rem 0;
+  white-space: nowrap;
+  flex-shrink: 0;
+  border-right: 1px solid var(--border);
+  margin-right: 0.25rem;
+}
+.nav-link {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--muted);
+  text-decoration: none;
+  padding: 0.75rem 0.75rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+  border-bottom: 2px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+  letter-spacing: 0.03em;
+}
+.nav-link:hover { color: var(--text); }
+.nav-link.active { color: var(--accent); border-bottom-color: var(--accent); }
+
+/* PAGE HEADER */
+.page-header {
+  background: linear-gradient(135deg, #1a6b5a 0%, #0d4038 100%);
+  padding: 2rem 1.5rem 1.75rem;
+  position: relative;
+  overflow: hidden;
+}
+.page-header::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0) 50%, rgba(0,0,0,0.2) 100%);
+}
+.page-header-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+.page-kicker {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 0.5rem;
+}
+.page-title {
+  font-family: 'Libre Baskerville', serif;
+  font-size: clamp(1.6rem, 5vw, 2.4rem);
+  font-weight: 400;
+  font-style: italic;
+  color: #fff;
+  line-height: 1.1;
+}
+.page-title strong {
+  font-style: normal;
+  font-weight: 700;
+}
+.page-meta {
+  margin-top: 0.6rem;
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+.page-meta span {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  color: rgba(255,255,255,0.6);
+}
+.page-meta span strong {
+  color: rgba(255,255,255,0.9);
+}
+
+/* CONTENT WRAPPER */
+.content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 4rem;
+}
+
+@media (min-width: 600px) {
+  .content { padding: 2rem 1.5rem 4rem; }
+  .page-header { padding: 2.5rem 2rem 2rem; }
+}
+
+
+/* ── PLAN-SPECIFIC STYLES ── */
+
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap');
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.15;
+  }
+
+  
+
+  
+
+  /* LEGEND */
+  .legend {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 36px;
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 3px;
+  }
+
+  .badge.must   { background: var(--must-bg); color: var(--rock); border: 1.5px solid var(--must-border); }
+  .badge.should { background: var(--should-bg); color: var(--sea); border: 1.5px solid var(--should-border); }
+  .badge.book   { background: var(--book-bg); color: #b35c00; border: 1.5px solid var(--book-border); }
+
+  .dot { width: 7px; height: 7px; border-radius: 50%; display: inline-block; }
+  .badge.must   .dot { background: var(--rock); }
+  .badge.should .dot { background: var(--sea); }
+  .badge.book   .dot { background: #b35c00; }
+
+  /* FIVE NON-NEGOTIABLES */
+  .five-box {
+    background: var(--sea);
+    color: white;
+    border-radius: 6px;
+    padding: 28px 32px;
+    margin-bottom: 40px;
+  }
+
+  .five-box h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    margin-bottom: 4px;
+  }
+
+  .five-box .sub {
+    font-size: 12px;
+    opacity: 0.7;
+    margin-bottom: 20px;
+  }
+
+  .five-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 12px;
+  }
+
+  .five-item {
+    background: rgba(255,255,255,0.12);
+    border-radius: 4px;
+    padding: 12px 14px;
+  }
+
+  .five-item .num {
+    font-size: 22px;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    opacity: 0.4;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .five-item .name {
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.3;
+  }
+
+  /* TABLE */
+  .section-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--mid);
+    margin-bottom: 12px;
+    margin-top: 36px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+    margin-bottom: 8px;
+  }
+
+  thead tr { background: var(--ink); color: white; }
+
+  thead th {
+    padding: 11px 14px;
+    text-align: left;
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  tbody tr {
+    border-bottom: 1px solid #f0f0f0;
+    transition: background 0.15s;
+  }
+
+  tbody tr:last-child { border-bottom: none; }
+  tbody tr:hover { background: #fafafa; }
+
+  td {
+    padding: 11px 14px;
+    vertical-align: top;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  td:first-child {
+    width: 24px;
+    color: var(--mid);
+    font-size: 11px;
+    font-weight: 500;
+    padding-right: 4px;
+  }
+
+  td.name { font-weight: 500; min-width: 160px; }
+  td.cat  { width: 85px; }
+  td.priority { width: 85px; }
+  td.dist { width: 130px; }
+  td.notes { color: var(--mid); font-size: 12.5px; }
+
+  .tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 2px 7px;
+    border-radius: 2px;
+  }
+
+  .tag.must   { background: var(--must-bg); color: var(--rock); border: 1px solid var(--must-border); }
+  .tag.should { background: var(--should-bg); color: var(--sea); border: 1px solid var(--should-border); }
+  .tag.beach  { background: var(--sea-light); color: var(--sea); }
+  .tag.boat   { background: #e8f0fd; color: #2c4fa3; }
+  .tag.hike   { background: var(--maquis-light); color: var(--maquis); }
+  .tag.town   { background: #f3eefc; color: #5a3a8a; }
+  .tag.food   { background: #fdf5e0; color: #7a5a00; }
+  .tag.activity { background: #fce8ec; color: #8a2535; }
+
+  /* distance pill */
+  .dist-pill {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .dist-pill .km {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .dist-pill .mins {
+    font-size: 11px;
+    color: var(--mid);
+  }
+
+  .dist-pill .est {
+    font-size: 10px;
+    color: #aaa;
+    font-style: italic;
+  }
+
+  /* BOOK AHEAD BOX */
+  .book-box {
+    background: var(--book-bg);
+    border: 1.5px solid var(--book-border);
+    border-radius: 6px;
+    padding: 24px 28px;
+    margin-top: 40px;
+  }
+
+  .book-box h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    color: #b35c00;
+    margin-bottom: 4px;
+  }
+
+  .book-box .sub { font-size: 12px; color: var(--mid); margin-bottom: 18px; }
+
+  .book-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 12px;
+  }
+
+  .book-item {
+    background: white;
+    border-radius: 4px;
+    padding: 12px 16px;
+    border-left: 3px solid var(--book-border);
+  }
+
+  .book-item strong { display: block; font-size: 13px; margin-bottom: 3px; }
+  .book-item span   { font-size: 12px; color: var(--mid); }
+
+  /* BASE NOTE */
+  .base-note {
+    background: var(--maquis-light);
+    border-left: 3px solid var(--maquis);
+    border-radius: 0 4px 4px 0;
+    padding: 14px 18px;
+    font-size: 12.5px;
+    color: var(--maquis);
+    margin-top: 32px;
+  }
+
+  .base-note strong { font-weight: 600; }
+
+  .dist-note {
+    font-size: 11px;
+    color: var(--mid);
+    margin-top: 10px;
+    font-style: italic;
+  }
+
+  
+
+
+/* Override table styles to match app */
+table {
+  font-family: 'Outfit', sans-serif;
+}
+thead tr { background: var(--text); }
+thead th {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+}
+td { font-size: 0.78rem; }
+td.notes { color: var(--muted); font-size: 0.74rem; }
+.section-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.13em;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+.five-box { background: var(--corsica); }
+.book-box {
+  background: linear-gradient(135deg, #fff8ee, #f5f9f6);
+  border: 1px solid rgba(196,122,42,0.2);
+  border-radius: 10px;
+  padding: 1.25rem 1.5rem;
+  margin-top: 2rem;
+}
+.book-box h3 {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 1.1rem;
+  font-style: italic;
+  color: var(--accent);
+  margin-bottom: 0.25rem;
+}
+.book-box .sub {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  color: var(--muted);
+  letter-spacing: 0.06em;
+  margin-bottom: 1rem;
+}
+.book-item {
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.78rem;
+}
+.book-item:last-child { border-bottom: none; }
+.book-item strong { color: var(--text); }
+.book-item span { color: var(--muted); margin-left: 0.5rem; }
+.base-note {
+  background: var(--s1);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--corsica);
+  border-radius: 0 8px 8px 0;
+  padding: 0.85rem 1rem;
+  font-size: 0.78rem;
+  color: var(--muted);
+  margin-top: 1.5rem;
+  line-height: 1.65;
+}
+.base-note strong { color: var(--text); }
+.dist-note {
+  font-size: 0.7rem;
+  color: var(--dim);
+  margin-top: 0.75rem;
+  line-height: 1.6;
+  font-style: italic;
+}
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="site-nav-inner">
+    <a href="index.html" class="nav-home">Radfords ʼ26</a>
+    <a href="index.html" class="nav-link">🗓 Trip</a>
+    <a href="packing-list.html" class="nav-link">✓ Packing</a>
+    <a href="corsica_plan.html" class="nav-link active" id="nav-corsica-plan" class="nav-link active">🗺 Corsica Guide</a>
+    <a href="corsica_itinerary.html" class="nav-link" id="nav-corsica-itinerary">📅 Corsica Days</a>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="page-header-inner">
+    <div class="page-kicker">🇫🇷 Corsica · 25 Jun – 7 Jul 2026 · Serra-di-Ferro</div>
+    <div class="page-title"><em>Corsica</em> — What to do &amp; where to go</div>
+    <div class="page-meta">
+      <span><strong>22</strong> destinations</span>
+      <span><strong>11 nights</strong> villa + hotel</span>
+      <span><strong>All distances</strong> from Serra-di-Ferro</span>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<div class="content">
+
+  <div class="legend">
+    <span class="badge must"><span class="dot"></span>Must Do</span>
+    <span class="badge should"><span class="dot"></span>Should Do</span>
+    <span class="badge book"><span class="dot"></span>Book Ahead</span>
+  </div>
+
+  <!-- FIVE NON-NEGOTIABLES -->
+  <div class="five-box">
+    <h2>The Five Non-Negotiables</h2>
+    <div class="sub">If you only do five things, make it these. They capture everything Corsica is.</div>
+    <div class="five-grid">
+      <div class="five-item"><div class="num">01</div><div class="name">Bonifacio + Sunset</div></div>
+      <div class="five-item"><div class="num">02</div><div class="name">Lavezzi Islands Boat Trip</div></div>
+      <div class="five-item"><div class="num">03</div><div class="name">Scandola + Girolata Cruise</div></div>
+      <div class="five-item"><div class="num">04</div><div class="name">Palombaggia / Santa Giulia Beach Day</div></div>
+      <div class="five-item"><div class="num">05</div><div class="name">Bavella Mountains + River Swimming</div></div>
+    </div>
+  </div>
+
+  <!-- BEACHES -->
+  <div class="section-label">Beaches</div>
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Experience</th>
+        <th>Type</th>
+        <th>Priority</th>
+        <th>From Serra-di-Ferro</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td class="name">Palombaggia Beach</td>
+        <td class="cat"><span class="tag beach">Beach</span></td>
+        <td class="priority"><span class="tag must">Must</span></td>
+        <td class="dist">
+          <div class="dist-pill">
+            <span class="km">~47 km</span>
+            <span class="mins">~55 min</span>
+          </div>
+        </td>
+        <td class="notes">Via Porto-Vecchio. Arrive before 9am — lower car park is free but fills fast. Worth combining with Santa Giulia on the same day.</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td class="name">Santa Giulia</td>
+        <td class="cat"><span class="tag beach">Beach</span></td>
+        <td class="priority"><span class="tag must">Must</span></td>
+        <td class="dist">
+          <div class="dist-pill">
+            <span class="km">~48 km</span>
+            <span class="mins">~55 min</span>
+          </div>
+        </td>
+        <td class="notes">Just south of Palombaggia — do both in a single beach day. Shallower and more sheltered; better for Ollie to roam freely. The lagoon behind is good for paddleboarding.</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td class="name">Rondinara</td>
+        <td class="cat"><span class="tag beach">Beach</span></td>
+        <td class="priority"><span class="tag should">Should</span></td>
+        <td class="dist">
+          <div class="dist-pill">
+            <span class="km">~53 km</span>
+            <span class="mins">~60 min</span>
+          </div>
+        </td>
+        <td class="notes">Circular bay between Porto-Vecchio and Bonifacio. Near-perfect. Arrive early. Combines well with a Bonifacio half-day.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- BOAT & SEA -->
+  <div class="section-label">Boat & Sea</div>
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Experience</th>
+        <th>Type</th>
+        <th>Priority</th>
+        <th>From Serra-di-Ferro</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>4</td>
+        <td class="name">Scandola + Girolata Cruise</td>
+        <td class="cat"><span class="tag boat">Boat</span></td>
+        <td class="priority"><span class="tag must">Must</span></td>
+        <td class="dist">
+          <div class="dist-pill">
+            <span class="km">~90 km</span>
+            <span class="mins">~1h 50 min</span>
+            <span class="est">to Porto departure</span>
+          </div>
+        </td>
+        <td class="notes">UNESCO-listed red volcanic cliffs, sea caves, osprey nests. Drive to Porto (or Sagone/Cargèse for a shorter trip) for the boat. Book rigid inflatable (Zodiac) — faster, gets inside the caves. Girolata stop included on most tours. Book weeks ahead. Earns the drive.</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td class="name">Lavezzi Islands</td>
+        <td class="cat"><span class="tag boat">Boat</span></td>
+        <td class="priority"><span class="tag must">Must</span></td>
+        <td class="dist">
+          <div class="dist-pill">
+            <span class="km">~67 km</span>
+            <span class="mins">~1h 15 min</span>
+            <span class="est">to Bonifacio marina</span>
+          </div>
+        </td>
+        <td class="notes">Protected marine reserve. Giant granite boulders, snorkelling, Caribbean-clear water. Fish are fearless — bring bread. Book ahead; fills quickly in late June.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- LANDSCAPES & WALKS -->
+  <div class="section-label">Landscapes & Walks</div>
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Experience</th>
+        <th>Type</th>
+        <th>Priority</th>
+        <th>From Serra-di-Ferro</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>6</td>
+        <td class="name">Bonifacio — Old Town, Citadel & Sunset</td>
+        <td class="cat"><span class="tag town">Town</span></td>
+        <td class="priority"><span class="tag must">Must</span></td>
+        <td class="dist">
+          <div class="dist-pill">
+            <span class="km">~48 km</span>
+            <span class="mins">~60 min</span>
+          </div>
+        </td>
+        <td class="notes">The most spectacular town in Corsica. White limestone cliffs, medieval alleys, cliff-edge viewpoints. Stay for the sunset — the light on the limestone is extraordinary. Half-day minimum; pair with Lavezzi boat trip or Rondinara.</td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td class="name">King of Aragon Staircase</td>
+        <td class="cat"><span class="tag hike">Walk</span></td>
+        <td class="priority"><span class="tag must">Must</span></td>
+        <td class="dist">
+          <div class="dist-pill">
+            <span class="km">~48 km</span>
+            <span class="mins">~60 min</span>
+          </div>
+        </td>
+        <td class="notes">187 steps carved into the cliff face at Bonifacio — do this on the same day as #6. Sea-level at the bottom is thrilling; Ollie will remember it. Remember you have to climb back up.</td>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td class="name">Calanques de Piana</td>
+        <td class="cat"><span class="tag hike">Walk</span></td>
+        <td class="priority"><span class="tag must">Must</span></td>
+        <td class="dist">
+          <div class="dist-pill">
+            <span class="km">~120 km</span>
+            <span class="mins">~2h 10 min</span>
+            <span class="est">to Piana village</span>
+          </div>
+        </td>
+        <td class="notes">UNESCO-listed red porphyry rock towers. Drive it at sunset, stop constantly. Walk the old mule track loop — easy, well-marked, far less congested than the road. Combine with Scandola boat trip on the same west coast day — stay overnight in Porto or Piana to make it worthwhile.</td>
+      </tr>
+      <tr>
+        <td>9</td>
+        <td class="name">Bavella Needles + River Swimming</td>
+        <td class="cat"><span class="tag hike">Walk</span></td>
+        <td class="priority"><span class="tag must">Must</span></td>
+        <td class="dist">
+          <div class="dist-pill">
+            <span class="km">~36 km</span>
+            <span class="mins">~50 min</span>
+          </div>
+        </td>
+        <td class="notes">Closest major landscape to Serra-di-Ferro. Drive the mountain road to the jagged granite spires. Hike to the Trou de la Bombe — manageable for Ollie, great payoff. Swim in the Bavella river pools on the way back.</td>
+      </tr>
+      <tr>
+        <td>10</td>
+        <td class="name">Gorges de Spelunca (Ota)</td>
+        <td class="cat"><span class="tag hike">Walk</span></td>
+        <td class="priority"><span class="tag should">Should</span></td>
+        <td class="dist">
+          <div class="dist-pill">
+            <span class="km">~105 km</span>
+            <span class="mins">~1h 55 min</span>
+            <span class="est">to Ota village</span>
+          </div>
+        </td>
+        <td class="notes">Genoese bridges, deep river pools, pink granite gorge. Easy for children. Park in Ota; walk to the second or third bridge and swim. Combine with Piana and Scandola on a west coast overnight.</td>
+      </tr>
+      <tr>
+        <td>11</td>
+        <td class="name">Restonica Valley (near Corte)</td>
+        <td class="cat"><span class="tag hike">Walk</span></td>
+        <td class="priority"><span class="tag should">Should</span></td>
+        <td class="dist">
+          <div class="dist-pill">
+            <span class="km">~115 km</span>
+            <span class="mins">~1h 45 min</span>
+            <span class="est">approx.</span>
+          </div>
+        </td>
+        <td class="notes">Emerald mountain pools in a granite gorge. Even a short walk is spectacular. Pair with half a day in Corte — citadel and belvedere are worth climbing. Full day trip from base.</td>
+      </tr>
+      <tr>
+        <td>12</td>
+        <td class="name">Corte (mountain capital)</td>
+        <td class="cat"><span class="tag town">Town</span></td>
+        <td class="priority"><span class="tag should">Should</span></td>
+        <td class="dist">
+          <div class="dist-pill">
+            <span class="km">~110 km</span>
+            <span class="mins">~1h 40 min</span>
+            <span class="est">approx.</span>
+          </div>
+        </td>
+        <td class="notes">The emotional heart of Corsican independence. Completely different feel from the coast. Citadel, belvedere, 360-degree valley views. Pair with Restonica for a full day trip.</td>
+      </tr>
+      <tr>
+        <td>13</td>
+        <td class="name">Natural Pools of Cavu</td>
+        <td class="cat"><span class="tag hike">Walk</span></td>
+        <td class="priority"><span class="tag should">Should</span></td>
+        <td class="dist">
+          <div class="dist-pill">
+            <span class="km">~55 km</span>
+            <span class="mins">~65 min</span>
+            <span class="est">approx.</span>
+          </div>
+        </td>
+        <td class="notes">Natural granite rock slides near Porto-Vecchio. Easy half-day. Good filler on a non-beach day. Combine with Palombaggia/Santa Giulia or Bavella depending on direction.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- ACTIVITIES -->
+  <div class="section-label">Activities</div>
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Experience</th>
+        <th>Type</th>
+        <th>Priority</th>
+        <th>From Serra-di-Ferro</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>14</td>
+        <td class="name">Family Canyoning (Baracci or Bavella)</td>
+        <td class="cat"><span class="tag activity">Activity</span></td>
+        <td class="priority"><span class="tag must">Must</span></td>
+        <td class="dist">
+          <div class="dist-pill">
+            <span class="km">~15 km</span>
+            <span class="mins">~20 min</span>
+            <span class="est">Baracci (closest)</span>
+          </div>
+        </td>
+        <td class="notes">Baracci canyon is practically on your doorstep — the closest and most family-friendly option. Natural water slides, small jumps, pools. Half-day guided trip; no experience needed. Book ahead. Bavella is also excellent if combining with the needles hike.</td>
+      </tr>
+      <tr>
+        <td>15</td>
+        <td class="name">Filitosa Prehistoric Site</td>
+        <td class="cat"><span class="tag activity">Activity</span></td>
+        <td class="priority"><span class="tag should">Should</span></td>
+        <td class="dist">
+          <div class="dist-pill">
+            <span class="km">~6 km</span>
+            <span class="mins">~10 min</span>
+          </div>
+        </td>
+        <td class="notes">Effectively on your doorstep — 6 km, barely 10 minutes. 8,000-year-old carved warrior menhirs among millennial olive trees. No excuse not to go. Do it on an arrival or departure day.</td>
+      </tr>
+      <tr>
+        <td>16</td>
+        <td class="name">A Cupulatta Tortoise Sanctuary</td>
+        <td class="cat"><span class="tag activity">Activity</span></td>
+        <td class="priority"><span class="tag should">Should</span></td>
+        <td class="dist">
+          <div class="dist-pill">
+            <span class="km">~50 km</span>
+            <span class="mins">~55 min</span>
+            <span class="est">via Ajaccio road</span>
+          </div>
+        </td>
+        <td class="notes">Europe's largest tortoise sanctuary. Works well on the drive north towards Piana/Scandola — it sits on the Ajaccio–Porto road, so you pass near it anyway.</td>
+      </tr>
+      <tr>
+        <td>17</td>
+        <td class="name">Scenic Mountain Train (Ajaccio–Corte)</td>
+        <td class="cat"><span class="tag activity">Activity</span></td>
+        <td class="priority"><span class="tag should">Should</span></td>
+        <td class="dist">
+          <div class="dist-pill">
+            <span class="km">~43 km</span>
+            <span class="mins">~50 min</span>
+            <span class="est">to Ajaccio station</span>
+          </div>
+        </td>
+        <td class="notes">Drive to Ajaccio, board the train. Do the Ajaccio–Corte section or just Ajaccio–Vizzavona for the most dramatic gorge scenery. Good option if the weather turns or you want a low-effort day.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- FOOD -->
+  <div class="section-label">Food & Drink</div>
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Experience</th>
+        <th>Type</th>
+        <th>Priority</th>
+        <th>From Serra-di-Ferro</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>18</td>
+        <td class="name">Tamaricciu Beach Shack (Palombaggia)</td>
+        <td class="cat"><span class="tag food">Food</span></td>
+        <td class="priority"><span class="tag must">Must</span></td>
+        <td class="dist">
+          <div class="dist-pill">
+            <span class="km">~47 km</span>
+            <span class="mins">~55 min</span>
+          </div>
+        </td>
+        <td class="notes">Right next to Palombaggia — do both in a single day. Feet in the sand, fresh grilled fish, Corsican charcuterie, wood-fired pizza under a shaded canopy. The archetypally Corsican beach lunch.</td>
+      </tr>
+      <tr>
+        <td>19</td>
+        <td class="name">Wild boar + polenta at a village auberge</td>
+        <td class="cat"><span class="tag food">Food</span></td>
+        <td class="priority"><span class="tag must">Must</span></td>
+        <td class="dist">
+          <div class="dist-pill">
+            <span class="km">~19 km</span>
+            <span class="mins">~25 min</span>
+            <span class="est">to Sartène</span>
+          </div>
+        </td>
+        <td class="notes">Sartène is 25 minutes away and the best place on the island for this. Sanglier slow-cooked with maquis herbs, chestnut polenta, house wine. Find one busy with locals. No booking needed — just pick the right-looking place.</td>
+      </tr>
+      <tr>
+        <td>20</td>
+        <td class="name">U Castillé, Bonifacio Citadel</td>
+        <td class="cat"><span class="tag food">Food</span></td>
+        <td class="priority"><span class="tag should">Should</span></td>
+        <td class="dist">
+          <div class="dist-pill">
+            <span class="km">~48 km</span>
+            <span class="mins">~60 min</span>
+          </div>
+        </td>
+        <td class="notes">Authentic Corsican cooking in the old town. Order the stuffed aubergines (bonifacienne) and wild boar stew. Pair with the Bonifacio sunset day. Book 5–7 days ahead.</td>
+      </tr>
+      <tr>
+        <td>21</td>
+        <td class="name">Evening in Porto-Vecchio Old Town</td>
+        <td class="cat"><span class="tag food">Food</span></td>
+        <td class="priority"><span class="tag should">Should</span></td>
+        <td class="dist">
+          <div class="dist-pill">
+            <span class="km">~43 km</span>
+            <span class="mins">~50 min</span>
+          </div>
+        </td>
+        <td class="notes">Wander the old town at dusk. Gelato for Ollie, charcuterie and local cheese for you and Sophie, fresh seafood while people-watching. Closest major town to base — easy and repeatable.</td>
+      </tr>
+      <tr>
+        <td>22</td>
+        <td class="name">Ajaccio Saturday Market</td>
+        <td class="cat"><span class="tag food">Food</span></td>
+        <td class="priority"><span class="tag should">Should</span></td>
+        <td class="dist">
+          <div class="dist-pill">
+            <span class="km">~43 km</span>
+            <span class="mins">~50 min</span>
+          </div>
+        </td>
+        <td class="notes">The best market on the island. Lonzu, coppa, figatellu, brocciu. Buy, find a bench with a view, eat. Saturday mornings only — plan the Ajaccio mountain train day around it if you can.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p class="dist-note">* Distances are by road from Serra-di-Ferro village centre. Times are without traffic. Late June = tourist season on Corsican roads — allow 15–25% extra on longer routes, particularly on the west coast D81. "Approx." denotes estimates from reference points where direct routing data was unavailable.</p>
+
+  <!-- BOOK AHEAD -->
+  <div class="book-box">
+    <h3>Book Before You Leave</h3>
+    <div class="sub">These will be unavailable if you try to arrange them on the day in late June.</div>
+    <div class="book-list">
+      <div class="book-item">
+        <strong>Scandola / Girolata Boat Trip</strong>
+        <span>Book 3–4 weeks ahead minimum. Rigid inflatable (Zodiac) from Porto. Tours sell out fast in late June.</span>
+      </div>
+      <div class="book-item">
+        <strong>Lavezzi Islands Boat Trip</strong>
+        <span>Departs Bonifacio marina. High demand — book as soon as you have dates confirmed.</span>
+      </div>
+      <div class="book-item">
+        <strong>Family Canyoning (Baracci)</strong>
+        <span>Guided half-day. Baracci is closest to base. Book through a local operator; groups fill a week or more ahead.</span>
+      </div>
+      <div class="book-item">
+        <strong>La Bergerie d'Acciola</strong>
+        <span>Consistently cited as the island's best mountain dining experience. Book weeks ahead; it is not large.</span>
+      </div>
+      <div class="book-item">
+        <strong>U Castillé, Bonifacio</strong>
+        <span>Popular, small, and inside the old town. Book 5–7 days ahead for an evening slot in late June.</span>
+      </div>
+      <div class="book-item">
+        <strong>A Cantina di l'Orriu, Piana</strong>
+        <span>Best traditional Corsican restaurant on the west coast. Small capacity — call ahead or book online.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- BASE NOTE -->
+  <div class="base-note">
+    <strong>From Serra-di-Ferro:</strong> You are on the south-west coast — well placed for almost everything in the south. Bonifacio, Lavezzi, Palombaggia, Santa Giulia, and Bavella are all under an hour. Filitosa and Baracci canyoning are under 20 minutes. Ajaccio and Porto-Vecchio are both around 50 minutes. The west coast (Piana, Porto, Scandola) is the one exception — factor in ~2 hours each way and consider an overnight there rather than a brutal there-and-back.
+  </div>
+
+  
+
+</div>
+
+
+<script>
+// Mark active nav link
+document.querySelectorAll('.nav-link').forEach(l => {
+  if (l.href === window.location.href) l.classList.add('active');
+});
+</script>
+</body>
+</html>

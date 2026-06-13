@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Radford Family — Packing List</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;500;600&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --bg:#f7f5f0;
+  --s1:#ffffff;
+  --s2:#f2f0eb;
+  --s3:#e8e4dc;
+  --border:#ddd9d0;
+  --text:#1a1814;
+  --muted:#6b6058;
+  --dim:#b0aa9f;
+  --accent:#c47a2a;
+  --green:#3d8a5c;
+  --blue:#3a6fa8;
+  --red:#a83a3a;
+  --alex:#2c3e6b;
+  --sophie:#6b2a5c;
+  --oliver:#1a6b3a;
+}
+html,body{height:100%;-webkit-text-size-adjust:100%;}
+body{
+  background:var(--bg);color:var(--text);
+  font-family:'Outfit',sans-serif;
+  min-height:100vh;display:flex;flex-direction:column;
+  max-width:480px;margin:0 auto;
+}
+
+/* HEADER */
+.header{
+  padding:1.25rem 1rem 0;
+  background:var(--s1);
+  border-bottom:1px solid var(--border);
+  flex-shrink:0;
+}
+.header-top{
+  display:flex;align-items:flex-start;justify-content:space-between;
+  margin-bottom:0.85rem;
+}
+.title{
+  font-family:'Libre Baskerville',serif;
+  font-size:1.2rem;font-weight:400;color:var(--text);
+}
+.title em{font-style:italic;color:var(--accent);}
+.title-sub{
+  font-family:'DM Mono',monospace;font-size:0.65rem;
+  letter-spacing:0.12em;color:var(--muted);text-transform:uppercase;
+  margin-top:0.25rem;
+}
+.progress-overall{
+  text-align:right;
+}
+.progress-num{
+  font-family:'Libre Baskerville',serif;
+  font-size:1.1rem;font-style:italic;color:var(--accent);
+}
+.progress-label{
+  font-family:'DM Mono',monospace;font-size:0.62rem;
+  color:var(--muted);letter-spacing:0.08em;
+  display:block;margin-top:0.1rem;
+}
+
+/* PERSON TABS */
+.person-tabs{display:flex;border-bottom:none;}
+.ptab{
+  flex:1;background:none;border:none;
+  border-bottom:3px solid transparent;
+  padding:0.65rem 0.5rem;
+  font-family:'Outfit',sans-serif;font-size:0.78rem;font-weight:600;
+  color:var(--muted);cursor:pointer;
+  transition:all 0.15s;
+  display:flex;flex-direction:column;align-items:center;gap:0.2rem;
+}
+.ptab .ptab-name{font-size:0.78rem;font-weight:600;}
+.ptab .ptab-prog{
+  font-family:'DM Mono',monospace;font-size:0.6rem;
+  letter-spacing:0.06em;color:var(--dim);
+}
+.ptab.alex.active{color:var(--alex);border-bottom-color:var(--alex);}
+.ptab.sophie.active{color:var(--sophie);border-bottom-color:var(--sophie);}
+.ptab.oliver.active{color:var(--oliver);border-bottom-color:var(--oliver);}
+.ptab:not(.active):hover{color:var(--muted);}
+
+/* MAIN */
+.main{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;}
+.main::-webkit-scrollbar{width:0;}
+
+.person-panel{display:none;padding:0.75rem 0.75rem 5rem;}
+.person-panel.active{display:block;}
+
+/* PROGRESS BAR */
+.prog-bar-wrap{
+  background:var(--s1);border:1px solid var(--border);
+  border-radius:8px;padding:0.6rem 0.85rem;
+  margin-bottom:0.75rem;
+  display:flex;align-items:center;gap:0.75rem;
+}
+.prog-bar-bg{
+  flex:1;height:6px;background:var(--s3);border-radius:3px;overflow:hidden;
+}
+.prog-bar-fill{
+  height:100%;border-radius:3px;transition:width 0.3s ease;
+}
+.prog-bar-fill.alex{background:var(--alex);}
+.prog-bar-fill.sophie{background:var(--sophie);}
+.prog-bar-fill.oliver{background:var(--oliver);}
+.prog-text{
+  font-family:'DM Mono',monospace;font-size:0.68rem;
+  color:var(--muted);white-space:nowrap;
+}
+
+/* SECTIONS */
+.section{margin-bottom:1rem;}
+.section-header{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0.5rem 0.1rem 0.4rem;
+  cursor:pointer;
+  user-select:none;
+}
+.section-title{
+  font-family:'DM Mono',monospace;font-size:0.68rem;
+  letter-spacing:0.13em;color:var(--muted);text-transform:uppercase;
+  display:flex;align-items:center;gap:0.5rem;
+}
+.section-title .ico{font-size:0.9rem;}
+.section-count{
+  font-family:'DM Mono',monospace;font-size:0.65rem;
+  color:var(--dim);
+}
+.section-items{
+  background:var(--s1);border:1px solid var(--border);
+  border-radius:10px;overflow:hidden;
+}
+
+/* ITEMS */
+.item{
+  display:flex;align-items:center;gap:0.75rem;
+  padding:0.65rem 0.85rem;
+  border-bottom:1px solid var(--border);
+  cursor:pointer;
+  transition:background 0.1s;
+  -webkit-tap-highlight-color:transparent;
+}
+.item:last-child{border-bottom:none;}
+.item:active{background:var(--s2);}
+.item.checked{opacity:0.5;}
+
+.checkbox{
+  width:22px;height:22px;border-radius:6px;
+  border:2px solid var(--border);
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;transition:all 0.15s;
+  font-size:0.75rem;color:#fff;
+}
+.item.checked .checkbox.alex{background:var(--alex);border-color:var(--alex);}
+.item.checked .checkbox.sophie{background:var(--sophie);border-color:var(--sophie);}
+.item.checked .checkbox.oliver{background:var(--oliver);border-color:var(--oliver);}
+
+.item-text{
+  flex:1;font-size:0.82rem;color:var(--text);line-height:1.3;
+}
+.item.checked .item-text{text-decoration:line-through;color:var(--dim);}
+.item-note{
+  font-size:0.7rem;color:var(--muted);
+  display:block;margin-top:0.15rem;
+}
+.item.checked .item-note{text-decoration:line-through;}
+
+/* IMPORTANT badge */
+.item-imp{
+  font-family:'DM Mono',monospace;font-size:0.55rem;
+  letter-spacing:0.06em;text-transform:uppercase;
+  padding:0.15rem 0.35rem;border-radius:3px;
+  background:rgba(168,58,58,0.1);color:var(--red);
+  flex-shrink:0;
+}
+
+/* RESET BUTTON */
+.reset-btn{
+  display:block;width:100%;
+  background:none;border:1px dashed var(--border);
+  border-radius:8px;padding:0.65rem;
+  font-family:'Outfit',sans-serif;font-size:0.75rem;
+  color:var(--dim);cursor:pointer;text-align:center;
+  margin-top:0.5rem;transition:all 0.15s;
+}
+.reset-btn:hover{border-color:var(--red);color:var(--red);}
+
+/* ALL PACKED banner */
+.all-packed{
+  background:linear-gradient(135deg,rgba(61,138,92,0.1),rgba(61,138,92,0.05));
+  border:1px solid rgba(61,138,92,0.25);
+  border-radius:10px;padding:1rem;
+  text-align:center;margin-bottom:1rem;
+}
+.all-packed-icon{font-size:2rem;margin-bottom:0.35rem;}
+.all-packed-text{
+  font-family:'Libre Baskerville',serif;
+  font-size:1rem;font-style:italic;color:var(--green);
+}
+.all-packed-sub{
+  font-size:0.75rem;color:var(--muted);margin-top:0.2rem;
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-top">
+    <div>
+      <div class="title">Radford <em>Europe</em> ʼ26</div>
+      <div class="title-sub">Packing list · 23 Jun – 23 Jul</div>
+    </div>
+    <div class="progress-overall">
+      <div class="progress-num" id="overallNum">0%</div>
+      <span class="progress-label">packed</span>
+    </div>
+  </div>
+  <div class="person-tabs">
+    <button class="ptab alex active" onclick="switchPerson('alex')">
+      <span class="ptab-name">Alex</span>
+      <span class="ptab-prog" id="prog-alex">0/0</span>
+    </button>
+    <button class="ptab sophie" onclick="switchPerson('sophie')">
+      <span class="ptab-name">Sophie</span>
+      <span class="ptab-prog" id="prog-sophie">0/0</span>
+    </button>
+    <button class="ptab oliver" onclick="switchPerson('oliver')">
+      <span class="ptab-name">Oliver</span>
+      <span class="ptab-prog" id="prog-oliver">0/0</span>
+    </button>
+  </div>
+</div>
+
+<div class="main">
+  <div class="person-panel active" id="panel-alex"></div>
+  <div class="person-panel" id="panel-sophie"></div>
+  <div class="person-panel" id="panel-oliver"></div>
+</div>
+
+<script>
+// ══════════════════════════════════
+// PACKING DATA
+// ══════════════════════════════════
+const LISTS = {
+  alex: [
+    {
+      title: 'Documents & money', icon: '📋',
+      items: [
+        { text: 'Passport', note: 'Check expiry — must be valid beyond 23 Jul', imp: true },
+        { text: 'Driving licence', note: 'For Europcar in Corsica' },
+        { text: 'Travel insurance documents', imp: true },
+        { text: 'All confirmation emails downloaded offline', note: 'Or saved in app Bookings tab', imp: true },
+        { text: 'Credit card (Visa/Mastercard)', note: 'Notify bank before travel' },
+        { text: 'Cash — Euros (€200 minimum)', note: 'Corsican villages, German markets' },
+        { text: 'Cash — GBP (£100)', note: 'London legs' },
+        { text: 'Emergency contact card in wallet' },
+      ]
+    },
+    {
+      title: 'Clothing', icon: '👔',
+      items: [
+        { text: '5–6 shirts / casual tops' },
+        { text: '2 smart shirts', note: 'Lyon dinner, River Café etc' },
+        { text: '3 pairs trousers / chinos' },
+        { text: 'Shorts × 3', note: 'Corsica beach days' },
+        { text: 'Swimwear × 2' },
+        { text: 'Lightweight jacket', note: 'Evenings in Strasbourg / Freiburg' },
+        { text: 'One smart layer', note: 'Fine dining in Lyon' },
+        { text: 'Socks × 8' },
+        { text: 'Underwear × 8' },
+        { text: 'Pyjamas / loungewear' },
+        { text: 'Belt' },
+      ]
+    },
+    {
+      title: 'Shoes', icon: '👟',
+      items: [
+        { text: 'Comfortable walking shoes', note: 'Cobblestones in Strasbourg, Lyon' },
+        { text: 'Sandals', note: 'Corsica beaches' },
+        { text: 'Smart shoes', note: 'Dinners in Lyon and London' },
+        { text: 'Flip flops' },
+      ]
+    },
+    {
+      title: 'Tech', icon: '💻',
+      items: [
+        { text: 'iPhone + charger' },
+        { text: 'Universal travel adaptor', note: 'EU + UK needed' },
+        { text: 'Portable power bank', note: 'Long train days' },
+        { text: 'Headphones', note: 'AKL→KUL is 10 hours' },
+        { text: 'iPad or laptop', note: 'For reading / work on trains' },
+        { text: 'E-reader / Kindle', note: 'Alex — Corsica beach reading' },
+        { text: 'Download offline maps', note: 'Google Maps: London, Corsica, Lyon, Strasbourg, Freiburg, Amsterdam', imp: true },
+        { text: 'Europe ʼ26 app bookmarked', note: 'radders007.github.io/europe-2026' },
+      ]
+    },
+    {
+      title: 'Toiletries', icon: '🧴',
+      items: [
+        { text: 'Prescription medication (if any)', imp: true },
+        { text: 'Sunscreen SPF 50+', note: 'Corsica July is intense' },
+        { text: 'After-sun / aloe vera' },
+        { text: 'Deodorant' },
+        { text: 'Shaving kit' },
+        { text: 'Toothbrush + toothpaste' },
+        { text: 'Shampoo / conditioner' },
+        { text: 'Moisturiser' },
+        { text: 'Lip balm with SPF' },
+      ]
+    },
+    {
+      title: 'Health & safety', icon: '🏥',
+      items: [
+        { text: 'Travel insurance — European Health Insurance Card', note: 'Or GHIC (UK)', imp: true },
+        { text: 'Basic first aid kit', note: 'Plasters, antiseptic, ibuprofen, antihistamine' },
+        { text: 'Insect repellent', note: 'Corsican maquis has mosquitoes' },
+        { text: 'Seasickness tablets', note: 'For the La Méridionale overnight ferry' },
+        { text: 'Rehydration sachets' },
+        { text: 'GP contact number saved', imp: true },
+      ]
+    },
+    {
+      title: 'Corsica specifics', icon: '🏝',
+      items: [
+        { text: 'Snorkelling mask + fins', note: 'Corsica water is extraordinary' },
+        { text: 'Beach bag + towels', note: 'Villa may have some but bring your own' },
+        { text: 'Car phone mount', note: 'For GPS in the rental' },
+        { text: 'Reusable water bottle × 3', note: 'Tap water safe, refill constantly' },
+        { text: 'Light day pack / rucksack', note: 'Gorges de la Restonica day trip' },
+      ]
+    },
+  ],
+
+  sophie: [
+    {
+      title: 'Documents & money', icon: '📋',
+      items: [
+        { text: 'Passport', note: 'Check expiry — must be valid beyond 23 Jul', imp: true },
+        { text: 'Travel insurance documents', imp: true },
+        { text: 'Credit card', note: 'Notify bank before travel' },
+        { text: 'Emergency cash — Euros €150', note: 'Markets, smaller towns' },
+      ]
+    },
+    {
+      title: 'Clothing', icon: '👗',
+      items: [
+        { text: 'Summer dresses × 4–5', note: 'Lightweight, Corsica heat and European evenings' },
+        { text: 'Smart dress × 1', note: 'Lyon dinner, London restaurant' },
+        { text: 'Lightweight trousers × 2' },
+        { text: 'Casual tops × 4' },
+        { text: 'Swimwear × 2–3' },
+        { text: 'Swimsuit coverup / kaftan' },
+        { text: 'Light cardigan or wrap', note: 'Evenings in northern cities' },
+        { text: 'Underwear × 8' },
+        { text: 'Socks × 5' },
+        { text: 'Pyjamas' },
+        { text: 'One warm layer', note: 'Freiburg evenings can be cool' },
+      ]
+    },
+    {
+      title: 'Shoes', icon: '👠',
+      items: [
+        { text: 'Comfortable walking sandals', note: 'Most important item — lots of cobblestones' },
+        { text: 'Smart flat shoes', note: 'Lyon, Amsterdam, London dinners' },
+        { text: 'Flip flops' },
+        { text: 'One dressier option', note: 'Fine dining' },
+      ]
+    },
+    {
+      title: 'Accessories & jewellery', icon: '💍',
+      items: [
+        { text: 'Sunglasses (polarised)', note: 'Corsica beach essential' },
+        { text: 'Sun hat', note: 'Wide brim for beach days' },
+        { text: 'Scarves × 2', note: 'Useful for churches, evenings, style' },
+        { text: 'Jewellery selection', note: 'But leave valuables at home' },
+        { text: 'Day bag / tote' },
+        { text: 'Evening bag' },
+        { text: 'Belt or two' },
+      ]
+    },
+    {
+      title: 'Beauty & toiletries', icon: '💄',
+      items: [
+        { text: 'Skincare routine', note: 'Travel sizes where possible' },
+        { text: 'Sunscreen SPF 50+ × 2', note: 'Buy extra in Corsica' },
+        { text: 'After-sun' },
+        { text: 'Makeup essentials', note: 'Keep it light — less is more in heat' },
+        { text: 'Haircare', note: 'Dry shampoo useful on travel days' },
+        { text: 'Perfume (travel size)' },
+        { text: 'Nail kit' },
+        { text: 'Prescription medication', imp: true },
+      ]
+    },
+    {
+      title: 'Shopping wishlist', icon: '🛍',
+      items: [
+        { text: 'Liberty London — jewellery budget', note: '23–25 Jun or final London week' },
+        { text: 'Alsatian linen / textiles', note: 'Strasbourg Grande Île' },
+        { text: 'Corsican artisan jewellery', note: 'Porto-Vecchio morning market' },
+        { text: 'Hutspot / De 9 Straatjes', note: 'Amsterdam — boutique jewellery and fashion' },
+      ]
+    },
+  ],
+
+  oliver: [
+    {
+      title: 'Documents', icon: '📋',
+      items: [
+        { text: 'Passport', note: 'Parents to carry — check expiry', imp: true },
+        { text: 'European Health Insurance Card', note: 'Parents to carry', imp: true },
+      ]
+    },
+    {
+      title: 'Clothing', icon: '👕',
+      items: [
+        { text: 'T-shirts × 8', note: 'Oliver goes through them fast' },
+        { text: 'Shorts × 4' },
+        { text: 'Swimwear × 3' },
+        { text: 'Lightweight trousers × 2', note: 'Restaurants, cooler evenings' },
+        { text: 'Hoodie / sweatshirt', note: 'Ferry overnight, cooler cities' },
+        { text: 'Light rain jacket' },
+        { text: 'Underwear × 8' },
+        { text: 'Socks × 8' },
+        { text: 'Pyjamas' },
+        { text: 'One smart outfit', note: 'For nicer dinners' },
+      ]
+    },
+    {
+      title: 'Shoes', icon: '👟',
+      items: [
+        { text: 'Trainers (worn on plane)', note: 'Comfortable for long travel days' },
+        { text: 'Water shoes / sandals', note: 'Corsica rocky beaches' },
+        { text: 'Flip flops' },
+      ]
+    },
+    {
+      title: 'Activities & outdoors', icon: '🎯',
+      items: [
+        { text: 'Snorkel set (kids size)', note: 'Corsica is unmissable' },
+        { text: 'Rashguard / sun vest', note: 'Corsica — long beach days' },
+        { text: 'Waterproof watch or fitness tracker' },
+        { text: 'Small day pack', note: 'Black Forest, Gorges de la Restonica' },
+        { text: 'Sunglasses' },
+        { text: 'Sun hat (cap style)' },
+        { text: 'Football', note: 'Optional — but Corsican beaches are perfect' },
+      ]
+    },
+    {
+      title: 'Entertainment', icon: '🎮',
+      items: [
+        { text: 'iPad + charger', note: 'Loaded with films and games for flights/trains' },
+        { text: 'AirPods / headphones' },
+        { text: 'Offline games downloaded', note: 'AKL→KUL is 10 hours' },
+        { text: 'Books or graphic novels', note: 'Oliver — 3 for the trip' },
+        { text: 'Travel card games', note: 'For train journeys' },
+      ]
+    },
+    {
+      title: 'Health', icon: '🏥',
+      items: [
+        { text: 'Sunscreen SPF 50+ (his own)', note: 'He needs to apply it himself' },
+        { text: 'Insect repellent', note: 'Corsican maquis mosquitoes' },
+        { text: 'Any regular medication', imp: true },
+        { text: 'Plasters (his own supply)', note: 'He will need them' },
+        { text: 'Motion sickness tablets', note: 'Corsican mountain roads + overnight ferry' },
+      ]
+    },
+    {
+      title: 'Shopping wishlist', icon: '🛍',
+      items: [
+        { text: 'Dover Street Market / Slam City — London', note: '23–25 Jun or final week' },
+        { text: 'Patta — Amsterdam', note: 'Jordaan flagship' },
+        { text: 'Concrete Matter — Amsterdam', note: 'Kith, Stone Island' },
+        { text: 'Globetrotter — Freiburg', note: 'Outdoor gear if needed for trip' },
+        { text: 'STRAAT Museum shop', note: 'Amsterdam — street art merch' },
+      ]
+    },
+  ]
+};
+
+// ══════════════════════════════════
+// STATE
+// ══════════════════════════════════
+let currentPerson = 'alex';
+let checked = {};
+
+try { checked = JSON.parse(localStorage.getItem('rf26_pack') || '{}'); } catch(e){}
+
+function save() {
+  try { localStorage.setItem('rf26_pack', JSON.stringify(checked)); } catch(e){}
+}
+
+// ══════════════════════════════════
+// BUILD
+// ══════════════════════════════════
+function buildPanel(person) {
+  const panel = document.getElementById('panel-' + person);
+  panel.innerHTML = '';
+  const list = LISTS[person];
+
+  list.forEach(section => {
+    const sec = document.createElement('div');
+    sec.className = 'section';
+
+    const totalItems = section.items.length;
+    const doneItems = section.items.filter(item => {
+      const id = person + '_' + section.title + '_' + item.text;
+      return checked[id];
+    }).length;
+
+    // Header
+    const hdr = document.createElement('div');
+    hdr.className = 'section-header';
+    hdr.innerHTML = `
+      <div class="section-title">
+        <span class="ico">${section.icon}</span>
+        ${section.title}
+      </div>
+      <div class="section-count">${doneItems}/${totalItems}</div>
+    `;
+    sec.appendChild(hdr);
+
+    // Items
+    const items = document.createElement('div');
+    items.className = 'section-items';
+
+    section.items.forEach(item => {
+      const id = person + '_' + section.title + '_' + item.text;
+      const isDone = !!checked[id];
+
+      const div = document.createElement('div');
+      div.className = 'item' + (isDone ? ' checked' : '');
+      div.innerHTML = `
+        <div class="checkbox ${person}">${isDone ? '✓' : ''}</div>
+        <div class="item-text">
+          ${item.text}
+          ${item.note ? `<span class="item-note">${item.note}</span>` : ''}
+        </div>
+        ${item.imp ? `<span class="item-imp">must</span>` : ''}
+      `;
+
+      div.onclick = () => {
+        checked[id] = !checked[id];
+        save();
+        buildPanel(person);
+        updateProgress();
+      };
+
+      items.appendChild(div);
+    });
+
+    sec.appendChild(items);
+    panel.appendChild(sec);
+  });
+
+  // Reset button
+  const reset = document.createElement('button');
+  reset.className = 'reset-btn';
+  reset.textContent = 'Reset ' + person.charAt(0).toUpperCase() + person.slice(1) + '\'s list';
+  reset.onclick = () => {
+    const keys = Object.keys(checked).filter(k => k.startsWith(person + '_'));
+    keys.forEach(k => delete checked[k]);
+    save();
+    buildPanel(person);
+    updateProgress();
+  };
+  panel.appendChild(reset);
+}
+
+function updateProgress() {
+  const persons = ['alex', 'sophie', 'oliver'];
+  let totalAll = 0, doneAll = 0;
+
+  persons.forEach(person => {
+    const list = LISTS[person];
+    let total = 0, done = 0;
+    list.forEach(section => {
+      section.items.forEach(item => {
+        total++;
+        totalAll++;
+        const id = person + '_' + section.title + '_' + item.text;
+        if (checked[id]) { done++; doneAll++; }
+      });
+    });
+    const el = document.getElementById('prog-' + person);
+    if (el) el.textContent = done + '/' + total;
+
+    // Update tab progress bar in panel
+    const bar = document.getElementById('bar-' + person);
+    if (bar) bar.style.width = (total > 0 ? Math.round(done/total*100) : 0) + '%';
+    const barText = document.getElementById('bartext-' + person);
+    if (barText) barText.textContent = (total > 0 ? Math.round(done/total*100) : 0) + '% packed';
+  });
+
+  const pct = totalAll > 0 ? Math.round(doneAll/totalAll*100) : 0;
+  const overallEl = document.getElementById('overallNum');
+  if (overallEl) overallEl.textContent = pct + '%';
+}
+
+function switchPerson(person) {
+  currentPerson = person;
+  document.querySelectorAll('.ptab').forEach(b => b.classList.remove('active'));
+  document.querySelector('.ptab.' + person).classList.add('active');
+  document.querySelectorAll('.person-panel').forEach(p => p.classList.remove('active'));
+  document.getElementById('panel-' + person).classList.add('active');
+}
+
+// ══════════════════════════════════
+// INIT
+// ══════════════════════════════════
+['alex','sophie','oliver'].forEach(p => buildPanel(p));
+updateProgress();
+</script>
+</body>
+</html>

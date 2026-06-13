@@ -1,0 +1,1330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="apple-mobile-web-app-title" content="Radfords ʼ26">
+<title>Corsica Days — Radfords ʼ26</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;500;600&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+/* ── SHARED NAV ── */
+:root {
+  --bg: #f7f5f0;
+  --s1: #ffffff;
+  --s2: #f2f0eb;
+  --s3: #e8e4dc;
+  --border: #ddd9d0;
+  --text: #1a1814;
+  --muted: #6b6058;
+  --dim: #b0aa9f;
+  --accent: #c47a2a;
+  --green: #3d8a5c;
+  --blue: #3a6fa8;
+  --red: #a83a3a;
+  --corsica: #1a6b5a;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* NAV BAR */
+.site-nav {
+  background: var(--s1);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.site-nav-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: 0 1rem;
+}
+.site-nav-inner::-webkit-scrollbar { display: none; }
+.nav-home {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 0.85rem;
+  font-style: italic;
+  color: var(--accent);
+  text-decoration: none;
+  padding: 0.75rem 0.85rem 0.75rem 0;
+  white-space: nowrap;
+  flex-shrink: 0;
+  border-right: 1px solid var(--border);
+  margin-right: 0.25rem;
+}
+.nav-link {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--muted);
+  text-decoration: none;
+  padding: 0.75rem 0.75rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+  border-bottom: 2px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+  letter-spacing: 0.03em;
+}
+.nav-link:hover { color: var(--text); }
+.nav-link.active { color: var(--accent); border-bottom-color: var(--accent); }
+
+/* PAGE HEADER */
+.page-header {
+  background: linear-gradient(135deg, #1a6b5a 0%, #0d4038 100%);
+  padding: 2rem 1.5rem 1.75rem;
+  position: relative;
+  overflow: hidden;
+}
+.page-header::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0) 50%, rgba(0,0,0,0.2) 100%);
+}
+.page-header-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+.page-kicker {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 0.5rem;
+}
+.page-title {
+  font-family: 'Libre Baskerville', serif;
+  font-size: clamp(1.6rem, 5vw, 2.4rem);
+  font-weight: 400;
+  font-style: italic;
+  color: #fff;
+  line-height: 1.1;
+}
+.page-title strong {
+  font-style: normal;
+  font-weight: 700;
+}
+.page-meta {
+  margin-top: 0.6rem;
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+.page-meta span {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  color: rgba(255,255,255,0.6);
+}
+.page-meta span strong {
+  color: rgba(255,255,255,0.9);
+}
+
+/* CONTENT WRAPPER */
+.content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 4rem;
+}
+
+@media (min-width: 600px) {
+  .content { padding: 2rem 1.5rem 4rem; }
+  .page-header { padding: 2.5rem 2rem 2rem; }
+}
+
+
+/* ── ITINERARY-SPECIFIC STYLES ── */
+
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap');
+
+  
+
+  
+
+  
+
+  /* ── HEADER ── */
+  
+
+  .
+
+  .
+
+  
+
+  
+
+  .
+
+  .meta-item {
+    font-size: 12px;
+    color: rgba(255,255,255,0.55);
+    font-weight: 400;
+  }
+
+  .meta-item strong {
+    color: rgba(255,255,255,0.85);
+    font-weight: 500;
+  }
+
+  /* ── LEGEND BAR ── */
+  
+
+  .legend-bar .label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--light);
+    margin-right: 4px;
+  }
+
+  .leg {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--mid);
+  }
+
+  .leg-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* ── CONTAINER ── */
+  
+
+  /* ── SUMMARY TILES ── */
+  .summary-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: 48px;
+  }
+
+  .summary-tile {
+    background: white;
+    border-radius: 6px;
+    padding: 16px 18px;
+    border-top: 3px solid var(--border);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  }
+
+  .summary-tile .s-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--ink);
+  }
+
+  .summary-tile .s-label {
+    font-size: 11px;
+    color: var(--mid);
+    margin-top: 4px;
+    font-weight: 400;
+  }
+
+  .summary-tile.t-villa  { border-top-color: var(--col-villa); }
+  .summary-tile.t-active { border-top-color: var(--col-south); }
+  .summary-tile.t-must   { border-top-color: var(--rock); }
+  .summary-tile.t-book   { border-top-color: var(--gold); }
+
+  /* ── DAYS ── */
+  .day-block {
+    margin-bottom: 20px;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+  }
+
+  .day-
+
+  .day-number {
+    background: var(--ink);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 10px;
+  }
+
+  .day-number .dn-label {
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    opacity: 0.5;
+    line-height: 1;
+  }
+
+  .day-number .dn-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1;
+    margin-top: 2px;
+  }
+
+  .day-title-area {
+    padding: 14px 20px;
+  }
+
+  .day-date {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--light);
+    margin-bottom: 3px;
+  }
+
+  .day-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--ink);
+  }
+
+  .day-subtitle {
+    font-size: 12px;
+    color: var(--mid);
+    margin-top: 2px;
+  }
+
+  .day-badge-area {
+    padding: 14px 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  .dtype {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 3px 9px;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+
+  .dtype-dot { width: 6px; height: 6px; border-radius: 50%; }
+
+  .dtype.villa    { background: #f7f0e4; color: var(--col-villa); }
+  .dtype.villa    .dtype-dot { background: var(--col-villa); }
+  .dtype.south    { background: var(--sea-light); color: var(--col-south); }
+  .dtype.south    .dtype-dot { background: var(--col-south); }
+  .dtype.west     { background: var(--rock-light); color: var(--col-west); }
+  .dtype.west     .dtype-dot { background: var(--col-west); }
+  .dtype.mountain { background: var(--maquis-light); color: var(--col-mountain); }
+  .dtype.mountain .dtype-dot { background: var(--col-mountain); }
+  .dtype.active   { background: #f0eaf8; color: var(--col-active); }
+  .dtype.active   .dtype-dot { background: var(--col-active); }
+  .dtype.must     { background: var(--rock-light); color: var(--rock); border: 1px solid #e0a080; }
+  .dtype.must     .dtype-dot { background: var(--rock); }
+
+  /* ── DAY BODY ── */
+  .day-
+
+  .day-intro {
+    font-size: 13px;
+    color: var(--mid);
+    padding: 14px 0 12px;
+    border-bottom: 1px solid #f5f0ea;
+    line-height: 1.6;
+  }
+
+  /* Activity rows */
+  .activity-list {
+    list-style: none;
+    padding: 10px 0 0;
+  }
+
+  .activity-item {
+    display: grid;
+    grid-template-columns: 58px 1fr;
+    gap: 0 14px;
+    padding: 8px 0;
+    border-bottom: 1px solid #f5f0ea;
+    align-items: start;
+  }
+
+  .activity-item:last-child { border-bottom: none; }
+
+  .act-time {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--light);
+    padding-top: 1px;
+    text-align: right;
+    white-space: nowrap;
+  }
+
+  .act-content {}
+
+  .act-name {
+    font-size: 13.5px;
+    font-weight: 500;
+    color: var(--ink);
+    line-height: 1.35;
+  }
+
+  .act-name .act-tag {
+    display: inline-block;
+    font-size: 9.5px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 1px 6px;
+    border-radius: 2px;
+    margin-left: 6px;
+    vertical-align: middle;
+    position: relative;
+    top: -1px;
+  }
+
+  .act-tag.must    { background: var(--rock-light); color: var(--rock); border: 1px solid #e8a080; }
+  .act-tag.should  { background: var(--sea-light);  color: var(--sea);  border: 1px solid #a0cce0; }
+  .act-tag.book    { background: var(--gold-light);  color: var(--gold); border: 1px solid #d4b060; }
+  .act-tag.close   { background: var(--maquis-light); color: var(--maquis); border: 1px solid #90b8a0; }
+
+  .act-detail {
+    font-size: 12px;
+    color: var(--mid);
+    margin-top: 2px;
+    line-height: 1.5;
+  }
+
+  /* Drive chip */
+  .drive-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 10.5px;
+    color: var(--light);
+    font-weight: 500;
+    margin-top: 3px;
+  }
+
+  .drive-chip::before {
+    content: '→';
+    font-size: 10px;
+  }
+
+  /* Villa day special styling */
+  .villa-day .day-number { background: var(--col-villa); }
+  .villa-day .day-intro  { font-style: italic; }
+
+  /* BOOK AHEAD REMINDER */
+  .book-reminder {
+    background: var(--gold-light);
+    border: 1.5px solid #d4b060;
+    border-radius: 6px;
+    padding: 20px 24px;
+    margin-bottom: 36px;
+  }
+
+  .book-reminder h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+
+  .book-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 10px;
+  }
+
+  .book-r-item {
+    background: white;
+    border-radius: 4px;
+    padding: 10px 14px;
+    border-left: 3px solid #d4b060;
+    font-size: 12px;
+  }
+
+  .book-r-item strong { display: block; font-size: 12.5px; margin-bottom: 2px; }
+  .book-r-item span   { color: var(--mid); }
+
+  /* SECTION DIVIDERS */
+  .week-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--light);
+    margin: 36px 0 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .week-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  footer {
+    text-align: center;
+    color: var(--light);
+    font-size: 11px;
+    margin-top: 48px;
+    padding-bottom: 12px;
+  }
+
+
+/* Summary tiles */
+.summary-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.6rem;
+  margin-bottom: 1.5rem;
+}
+@media (min-width: 500px) {
+  .summary-row { grid-template-columns: repeat(4, 1fr); }
+}
+.summary-tile {
+  background: var(--s1);
+  border-radius: 8px;
+  padding: 0.85rem 1rem;
+  border-top: 3px solid var(--border);
+  border: 1px solid var(--border);
+  border-top-width: 3px;
+}
+.summary-tile .s-num {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--text);
+}
+.summary-tile .s-label {
+  font-size: 0.7rem;
+  color: var(--muted);
+  margin-top: 0.25rem;
+  font-family: 'DM Mono', monospace;
+  letter-spacing: 0.06em;
+}
+.summary-tile.t-villa  { border-top-color: #8a6a2a; }
+.summary-tile.t-active { border-top-color: var(--corsica); }
+.summary-tile.t-must   { border-top-color: var(--red); }
+.summary-tile.t-book   { border-top-color: var(--accent); }
+
+/* Day blocks */
+.day-block {
+  margin-bottom: 1rem;
+  background: var(--s1);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.day-header {
+  display: grid;
+  grid-template-columns: 60px 1fr auto;
+  align-items: stretch;
+  border-bottom: 1px solid var(--border);
+}
+.day-number {
+  background: var(--text);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 0.5rem;
+}
+.dn-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.55rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.6;
+}
+.dn-num {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1;
+}
+.day-title-area { padding: 0.75rem 0.85rem; }
+.day-date {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  text-transform: uppercase;
+  margin-bottom: 0.2rem;
+}
+.day-title {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 1rem;
+  font-style: italic;
+  color: var(--text);
+  line-height: 1.2;
+}
+.day-subtitle {
+  font-size: 0.72rem;
+  color: var(--muted);
+  margin-top: 0.2rem;
+}
+.day-badge-area {
+  padding: 0.75rem 0.75rem 0.75rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  align-items: flex-end;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.dtype {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.5rem;
+  border-radius: 3px;
+  white-space: nowrap;
+}
+.dtype-dot { width: 6px; height: 6px; border-radius: 50%; display: inline-block; }
+.dtype.villa    { background: #fdf5e8; color: #8a6a2a; }
+.dtype.villa    .dtype-dot { background: #8a6a2a; }
+.dtype.south    { background: rgba(26,107,90,0.1); color: var(--corsica); }
+.dtype.south    .dtype-dot { background: var(--corsica); }
+.dtype.west     { background: rgba(168,58,58,0.1); color: var(--red); }
+.dtype.west     .dtype-dot { background: var(--red); }
+.dtype.mountain { background: rgba(61,138,92,0.1); color: var(--green); }
+.dtype.mountain .dtype-dot { background: var(--green); }
+.dtype.must     { background: rgba(168,58,58,0.08); color: var(--red); }
+.dtype.must     .dtype-dot { background: var(--red); }
+.dtype.should   { background: rgba(58,111,168,0.08); color: var(--blue); }
+.dtype.should   .dtype-dot { background: var(--blue); }
+
+.day-body { padding: 0.85rem 1rem; }
+.day-intro {
+  font-size: 0.8rem;
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 0.85rem;
+  padding-bottom: 0.85rem;
+  border-bottom: 1px solid var(--border);
+}
+.activity-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.activity-item {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+.act-time {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  color: var(--accent);
+  letter-spacing: 0.04em;
+  width: 3.5rem;
+  flex-shrink: 0;
+  padding-top: 0.1rem;
+}
+.act-content { flex: 1; }
+.act-name {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text);
+  line-height: 1.3;
+  margin-bottom: 0.2rem;
+}
+.act-detail {
+  font-size: 0.74rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+.act-tag {
+  display: inline-block;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.55rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.1rem 0.35rem;
+  border-radius: 3px;
+  margin-left: 0.35rem;
+  vertical-align: middle;
+}
+.act-tag.must   { background: rgba(168,58,58,0.1); color: var(--red); }
+.act-tag.should { background: rgba(58,111,168,0.08); color: var(--blue); }
+.drive-chip {
+  display: inline-block;
+  margin-top: 0.3rem;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.62rem;
+  color: var(--muted);
+  background: var(--s2);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.18rem 0.5rem;
+  letter-spacing: 0.04em;
+}
+.villa-day .day-number { background: #8a6a2a; }
+
+/* Week labels */
+.week-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 1.5rem 0 0.6rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.week-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+/* Left on bench section */
+.bench-box {
+  background: var(--s1);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+  font-size: 0.78rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+.bench-box p + p { margin-top: 0.6rem; }
+.bench-box strong { color: var(--text); }
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="site-nav-inner">
+    <a href="index.html" class="nav-home">Radfords ʼ26</a>
+    <a href="index.html" class="nav-link">🗓 Trip</a>
+    <a href="packing-list.html" class="nav-link">✓ Packing</a>
+    <a href="corsica_plan.html" class="nav-link" id="nav-corsica-plan">🗺 Corsica Guide</a>
+    <a href="corsica_itinerary.html" class="nav-link active" id="nav-corsica-itinerary">📅 Corsica Days</a>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="page-header-inner">
+    <div class="page-kicker">🇫🇷 Corsica · 27 Jun – 7 Jul 2026 · Serra-di-Ferro villa</div>
+    <div class="page-title"><em>Corsica</em> — Day by day</div>
+    <div class="page-meta">
+      <span><strong>11 days</strong> detailed plan</span>
+      <span><strong>Must dos, day trips, beaches</strong></span>
+      <span><strong>Times &amp; distances</strong> included</span>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+<div class="content">
+
+  <!-- SUMMARY -->
+  <div class="summary-row">
+    <div class="summary-tile t-villa">
+      <div class="s-num">4</div>
+      <div class="s-label">Villa / free days</div>
+    </div>
+    <div class="summary-tile t-active">
+      <div class="s-num">7</div>
+      <div class="s-label">Activity days</div>
+    </div>
+    <div class="summary-tile t-must">
+      <div class="s-num">5</div>
+      <div class="s-label">Must-dos covered</div>
+    </div>
+    <div class="summary-tile t-book">
+      <div class="s-num">4</div>
+      <div class="s-label">Things to book now</div>
+    </div>
+  </div>
+
+  <!-- BOOK AHEAD -->
+  <div class="book-reminder">
+    <h3>Book these before you leave</h3>
+    <div class="book-grid">
+      <div class="book-r-item">
+        <strong>Scandola / Girolata boat (Day 3)</strong>
+        <span>Zodiac from Porto or Sagone. Book 3–4 weeks ahead — sells out in late June.</span>
+      </div>
+      <div class="book-r-item">
+        <strong>Lavezzi Islands boat (Day 6)</strong>
+        <span>From Bonifacio marina. Book as soon as dates are confirmed.</span>
+      </div>
+      <div class="book-r-item">
+        <strong>Canyoning — Baracci (Day 5)</strong>
+        <span>Half-day guided trip. Book 1–2 weeks ahead; groups fill fast.</span>
+      </div>
+      <div class="book-r-item">
+        <strong>U Castillé, Bonifacio (Day 6)</strong>
+        <span>Dinner in the citadel. Book 5–7 days ahead for a late-June slot.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- WEEK 1 -->
+  <div class="week-label">Arrival week &nbsp;· &nbsp;27 June – 1 July</div>
+
+  <!-- DAY 1 -->
+  <div class="day-block villa-day">
+    <div class="day-header">
+      <div class="day-number">
+        <div class="dn-label">Day</div>
+        <div class="dn-num">1</div>
+      </div>
+      <div class="day-title-area">
+        <div class="day-date">Friday 27 June</div>
+        <div class="day-title">Arrival & settle in</div>
+        <div class="day-subtitle">Villa · free day</div>
+      </div>
+      <div class="day-badge-area">
+        <span class="dtype villa"><span class="dtype-dot"></span>Villa</span>
+      </div>
+    </div>
+    <div class="day-body">
+      <div class="day-intro">
+        Travel day. Arrive, unpack, do nothing of consequence. If you have energy in the evening, drive the 10 minutes to Porto Pollo for a drink by the water and get your bearings.
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 2 -->
+  <div class="day-block">
+    <div class="day-header">
+      <div class="day-number">
+        <div class="dn-label">Day</div>
+        <div class="dn-num">2</div>
+      </div>
+      <div class="day-title-area">
+        <div class="day-date">Saturday 28 June</div>
+        <div class="day-title">Filitosa + Sartène lunch</div>
+        <div class="day-subtitle">Easy half-day — both close to base</div>
+      </div>
+      <div class="day-badge-area">
+        <span class="dtype south"><span class="dtype-dot"></span>South</span>
+      </div>
+    </div>
+    <div class="day-body">
+      <div class="day-intro">
+        Deliberately light — you only arrived yesterday. Filitosa is 10 minutes away and takes 90 minutes. Sartène is 25 minutes and has the best wild boar on the island. Back at the villa by mid-afternoon; swim, decompress.
+      </div>
+      <ul class="activity-list">
+        <li class="activity-item">
+          <div class="act-time">9:30am</div>
+          <div class="act-content">
+            <div class="act-name">Filitosa Prehistoric Site <span class="act-tag close">6 km · 10 min</span></div>
+            <div class="act-detail">8,000-year-old carved warrior menhirs among millennial olive trees. Allow 60–90 minutes. Ollie will either love it or be bored within 20 minutes — either outcome is fine, it costs nothing to try.</div>
+          </div>
+        </li>
+        <li class="activity-item">
+          <div class="act-time">12:30pm</div>
+          <div class="act-content">
+            <div class="act-name">Lunch in Sartène <span class="act-tag should">Should do</span></div>
+            <div class="act-detail">19 km, 25 minutes from base. Order wild boar (sanglier) with chestnut polenta at whichever auberge looks busiest with locals. The town itself — medieval stone alleys, Place de la Libération — is worth 30 minutes of wandering before or after.</div>
+            <div class="drive-chip">19 km · ~25 min from villa</div>
+          </div>
+        </li>
+        <li class="activity-item">
+          <div class="act-time">3:00pm+</div>
+          <div class="act-content">
+            <div class="act-name">Afternoon free — villa pool</div>
+            <div class="act-detail">Back by mid-afternoon. Do nothing. You're on holiday.</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- DAY 3 -->
+  <div class="day-block">
+    <div class="day-header">
+      <div class="day-number">
+        <div class="dn-label">Day</div>
+        <div class="dn-num">3</div>
+      </div>
+      <div class="day-title-area">
+        <div class="day-date">Sunday 29 June</div>
+        <div class="day-title">West Coast — Scandola, Girolata & Calanques de Piana</div>
+        <div class="day-subtitle">Long day — the one that earns the drive</div>
+      </div>
+      <div class="day-badge-area">
+        <span class="dtype west"><span class="dtype-dot"></span>West coast</span>
+        <span class="dtype must"><span class="dtype-dot"></span>Must do</span>
+      </div>
+    </div>
+    <div class="day-body">
+      <div class="day-intro">
+        This is the big day. Leave by 7am — the drive to Porto takes nearly 2 hours and the road gets congested. Do the boat first, then Piana on the way home. It's a long day (back around 8–9pm) but everything lands in one trip. Don't attempt this as a leisurely start.
+      </div>
+      <ul class="activity-list">
+        <li class="activity-item">
+          <div class="act-time">7:00am</div>
+          <div class="act-content">
+            <div class="act-name">Depart Serra-di-Ferro</div>
+            <div class="act-detail">~90 km north. Head via Ajaccio on the fast road (D81/T10) rather than hugging the coast — faster. Allow 1h 45–2h given early morning.</div>
+          </div>
+        </li>
+        <li class="activity-item">
+          <div class="act-time">9:00am</div>
+          <div class="act-content">
+            <div class="act-name">Scandola Nature Reserve + Girolata boat <span class="act-tag must">Must do</span> <span class="act-tag book">Pre-book</span></div>
+            <div class="act-detail">Rigid inflatable (Zodiac) from Porto. UNESCO-listed red volcanic cliffs, sea caves, osprey nests. Most tours are 3–4 hours and stop at Girolata — the village accessible only by sea. Ollie will remember this.</div>
+            <div class="drive-chip">Boat departs Porto marina</div>
+          </div>
+        </li>
+        <li class="activity-item">
+          <div class="act-time">1:30pm</div>
+          <div class="act-content">
+            <div class="act-name">Lunch in Porto or Piana</div>
+            <div class="act-detail">Eat near the marina in Porto or drive the 15 minutes south to Piana and eat at A Cantina di l'Orriu (book ahead) — one of the best traditional Corsican restaurants on the island. Worth calling ahead even if you couldn't pre-book.</div>
+          </div>
+        </li>
+        <li class="activity-item">
+          <div class="act-time">3:30pm</div>
+          <div class="act-content">
+            <div class="act-name">Calanques de Piana <span class="act-tag must">Must do</span></div>
+            <div class="act-detail">Drive the D81 south from Piana. Stop constantly. The late afternoon light on the red rock is the best time to be here — the early morning crowd has gone and the colours are extraordinary. Walk the short mule track loop if you have energy; 45 minutes, easy terrain.</div>
+          </div>
+        </li>
+        <li class="activity-item">
+          <div class="act-time">6:30pm</div>
+          <div class="act-content">
+            <div class="act-name">Drive home</div>
+            <div class="act-detail">~90 km south. Allow 2 hours. You'll be tired but satisfied. Stop at a roadside bar near Sagone or Tiuccia if you need a break.</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- DAY 4 -->
+  <div class="day-block villa-day">
+    <div class="day-header">
+      <div class="day-number">
+        <div class="dn-label">Day</div>
+        <div class="dn-num">4</div>
+      </div>
+      <div class="day-title-area">
+        <div class="day-date">Monday 30 June</div>
+        <div class="day-title">Villa day — recovery</div>
+        <div class="day-subtitle">Pool · rest · local beach</div>
+      </div>
+      <div class="day-badge-area">
+        <span class="dtype villa"><span class="dtype-dot"></span>Villa</span>
+      </div>
+    </div>
+    <div class="day-body">
+      <div class="day-intro">
+        You drove 4 hours and were on a boat yesterday. Do nothing ambitious. Plage de Cupabia is 6 minutes away and excellent — go there in the morning, back to the villa pool in the afternoon. Evening at Porto Pollo or a quiet dinner in.
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 5 -->
+  <div class="day-block">
+    <div class="day-header">
+      <div class="day-number">
+        <div class="dn-label">Day</div>
+        <div class="dn-num">5</div>
+      </div>
+      <div class="day-title-area">
+        <div class="day-date">Tuesday 1 July</div>
+        <div class="day-title">Canyoning at Baracci + Ajaccio evening</div>
+        <div class="day-subtitle">Active morning · relaxed afternoon · optional evening</div>
+      </div>
+      <div class="day-badge-area">
+        <span class="dtype active"><span class="dtype-dot"></span>Activity</span>
+        <span class="dtype must"><span class="dtype-dot"></span>Must do</span>
+      </div>
+    </div>
+    <div class="day-body">
+      <div class="day-intro">
+        Baracci canyon is 15 km from the villa — your most convenient activity day. Half-day guided canyoning in the morning (the canyon itself takes 2–3 hours). Afternoon free. If you have energy, drive the 43 km to Ajaccio for dinner and a harbour walk — the old town is pleasant in the evening.
+      </div>
+      <ul class="activity-list">
+        <li class="activity-item">
+          <div class="act-time">8:30am</div>
+          <div class="act-content">
+            <div class="act-name">Canyoning — Baracci <span class="act-tag must">Must do</span> <span class="act-tag book">Pre-book</span></div>
+            <div class="act-detail">~15 km, 20 minutes from villa. Guided half-day: wetsuits and helmets provided, natural water slides, pools, small jumps. No experience needed. Ollie is the perfect age for this. Back by 1pm.</div>
+            <div class="drive-chip">15 km · ~20 min from villa</div>
+          </div>
+        </li>
+        <li class="activity-item">
+          <div class="act-time">1:30pm</div>
+          <div class="act-content">
+            <div class="act-name">Lunch + villa afternoon</div>
+            <div class="act-detail">Back to the villa or lunch in Propriano (11 km away). Afternoon free — pool, read, recover.</div>
+          </div>
+        </li>
+        <li class="activity-item">
+          <div class="act-time">6:30pm</div>
+          <div class="act-content">
+            <div class="act-name">Optional: Ajaccio evening <span class="act-tag should">Should do</span></div>
+            <div class="act-detail">43 km, ~50 minutes. Harbour walk, old town, dinner. Napoleon's birthplace is worth a look even without going inside anything. If this feels like too much after canyoning, skip it — you can do Ajaccio on the Saturday market day later in the trip.</div>
+            <div class="drive-chip">43 km · ~50 min from villa</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- WEEK 2 -->
+  <div class="week-label">Second week &nbsp;·&nbsp; 2–7 July</div>
+
+  <!-- DAY 6 -->
+  <div class="day-block">
+    <div class="day-header">
+      <div class="day-number">
+        <div class="dn-label">Day</div>
+        <div class="dn-num">6</div>
+      </div>
+      <div class="day-title-area">
+        <div class="day-date">Wednesday 2 July</div>
+        <div class="day-title">Bonifacio — Lavezzi Islands + Citadel sunset dinner</div>
+        <div class="day-subtitle">The best day of the trip</div>
+      </div>
+      <div class="day-badge-area">
+        <span class="dtype south"><span class="dtype-dot"></span>South</span>
+        <span class="dtype must"><span class="dtype-dot"></span>Must do</span>
+      </div>
+    </div>
+    <div class="day-body">
+      <div class="day-intro">
+        Pack everything into Bonifacio in one day. Morning boat to Lavezzi, afternoon in the citadel, stay for the sunset, dinner at U Castillé. It's 48 km from the villa — about an hour — so you can leave at a reasonable time. This is the day Ollie will talk about most.
+      </div>
+      <ul class="activity-list">
+        <li class="activity-item">
+          <div class="act-time">8:00am</div>
+          <div class="act-content">
+            <div class="act-name">Drive to Bonifacio</div>
+            <div class="act-detail">~48 km, allow 60–70 minutes. Park in the lower marina car park.</div>
+            <div class="drive-chip">48 km · ~60 min from villa</div>
+          </div>
+        </li>
+        <li class="activity-item">
+          <div class="act-time">9:30am</div>
+          <div class="act-content">
+            <div class="act-name">Lavezzi Islands boat trip <span class="act-tag must">Must do</span> <span class="act-tag book">Pre-book</span></div>
+            <div class="act-detail">Departs Bonifacio marina. Protected marine reserve — giant granite boulders, crystal water, snorkelling with fearless fish. Bring bread. Most tours are 2.5–3 hours. Back by midday.</div>
+          </div>
+        </li>
+        <li class="activity-item">
+          <div class="act-time">1:00pm</div>
+          <div class="act-content">
+            <div class="act-name">Lunch on the marina, then King of Aragon Staircase <span class="act-tag must">Must do</span></div>
+            <div class="act-detail">Eat on the waterfront, then descend the 187 steps carved into the cliff face. Thrilling at sea level with the waves below. Don't underestimate the climb back up.</div>
+          </div>
+        </li>
+        <li class="activity-item">
+          <div class="act-time">3:30pm</div>
+          <div class="act-content">
+            <div class="act-name">Old town & citadel walk <span class="act-tag must">Must do</span></div>
+            <div class="act-detail">Wander the medieval alleys of the upper town. Walk the cliff-edge path. Find a spot on the ramparts and wait for the light to change. The limestone turns gold then pink as the sun drops.</div>
+          </div>
+        </li>
+        <li class="activity-item">
+          <div class="act-time">8:00pm</div>
+          <div class="act-content">
+            <div class="act-name">Dinner at U Castillé <span class="act-tag book">Pre-book</span></div>
+            <div class="act-detail">In the heart of the old town. Order the aubergines bonifacienne (stuffed with local sheep's cheese) and the wild boar stew. Drive home after — roughly 9:30pm arrival back at villa.</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- DAY 7 -->
+  <div class="day-block villa-day">
+    <div class="day-header">
+      <div class="day-number">
+        <div class="dn-label">Day</div>
+        <div class="dn-num">7</div>
+      </div>
+      <div class="day-title-area">
+        <div class="day-date">Thursday 3 July</div>
+        <div class="day-title">Villa day</div>
+        <div class="day-subtitle">Pool · Cupabia beach · nothing much</div>
+      </div>
+      <div class="day-badge-area">
+        <span class="dtype villa"><span class="dtype-dot"></span>Villa</span>
+      </div>
+    </div>
+    <div class="day-body">
+      <div class="day-intro">
+        Yesterday was a long one. Deliberately unscheduled. Plage de Cupabia is 6 minutes away — white sand, clear water, rarely crowded. If Ollie needs something to do in the afternoon, the natural pools at Baracci are 15 minutes away and require no booking.
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 8 -->
+  <div class="day-block">
+    <div class="day-header">
+      <div class="day-number">
+        <div class="dn-label">Day</div>
+        <div class="dn-num">8</div>
+      </div>
+      <div class="day-title-area">
+        <div class="day-date">Friday 4 July</div>
+        <div class="day-title">Palombaggia + Santa Giulia beach day</div>
+        <div class="day-subtitle">The classic Corsican beach day</div>
+      </div>
+      <div class="day-badge-area">
+        <span class="dtype south"><span class="dtype-dot"></span>South</span>
+        <span class="dtype must"><span class="dtype-dot"></span>Must do</span>
+      </div>
+    </div>
+    <div class="day-body">
+      <div class="day-intro">
+        No complicated logistics today. Drive to Palombaggia early, park before the car park fills, spend the morning there. Lunch at Tamaricciu beach shack right next door. Walk or drive 5 minutes south to Santa Giulia for the afternoon — the lagoon is shallower and better for messing around in.
+      </div>
+      <ul class="activity-list">
+        <li class="activity-item">
+          <div class="act-time">8:30am</div>
+          <div class="act-content">
+            <div class="act-name">Drive to Palombaggia</div>
+            <div class="act-detail">~47 km via Porto-Vecchio. Leave early — the lower car park (free) fills by 9:30am in late June. Take the D168 south of Porto-Vecchio.</div>
+            <div class="drive-chip">47 km · ~55 min from villa</div>
+          </div>
+        </li>
+        <li class="activity-item">
+          <div class="act-time">9:30am</div>
+          <div class="act-content">
+            <div class="act-name">Palombaggia Beach <span class="act-tag must">Must do</span></div>
+            <div class="act-detail">White sand, umbrella pines, clear water. The postcard beach. Spend the morning here before the afternoon crowds arrive and it starts feeling like a car park.</div>
+          </div>
+        </li>
+        <li class="activity-item">
+          <div class="act-time">12:30pm</div>
+          <div class="act-content">
+            <div class="act-name">Lunch at Tamaricciu <span class="act-tag must">Must do</span></div>
+            <div class="act-detail">Right next to Palombaggia. Feet in the sand, shaded canopy, fresh grilled fish, Corsican charcuterie, wood-fired pizza. The Corsican beach lunch in its definitive form. Arrive early or queue.</div>
+          </div>
+        </li>
+        <li class="activity-item">
+          <div class="act-time">2:30pm</div>
+          <div class="act-content">
+            <div class="act-name">Santa Giulia Beach <span class="act-tag must">Must do</span></div>
+            <div class="act-detail">5 minutes south of Palombaggia. Shallower, more sheltered lagoon — better for Ollie to explore freely. Paddleboard hire available. Stay until late afternoon, drive home for dinner at the villa.</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- DAY 9 -->
+  <div class="day-block">
+    <div class="day-header">
+      <div class="day-number">
+        <div class="dn-label">Day</div>
+        <div class="dn-num">9</div>
+      </div>
+      <div class="day-title-area">
+        <div class="day-date">Saturday 5 July</div>
+        <div class="day-title">Corte + Restonica Valley</div>
+        <div class="day-subtitle">Mountain day — completely different Corsica</div>
+      </div>
+      <div class="day-badge-area">
+        <span class="dtype mountain"><span class="dtype-dot"></span>Mountains</span>
+        <span class="dtype should" style="background:#f0eaf8;color:var(--col-active);"><span class="dtype-dot" style="background:var(--col-active)"></span>Should do</span>
+      </div>
+    </div>
+    <div class="day-body">
+      <div class="day-intro">
+        The furthest day trip from base (~115 km, 1h 45min) but worth it. Corte shows you the island beyond beaches and tourism — fierce, beautiful, independent. The Restonica gorge just outside town has emerald mountain pools that are cooler and wilder than anything on the coast.
+      </div>
+      <ul class="activity-list">
+        <li class="activity-item">
+          <div class="act-time">7:30am</div>
+          <div class="act-content">
+            <div class="act-name">Drive to Corte</div>
+            <div class="act-detail">~115 km. Take the N196 north to Ajaccio then the N193 inland. Allow 1h 45min. Bring snacks — there's little on the road through the interior.</div>
+            <div class="drive-chip">~115 km · ~1h 45min from villa</div>
+          </div>
+        </li>
+        <li class="activity-item">
+          <div class="act-time">9:30am</div>
+          <div class="act-content">
+            <div class="act-name">Restonica Valley — gorge walk & swimming pools <span class="act-tag should">Should do</span></div>
+            <div class="act-detail">Drive the D623 gorge road from Corte (5 km). Park at the end and walk upstream along the river. The pools are cold, clear, and carved into granite. Even a 45-minute walk gets you to spectacular swimming. Go here first while it's cool.</div>
+          </div>
+        </li>
+        <li class="activity-item">
+          <div class="act-time">12:30pm</div>
+          <div class="act-content">
+            <div class="act-name">Corte citadel, belvedere & lunch <span class="act-tag should">Should do</span></div>
+            <div class="act-detail">Walk the steep cobblestone streets up to the citadel. The belvedere gives a 360-degree view of the surrounding valleys. Lunch in the town square — there are several decent options on the main drag. Allow 2 hours for lunch + exploration.</div>
+          </div>
+        </li>
+        <li class="activity-item">
+          <div class="act-time">3:00pm</div>
+          <div class="act-content">
+            <div class="act-name">Drive home</div>
+            <div class="act-detail">~115 km south. Back by 5pm. Optional: stop at Ajaccio Saturday market on the way — it runs until noon, so this only works if you leave Corte by 10am and detour through Ajaccio on the way there, not back.</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- DAY 10 -->
+  <div class="day-block">
+    <div class="day-header">
+      <div class="day-number">
+        <div class="dn-label">Day</div>
+        <div class="dn-num">10</div>
+      </div>
+      <div class="day-title-area">
+        <div class="day-date">Sunday 6 July</div>
+        <div class="day-title">Bavella Needles + Cavu pools + Porto-Vecchio evening</div>
+        <div class="day-subtitle">Your nearest big landscape — no excuse to skip it</div>
+      </div>
+      <div class="day-badge-area">
+        <span class="dtype mountain"><span class="dtype-dot"></span>Mountains</span>
+        <span class="dtype must"><span class="dtype-dot"></span>Must do</span>
+      </div>
+    </div>
+    <div class="day-body">
+      <div class="day-intro">
+        Bavella is only 36 km away — the closest major destination on the list. Do it in a half-day, combine with the Cavu natural pools on the way back, then drive into Porto-Vecchio for a proper evening in the old town. Ollie gets gelato; you get charcuterie and a glass of something cold.
+      </div>
+      <ul class="activity-list">
+        <li class="activity-item">
+          <div class="act-time">8:30am</div>
+          <div class="act-content">
+            <div class="act-name">Drive to Bavella</div>
+            <div class="act-detail">~36 km via Zonza. Allow 50 minutes — the mountain road is spectacular but slow. Leave early before the car park fills.</div>
+            <div class="drive-chip">36 km · ~50 min from villa</div>
+          </div>
+        </li>
+        <li class="activity-item">
+          <div class="act-time">9:30am</div>
+          <div class="act-content">
+            <div class="act-name">Bavella Needles — Trou de la Bombe hike <span class="act-tag must">Must do</span></div>
+            <div class="act-detail">The hike to the Trou de la Bombe (a massive natural hole blown through the rock) is well-marked, shaded through pine forest, and fully manageable for Ollie. Allow 2–2.5 hours return. The needles as a backdrop are spectacular even from the car park.</div>
+          </div>
+        </li>
+        <li class="activity-item">
+          <div class="act-time">12:30pm</div>
+          <div class="act-content">
+            <div class="act-name">Natural Pools of Cavu <span class="act-tag should">Should do</span></div>
+            <div class="act-detail">~55 km from villa, roughly on the way to Porto-Vecchio. Granite rock slides worn smooth by the river — natural water park. Bring lunch and eat here. Allow 90 minutes.</div>
+            <div class="drive-chip">~20 km from Bavella towards Porto-Vecchio</div>
+          </div>
+        </li>
+        <li class="activity-item">
+          <div class="act-time">5:30pm</div>
+          <div class="act-content">
+            <div class="act-name">Porto-Vecchio old town evening <span class="act-tag should">Should do</span></div>
+            <div class="act-detail">43 km from villa. Wander the old town at dusk, people-watch from a terrace, order charcuterie and local cheese. Gelato for Ollie. Drive home after dinner — it's your last proper evening out.</div>
+            <div class="drive-chip">43 km · ~50 min from villa</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- DAY 11 -->
+  <div class="day-block villa-day">
+    <div class="day-header">
+      <div class="day-number">
+        <div class="dn-label">Day</div>
+        <div class="dn-num">11</div>
+      </div>
+      <div class="day-title-area">
+        <div class="day-date">Monday 7 July</div>
+        <div class="day-title">Departure day</div>
+        <div class="day-subtitle">Villa · local beach · leave</div>
+      </div>
+      <div class="day-badge-area">
+        <span class="dtype villa"><span class="dtype-dot"></span>Villa</span>
+      </div>
+    </div>
+    <div class="day-body">
+      <div class="day-intro">
+        Pack in the morning. One last swim at Cupabia or Porto Pollo beach — both under 10 minutes away. Leave yourself enough time to get to Ajaccio airport (43 km, about 50 minutes, but allow 70–75 in summer traffic).
+      </div>
+    </div>
+  </div>
+
+  <!-- WHAT DIDN'T MAKE THE CUT -->
+  <div class="week-label">Left on the bench</div>
+  <div class="bench-box">
+    <p>These didn't fit without overloading the schedule. All remain possible if days shift:</p>
+    <p style="margin-top:10px;">
+      <strong style="color:var(--ink);">Ajaccio Saturday market</strong> — works if you route through Ajaccio on the way to Corte on Day 9 (leave by 7am, market 8–11am, then continue north). Or swap Day 2 from Sartène to Ajaccio market instead.
+    </p>
+    <p style="margin-top:8px;">
+      <strong style="color:var(--ink);">Gorges de Spelunca</strong> — would add 45 minutes to the west coast day (Day 3). If you arrive in Porto by 8:30am and the boat isn't until 10am, you could walk the lower section of the gorge from Ota first. Tight but possible.
+    </p>
+    <p style="margin-top:8px;">
+      <strong style="color:var(--ink);">A Cupulatta Tortoise Sanctuary</strong> — sits on the road north from Ajaccio towards Porto. If you left for the west coast day (Day 3) at 6:30am, you could add a 45-minute stop here en route. Ollie's call.
+    </p>
+    <p style="margin-top:8px;">
+      <strong style="color:var(--ink);">Rondinara Beach</strong> — if you have a spare afternoon on the villa days, it's 53 km from base and combines easily with the Lavezzi/Bonifacio area.
+    </p>
+  </div>
+
+  
+
+</div>
+
+
+<script>
+document.querySelectorAll('.nav-link').forEach(l => {
+  if (l.href === window.location.href) l.classList.add('active');
+});
+</script>
+</body>
+</html>

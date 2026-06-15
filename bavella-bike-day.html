@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Bike Day — Bavella 🚵</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700;1,900&family=Barlow:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --dirt:#c47a2a;
+  --forest:#1a6b3a;
+  --rock:#2a2420;
+  --sky:#1a3d6b;
+  --cream:#f7f4ee;
+  --mid:#e8e2d8;
+  --muted:#7a6e62;
+  --white:#ffffff;
+  --danger:#d93a2a;
+  --neon:#7fd94a;
+}
+
+html{scroll-behavior:smooth;}
+body{
+  background:var(--rock);
+  color:var(--cream);
+  font-family:'Barlow',sans-serif;
+  min-height:100vh;
+  overflow-x:hidden;
+}
+
+/* ── HERO ── */
+.hero{
+  position:relative;
+  min-height:100svh;
+  display:flex;flex-direction:column;
+  justify-content:flex-end;
+  overflow:hidden;
+  padding:2rem 1.25rem 2.5rem;
+}
+.hero-bg{
+  position:absolute;inset:0;
+  background:
+    linear-gradient(to bottom, rgba(26,61,107,0.3) 0%, rgba(26,32,24,0.0) 40%, rgba(26,32,24,0.85) 80%, rgba(26,32,24,1) 100%),
+    linear-gradient(135deg, #1a3d6b 0%, #1a6b3a 35%, #2a2420 70%, #c47a2a 100%);
+  z-index:0;
+}
+/* Animated mountain silhouette */
+.hero-mountains{
+  position:absolute;bottom:0;left:0;right:0;z-index:1;
+  height:55%;
+}
+.hero-mountains svg{width:100%;height:100%;}
+
+.hero-content{position:relative;z-index:2;}
+
+.hero-eyebrow{
+  font-family:'DM Mono',monospace;
+  font-size:0.7rem;letter-spacing:0.2em;
+  text-transform:uppercase;
+  color:var(--dirt);
+  margin-bottom:0.75rem;
+}
+.hero-title{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:clamp(3.2rem,14vw,5.5rem);
+  font-weight:900;
+  font-style:italic;
+  line-height:0.9;
+  letter-spacing:-0.01em;
+  color:var(--white);
+  text-transform:uppercase;
+}
+.hero-title .accent{color:var(--dirt);}
+.hero-title .green{color:var(--neon);}
+
+.hero-sub{
+  font-size:1rem;
+  color:rgba(247,244,238,0.7);
+  margin-top:1rem;
+  line-height:1.5;
+  max-width:320px;
+}
+.hero-date-chip{
+  display:inline-flex;align-items:center;gap:0.5rem;
+  background:rgba(196,122,42,0.2);
+  border:1px solid rgba(196,122,42,0.4);
+  border-radius:4px;
+  padding:0.3rem 0.75rem;
+  margin-top:1rem;
+  font-family:'DM Mono',monospace;
+  font-size:0.7rem;letter-spacing:0.1em;
+  color:var(--dirt);
+}
+.scroll-hint{
+  margin-top:2rem;
+  display:flex;align-items:center;gap:0.6rem;
+  font-family:'DM Mono',monospace;
+  font-size:0.65rem;letter-spacing:0.12em;
+  color:rgba(247,244,238,0.4);
+  text-transform:uppercase;
+  animation:bounce 2s infinite;
+}
+@keyframes bounce{0%,100%{transform:translateY(0);}50%{transform:translateY(4px);}}
+
+/* ── SECTIONS ── */
+.section{padding:2.5rem 1.25rem;}
+.section + .section{padding-top:0;}
+
+.section-label{
+  font-family:'DM Mono',monospace;
+  font-size:0.65rem;letter-spacing:0.18em;
+  text-transform:uppercase;
+  color:var(--dirt);
+  margin-bottom:0.6rem;
+}
+.section-title{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:clamp(1.8rem,7vw,2.8rem);
+  font-weight:800;font-style:italic;
+  text-transform:uppercase;
+  color:var(--white);
+  line-height:1;
+  margin-bottom:1rem;
+}
+
+/* ── TRAIL CARDS ── */
+.trails-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:0.6rem;
+  margin-top:1rem;
+}
+.trail-card{
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:8px;
+  padding:0.85rem 0.9rem;
+  position:relative;
+  overflow:hidden;
+}
+.trail-card::before{
+  content:'';position:absolute;
+  top:0;left:0;width:4px;height:100%;
+}
+.trail-card.green::before{background:#4caf50;}
+.trail-card.blue::before{background:#2196f3;}
+.trail-card.red::before{background:#f44336;}
+.trail-card.black::before{background:#ffffff;}
+.trail-card.oliver::before{background:var(--neon);}
+
+.trail-level{
+  font-family:'DM Mono',monospace;
+  font-size:0.6rem;letter-spacing:0.1em;
+  text-transform:uppercase;
+  margin-bottom:0.3rem;
+}
+.trail-card.green .trail-level{color:#4caf50;}
+.trail-card.blue .trail-level{color:#2196f3;}
+.trail-card.red .trail-level{color:#f44336;}
+.trail-card.black .trail-level{color:#aaa;}
+.trail-card.oliver .trail-level{color:var(--neon);}
+
+.trail-name{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:1.1rem;font-weight:700;
+  color:var(--white);line-height:1.1;
+}
+.trail-desc{
+  font-size:0.72rem;color:rgba(247,244,238,0.55);
+  margin-top:0.3rem;line-height:1.4;
+}
+
+/* ── HYPE STAT ROW ── */
+.stats-row{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:0.6rem;
+  margin:1.5rem 0;
+}
+.stat{
+  background:rgba(196,122,42,0.1);
+  border:1px solid rgba(196,122,42,0.2);
+  border-radius:8px;
+  padding:0.85rem 0.5rem;
+  text-align:center;
+}
+.stat-num{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:2rem;font-weight:900;font-style:italic;
+  color:var(--dirt);line-height:1;
+}
+.stat-label{
+  font-family:'DM Mono',monospace;
+  font-size:0.55rem;letter-spacing:0.08em;
+  text-transform:uppercase;
+  color:rgba(247,244,238,0.5);
+  margin-top:0.25rem;
+  line-height:1.3;
+}
+
+/* ── TIMELINE ── */
+.timeline{margin-top:1rem;}
+.tl-item{
+  display:flex;gap:1rem;
+  padding-bottom:1.5rem;
+  position:relative;
+}
+.tl-item::before{
+  content:'';position:absolute;
+  left:20px;top:36px;bottom:0;width:2px;
+  background:rgba(196,122,42,0.25);
+}
+.tl-item:last-child::before{display:none;}
+.tl-dot{
+  width:40px;height:40px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.1rem;flex-shrink:0;
+  background:rgba(196,122,42,0.15);
+  border:2px solid rgba(196,122,42,0.3);
+  z-index:1;
+}
+.tl-time{
+  font-family:'DM Mono',monospace;
+  font-size:0.68rem;letter-spacing:0.06em;
+  color:var(--dirt);
+  margin-bottom:0.2rem;
+}
+.tl-title{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:1.1rem;font-weight:700;
+  color:var(--white);line-height:1.1;
+}
+.tl-detail{
+  font-size:0.78rem;color:rgba(247,244,238,0.55);
+  margin-top:0.2rem;line-height:1.5;
+}
+
+/* ── PACK LIST ── */
+.pack-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:0.5rem;margin-top:0.75rem;
+}
+.pack-item{
+  display:flex;align-items:center;gap:0.5rem;
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.07);
+  border-radius:6px;
+  padding:0.6rem 0.75rem;
+  font-size:0.78rem;color:rgba(247,244,238,0.75);
+  cursor:pointer;
+  transition:all 0.15s;
+  -webkit-tap-highlight-color:transparent;
+}
+.pack-item:active{background:rgba(127,217,74,0.1);border-color:rgba(127,217,74,0.3);}
+.pack-item.done{
+  background:rgba(127,217,74,0.08);
+  border-color:rgba(127,217,74,0.25);
+  color:rgba(247,244,238,0.4);
+  text-decoration:line-through;
+}
+.pack-tick{
+  width:18px;height:18px;border-radius:4px;
+  border:2px solid rgba(255,255,255,0.2);
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;font-size:0.6rem;
+  transition:all 0.15s;
+}
+.pack-item.done .pack-tick{
+  background:var(--neon);border-color:var(--neon);color:var(--rock);
+}
+
+/* ── DIVIDER ── */
+.divider{
+  height:1px;background:rgba(255,255,255,0.08);
+  margin:0 1.25rem;
+}
+
+/* ── CTA BLOCK ── */
+.cta-block{
+  background:linear-gradient(135deg, rgba(196,122,42,0.15), rgba(26,107,58,0.15));
+  border:1px solid rgba(196,122,42,0.3);
+  border-radius:12px;
+  padding:1.5rem 1.25rem;
+  margin:1.5rem 0 0;
+  text-align:center;
+}
+.cta-block h3{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:1.4rem;font-weight:800;font-style:italic;
+  text-transform:uppercase;
+  color:var(--white);
+  margin-bottom:0.25rem;
+}
+.cta-block p{
+  font-size:0.78rem;color:rgba(247,244,238,0.6);
+  line-height:1.5;margin-bottom:1rem;
+}
+.cta-btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:0.5rem;
+  background:var(--dirt);color:var(--white);
+  text-decoration:none;
+  border-radius:6px;
+  padding:0.75rem 1.5rem;
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:1rem;font-weight:700;letter-spacing:0.05em;
+  text-transform:uppercase;
+  width:100%;
+  transition:all 0.15s;
+}
+.cta-btn:active{background:#a3631e;}
+.cta-btn.secondary{
+  background:transparent;
+  border:1px solid rgba(196,122,42,0.4);
+  color:var(--dirt);
+  margin-top:0.5rem;
+}
+
+/* ── HYPE BOX ── */
+.hype-box{
+  background:linear-gradient(135deg, rgba(127,217,74,0.1), rgba(26,107,58,0.15));
+  border:1px solid rgba(127,217,74,0.25);
+  border-radius:10px;
+  padding:1.25rem;
+  margin-top:1rem;
+}
+.hype-box p{
+  font-size:0.82rem;
+  color:rgba(247,244,238,0.75);
+  line-height:1.7;
+}
+.hype-box strong{color:var(--neon);}
+
+/* ── TERRAIN MAP ── */
+.terrain-map{
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:10px;
+  overflow:hidden;
+  margin-top:1rem;
+}
+.terrain-map-header{
+  background:rgba(255,255,255,0.05);
+  padding:0.75rem 1rem;
+  font-family:'DM Mono',monospace;
+  font-size:0.65rem;letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:var(--muted);
+  border-bottom:1px solid rgba(255,255,255,0.06);
+}
+.terrain-map-body{
+  padding:1rem;
+}
+.elevation-bar{
+  height:60px;
+  background:linear-gradient(to right,
+    rgba(26,107,58,0.4) 0%,
+    rgba(127,217,74,0.3) 20%,
+    rgba(196,122,42,0.5) 50%,
+    rgba(217,58,42,0.4) 75%,
+    rgba(42,36,32,0.2) 100%
+  );
+  border-radius:4px;
+  position:relative;
+  margin-bottom:0.5rem;
+  overflow:hidden;
+}
+.elevation-bar::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(to bottom, transparent 30%, rgba(0,0,0,0.4) 100%);
+}
+.elev-labels{
+  display:flex;justify-content:space-between;
+  font-family:'DM Mono',monospace;
+  font-size:0.6rem;color:var(--muted);
+  letter-spacing:0.06em;
+}
+
+/* ── INFO CHIPS ── */
+.info-chips{
+  display:flex;flex-wrap:wrap;gap:0.5rem;
+  margin-top:1rem;
+}
+.chip{
+  display:inline-flex;align-items:center;gap:0.35rem;
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:20px;
+  padding:0.35rem 0.75rem;
+  font-size:0.72rem;
+  color:rgba(247,244,238,0.65);
+}
+.chip .dot{
+  width:6px;height:6px;border-radius:50%;
+  background:var(--dirt);
+}
+
+/* ── FOOTER ── */
+.footer{
+  padding:2rem 1.25rem;
+  text-align:center;
+  border-top:1px solid rgba(255,255,255,0.06);
+}
+.footer p{
+  font-size:0.72rem;color:rgba(247,244,238,0.3);
+  line-height:1.6;
+}
+.footer strong{color:var(--dirt);}
+
+/* ── PROGRESS BAR ── */
+.progress-wrap{
+  margin-top:0.75rem;
+  display:flex;align-items:center;gap:0.75rem;
+}
+.progress-bg{
+  flex:1;height:4px;background:rgba(255,255,255,0.1);border-radius:2px;overflow:hidden;
+}
+.progress-fill{
+  height:100%;background:var(--neon);border-radius:2px;transition:width 0.3s ease;
+}
+.progress-text{
+  font-family:'DM Mono',monospace;
+  font-size:0.62rem;color:var(--neon);white-space:nowrap;
+}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+.fade-up{animation:fadeUp 0.6s ease both;}
+.fade-up-2{animation:fadeUp 0.6s 0.15s ease both;}
+.fade-up-3{animation:fadeUp 0.6s 0.3s ease both;}
+
+/* Pulse on key element */
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(127,217,74,0.4);}50%{box-shadow:0 0 0 8px rgba(127,217,74,0);}}
+.pulse{animation:pulse 2s infinite;}
+
+/* ── RESPONSIVE ── */
+@media(min-width:480px){
+  .trails-grid{grid-template-columns:repeat(4,1fr);}
+  .stats-row{grid-template-columns:repeat(3,1fr);}
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-bg"></div>
+  <!-- Mountain silhouette SVG -->
+  <div class="hero-mountains">
+    <svg viewBox="0 0 400 220" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Background mountain range -->
+      <polygon points="0,220 0,160 30,120 60,140 90,80 130,110 160,50 200,90 230,40 270,70 300,30 340,65 370,45 400,70 400,220" fill="rgba(26,61,107,0.4)"/>
+      <!-- Aiguilles de Bavella spikes -->
+      <polygon points="0,220 0,180 40,150 80,160 110,100 130,120 150,70 165,90 175,55 190,75 200,45 215,68 230,38 248,60 265,30 280,55 295,25 312,50 330,35 350,58 370,42 390,62 400,55 400,220" fill="rgba(42,36,32,0.95)"/>
+      <!-- Tree line -->
+      <path d="M0,220 Q50,195 100,200 Q150,205 200,198 Q250,195 300,202 Q350,198 400,200 L400,220 Z" fill="rgba(26,107,58,0.6)"/>
+      <!-- Snow caps on highest peaks -->
+      <polygon points="265,30 258,48 272,48" fill="rgba(247,244,238,0.6)"/>
+      <polygon points="295,25 288,44 302,44" fill="rgba(247,244,238,0.7)"/>
+      <polygon points="230,38 224,56 237,56" fill="rgba(247,244,238,0.5)"/>
+    </svg>
+  </div>
+
+  <div class="hero-content">
+    <div class="hero-eyebrow fade-up">🚵 Corsica · Summer 2026</div>
+    <div class="hero-title fade-up-2">
+      <span class="accent">BIKE</span><br>
+      <span>DAY</span><br>
+      <span class="green">BAVELLA</span>
+    </div>
+    <p class="hero-sub fade-up-3">28 trails. Jumps, drops, berms. The Aiguilles de Bavella above you. You and Dad, full day.</p>
+    <div class="hero-date-chip fade-up-3">
+      📅 TBC — July 2026 · Zonza, Corsica
+    </div>
+    <div class="scroll-hint fade-up-3">
+      <span>↓</span> <span>Scroll for the details</span>
+    </div>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="section">
+  <div class="section-label">By the numbers</div>
+  <div class="stats-row">
+    <div class="stat">
+      <div class="stat-num">28</div>
+      <div class="stat-label">Jump &amp; downhill trails</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">500</div>
+      <div class="stat-label">km of trail to shred</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">1hr</div>
+      <div class="stat-label">drive from the villa</div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- TRAIL BREAKDOWN -->
+<div class="section">
+  <div class="section-label">The trails</div>
+  <div class="section-title">Pick your<br>difficulty</div>
+
+  <div class="hype-box">
+    <p>Bike Park Bavella has built <strong>28 trails cut into the forest</strong> beneath the Aiguilles — Corsica's dramatic granite needle peaks. Everything from wide flowy greens to <strong>black-level jump lines with drops</strong>. The park has shuttles to take you back up so you can lap all day without pedalling uphill. <strong>You bring the energy, the bike does the rest.</strong></p>
+  </div>
+
+  <div class="trails-grid" style="margin-top:1rem;">
+    <div class="trail-card green">
+      <div class="trail-level">🟢 Green</div>
+      <div class="trail-name">First runs</div>
+      <div class="trail-desc">Get the feel of the bike. Wide, flowy, confidence-building.</div>
+    </div>
+    <div class="trail-card blue">
+      <div class="trail-level">🔵 Blue</div>
+      <div class="trail-name">Start jumping</div>
+      <div class="trail-desc">Tables, small drops, rollers. Where the fun really starts.</div>
+    </div>
+    <div class="trail-card red">
+      <div class="trail-level">🔴 Red</div>
+      <div class="trail-name">Proper tech</div>
+      <div class="trail-desc">Gaps, gaps, steeps. You'll be hitting these by lunch.</div>
+    </div>
+    <div class="trail-card black">
+      <div class="trail-level">⚫ Black</div>
+      <div class="trail-name">Send it</div>
+      <div class="trail-desc">Full enduro, big jumps, gnarly rock. End-of-day challenge.</div>
+    </div>
+  </div>
+
+  <div class="info-chips">
+    <div class="chip"><span class="dot"></span> Shuttles take you back up</div>
+    <div class="chip"><span class="dot"></span> Full rental fleet on site</div>
+    <div class="chip"><span class="dot"></span> Helmets, pads, gloves included</div>
+    <div class="chip"><span class="dot"></span> Qualified instructors available</div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- DAY TIMELINE -->
+<div class="section">
+  <div class="section-label">The plan</div>
+  <div class="section-title">Your day,<br>hour by hour</div>
+
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-dot">☀️</div>
+      <div>
+        <div class="tl-time">08:00</div>
+        <div class="tl-title">Breakfast at the villa</div>
+        <div class="tl-detail">Big one. You're going to need it. Pack water bottles and snacks the night before.</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot">🚗</div>
+      <div>
+        <div class="tl-time">08:30</div>
+        <div class="tl-title">Drive to Zonza</div>
+        <div class="tl-detail">~1 hour through the Alta Rocca mountains. The road itself is ridiculous — hairpins through the maquis, views down to the coast.</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot">🚵</div>
+      <div>
+        <div class="tl-time">09:30</div>
+        <div class="tl-title">Gear up + first shuttle</div>
+        <div class="tl-detail">Pick up the bikes, helmets, full-face, pads, gloves. Then first shuttle up to the Col de Bavella. Views at the top are insane.</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot">🔥</div>
+      <div>
+        <div class="tl-time">10:00 – 13:00</div>
+        <div class="tl-title">Morning laps</div>
+        <div class="tl-detail">Green warm-up run, then straight onto blue and red. You lap the jump lines. Dad does the cross-country circuit. Whoever finishes first waits at the bottom. Repeat.</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot">🍕</div>
+      <div>
+        <div class="tl-time">13:00</div>
+        <div class="tl-title">Lunch in Zonza village</div>
+        <div class="tl-detail">Cold Coke. Pizza. Lie on the grass. Compare runs. Argue about whose crash was worse.</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot">💥</div>
+      <div>
+        <div class="tl-time">14:00 – 17:00</div>
+        <div class="tl-title">Afternoon send</div>
+        <div class="tl-detail">One run together on blue or red. Then you push for the black. There's also a guided descent from the Col with a river swim at the bottom — might do this together.</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot">🏆</div>
+      <div>
+        <div class="tl-time">17:00</div>
+        <div class="tl-title">Pack up + drive home</div>
+        <div class="tl-detail">Return bikes. Probably too tired to talk. Stop for ice cream on the way back through Propriano.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- WHAT YOU GET -->
+<div class="section">
+  <div class="section-label">The location</div>
+  <div class="section-title">Foot of the<br>Aiguilles</div>
+
+  <div class="terrain-map">
+    <div class="terrain-map-header">📍 Elevation profile — Col de Bavella → Zonza</div>
+    <div class="terrain-map-body">
+      <div class="elevation-bar"></div>
+      <div class="elev-labels">
+        <span>Col de Bavella<br>1,218m</span>
+        <span>↓ Trails<br>downhill</span>
+        <span>Zonza<br>~780m</span>
+      </div>
+      <p style="font-size:0.72rem;color:rgba(247,244,238,0.4);margin-top:0.75rem;line-height:1.5;">The shuttle van takes you from Zonza up to the Col. You ride down. At the top: granite needles, pine forest, and views across the whole south of Corsica.</p>
+    </div>
+  </div>
+
+  <div class="hype-box" style="margin-top:1rem;">
+    <p>The park is at <strong>GPS 41.7506, 9.1692</strong> — Route de Levie, Zonza. It's run by David (builds the trails) and Bérénice (runs the bikes). Every review says the same thing: the trails are brilliant, the setting is unlike anywhere else in Europe.</p>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- PACK LIST -->
+<div class="section">
+  <div class="section-label">The checklist</div>
+  <div class="section-title">What to<br>pack</div>
+  <p style="font-size:0.78rem;color:rgba(247,244,238,0.5);margin-bottom:0.25rem;">Tap to check things off 👇</p>
+
+  <div class="progress-wrap">
+    <div class="progress-bg"><div class="progress-fill" id="packBar" style="width:0%"></div></div>
+    <div class="progress-text" id="packText">0 / 8</div>
+  </div>
+
+  <div class="pack-grid" id="packGrid">
+    <div class="pack-item" onclick="togglePack(this)"><div class="pack-tick"></div>Water bottle × 2</div>
+    <div class="pack-item" onclick="togglePack(this)"><div class="pack-tick"></div>Snacks + energy bars</div>
+    <div class="pack-item" onclick="togglePack(this)"><div class="pack-tick"></div>Sunscreen SPF 50</div>
+    <div class="pack-item" onclick="togglePack(this)"><div class="pack-tick"></div>Closed-toe shoes</div>
+    <div class="pack-item" onclick="togglePack(this)"><div class="pack-tick"></div>Shorts + long socks</div>
+    <div class="pack-item" onclick="togglePack(this)"><div class="pack-tick"></div>Cash (cards not accepted)</div>
+    <div class="pack-item" onclick="togglePack(this)"><div class="pack-tick"></div>Phone + charger</div>
+    <div class="pack-item" onclick="togglePack(this)"><div class="pack-tick"></div>Small rucksack</div>
+  </div>
+
+  <p style="font-size:0.7rem;color:rgba(247,244,238,0.35);margin-top:0.75rem;">Helmets, pads, gloves and full-face are all provided with the bike rental.</p>
+</div>
+
+<div class="divider"></div>
+
+<!-- BOOK IT -->
+<div class="section">
+  <div class="section-label">Make it happen</div>
+  <div class="section-title">Book the<br>bikes</div>
+
+  <div class="cta-block">
+    <h3>🔒 Book in advance</h3>
+    <p>Open every day but by reservation only. July fills up. Dad needs to call or email to lock in the date and the Rider Pack (bike + full protection + shuttle pass).</p>
+    <a href="tel:+33611016316" class="cta-btn pulse">📞 Call +33 6 11 01 63 16</a>
+    <a href="mailto:contact@bikepark-bavella.com" class="cta-btn secondary">✉ contact@bikepark-bavella.com</a>
+    <a href="https://bikepark-bavella.com" target="_blank" class="cta-btn secondary" style="margin-top:0.5rem;">🌐 bikepark-bavella.com</a>
+  </div>
+
+  <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:8px;padding:1rem;margin-top:1rem;">
+    <div class="section-label" style="margin-bottom:0.5rem;">Pricing guide</div>
+    <div style="font-size:0.78rem;color:rgba(247,244,238,0.6);line-height:2;">
+      🚲 Bike hire from <strong style="color:var(--dirt)">€25/day</strong><br>
+      🛡 Full protection kit included in Rider Pack<br>
+      🚐 Shuttle pass from <strong style="color:var(--dirt)">€28/half day</strong><br>
+      🎫 Bike Pass (no shuttle) <strong style="color:var(--dirt)">€15/day</strong><br>
+      💰 <strong style="color:var(--danger)">Cash only — no card payments</strong>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <p>Bike Park de Bavella · Route de Levie, 20124 Zonza, Corsica<br>
+  <strong>GPS: 41.750570, 9.171339</strong><br><br>
+  Part of the Radford family Europe ʼ26 trip · Serra-di-Ferro villa</p>
+</div>
+
+<script>
+// Pack checklist
+function togglePack(el) {
+  el.classList.toggle('done');
+  const tick = el.querySelector('.pack-tick');
+  tick.textContent = el.classList.contains('done') ? '✓' : '';
+  updatePackProgress();
+}
+
+function updatePackProgress() {
+  const items = document.querySelectorAll('.pack-item');
+  const done = document.querySelectorAll('.pack-item.done').length;
+  const total = items.length;
+  const pct = Math.round(done / total * 100);
+  document.getElementById('packBar').style.width = pct + '%';
+  document.getElementById('packText').textContent = done + ' / ' + total;
+}
+
+// Scroll reveal
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) e.target.style.opacity = '1';
+  });
+}, { threshold: 0.1 });
+</script>
+
+</body>
+</html>

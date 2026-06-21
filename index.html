@@ -360,6 +360,16 @@ body{background:var(--bg);color:var(--text);font-family:'Outfit',sans-serif;disp
   </div>
 </div>
 
+<!-- SITE NAV -->
+<nav style="background:#fff;border-bottom:1px solid #ddd9d0;flex-shrink:0;">
+  <div style="display:flex;overflow-x:auto;scrollbar-width:none;padding:0 0.75rem;-webkit-overflow-scrolling:touch;">
+    <span style="font-family:'Libre Baskerville',serif;font-size:0.85rem;font-style:italic;color:#c47a2a;padding:0.75rem 0.85rem 0.75rem 0;white-space:nowrap;flex-shrink:0;border-right:1px solid #ddd9d0;margin-right:0.25rem;">Radfords ʼ26</span>
+    <a href="packing-list.html" style="font-family:'Outfit',sans-serif;font-size:0.72rem;font-weight:500;color:#6b6058;text-decoration:none;padding:0.75rem;white-space:nowrap;flex-shrink:0;">✓ Packing</a>
+    <a href="corsica_plan.html" style="font-family:'Outfit',sans-serif;font-size:0.72rem;font-weight:500;color:#6b6058;text-decoration:none;padding:0.75rem;white-space:nowrap;flex-shrink:0;">🗺 Corsica Guide</a>
+    <a href="corsica_itinerary.html" style="font-family:'Outfit',sans-serif;font-size:0.72rem;font-weight:500;color:#6b6058;text-decoration:none;padding:0.75rem;white-space:nowrap;flex-shrink:0;">📅 Corsica Days</a>
+  </div>
+</nav>
+
 <!-- PRE-HOLIDAY BANNER — hidden once trip starts -->
 <div class="preholiday-banner" id="preholidayBanner" style="display:none">
   <div class="ph-left">
@@ -547,12 +557,12 @@ const SEGS = [
     lat:52.3676, lng:4.9041,
     start:'2026-07-15', end:'2026-07-17', nights:'2 nights',
     hotel:'Staying with Matt Francis (Alex\'s uni friend). No hotel.',
-    notes:'Alex studied in Rotterdam — knows NL well. Canal city. Brilliant for cycling with Ollie. Anne Frank House needs advance booking. Leaving 17 Jul for England.' },
+    notes:'Alex studied in Rotterdam — knows NL well. Canal city. Brilliant for cycling with Ollie. Anne Frank House needs advance booking. Staying with Matt Francis. Leaving 17 Jul via Eurostar at 14:40.' },
   { id:'england', city:'England', country:'Final days', flag:'🇬🇧',
     lat:51.5074, lng:-0.1278,
     start:'2026-07-17', end:'2026-07-22', nights:'5 nights',
-    hotel:'Accommodation TBC. London base most likely.',
-    notes:'Arriving from Amsterdam 17 Jul. Flight MH3 departs LHR 11:00 Wed 22 Jul, Terminal 4. Must be at Heathrow by 08:00. Last night must be London or very close. Plan via Ask tab — use it to figure out what to do with 5 nights.' }
+    hotel:'Brighton 17–20 Jul: Airbnb, 76 Rutland Road, Brighton BN3 5FE. London 20–22 Jul: Vintry & Mercer Hotel, 20 Garlick Hill, City of London EC4V 2AU.',
+    notes:'Arriving from Amsterdam 17 Jul via Eurostar. Brighton 3 nights, then back to London 2 nights before flying. Flight MH3 departs LHR 11:00 Wed 22 Jul, Terminal 4. Must be at Heathrow by 08:00.' }
 ];
 
 const TL_EVENTS = [
@@ -584,8 +594,12 @@ const TL_EVENTS = [
   {date:'2026-07-15',type:'transport',time:'10:55',title:'Freiburg → Frankfurt Hbf',detail:'Deutsche Bahn 372 · Coach 12 · Seats 123/125/126 · Arrive 13:09',conf:'804390258507',seg:'amsterdam'},
   {date:'2026-07-15',type:'transport',time:'13:34',title:'Frankfurt Hbf → Amsterdam Centraal',detail:'Deutsche Bahn 124 · Coach 28 · Seats 53/55/56 · Arrive 17:29',conf:'784716710199',seg:'amsterdam'},
   {date:'2026-07-15',type:'hotel',time:'17:30+',title:'Arrive — staying with Matt Francis',detail:'Amsterdam. No hotel — private stay.',seg:'amsterdam'},
-  {date:'2026-07-17',type:'transport',time:'TBC',title:'Amsterdam → England',detail:'Travel to London — transport TBC. Confirm with Matt on dates.',seg:'england'},
-  {date:'2026-07-17',type:'hotel',time:'TBC',title:'Arrive England',detail:'London base — accommodation TBC. 5 nights before flying home.',seg:'england'},
+  {date:'2026-07-17',type:'transport',time:'14:40',title:'Eurostar — Amsterdam Centraal → St Pancras',detail:'Depart 14:40 GMT+2 · Arrive St Pancras 17:57 GMT+1',seg:'england'},
+  {date:'2026-07-17',type:'transport',time:'19:00',title:'St Pancras → Brighton',detail:'Train 19:00 · Arrive Brighton 20:18 GMT+1',seg:'england'},
+  {date:'2026-07-17',type:'hotel',time:'19:01',title:'Check in — Airbnb Brighton',detail:'76 Rutland Road, Brighton BN3 5FE · Check-in from 19:01',seg:'england'},
+  {date:'2026-07-20',type:'hotel',time:'11:00',title:'Check out — Brighton Airbnb',detail:'76 Rutland Road, Brighton BN3 5FE · Check-out 11:00',seg:'england'},
+  {date:'2026-07-20',type:'hotel',time:'14:00',title:'Check in — Vintry & Mercer Hotel',detail:'20 Garlick Hill, City of London EC4V 2AU · Check-in 14:00 · Conf 5314869391',seg:'england'},
+  {date:'2026-07-22',type:'hotel',time:'10:00',title:'Check out — Vintry & Mercer Hotel',detail:'20 Garlick Hill, City of London EC4V 2AU · Check-out 10:00 · Then to LHR for 11:00 departure',seg:'england'},
   {date:'2026-07-22',type:'transport',time:'08:00',title:'Depart for Heathrow',detail:'Need to be at LHR by 08:00 — T4, 3 people + bags',seg:'england'},
   {date:'2026-07-22',type:'transport',time:'11:00',title:'LHR → Kuala Lumpur',detail:'MH3 · Malaysia Airlines · Terminal 4 · Seat 07A',conf:'EUMSMQ',seg:'england'},
   {date:'2026-07-23',type:'transport',time:'08:40',title:'KUL → Auckland',detail:'MH133 · Malaysia Airlines · Terminal 1 · Seat 07A · Arrive 22:50 NZST',conf:'EUMSMQ',seg:'england'},
@@ -607,6 +621,9 @@ const BOOKINGS = [
   {seg:'freiburg',name:'DB Strasbourg→Offenburg→Freiburg',type:'train',detail:'13 Jul · Dep 09:52 · Arrive Freiburg 11:01 · Via Offenburg',conf:'784716710199'},
   {seg:'freiburg',name:'Friedrich Boutique-Apartments',type:'hotel',detail:'Check-in 13 Jul 16:00 · Check-out 15 Jul 09:00 · Friedrichring 11, 79098',conf:'5562573128'},
   {seg:'amsterdam',name:'DB Freiburg→Frankfurt→Amsterdam',type:'train',detail:'15 Jul · Dep Freiburg 10:55 · Arrive Amsterdam 17:29 · Two trains',conf:'804390258507 / 784716710199'},
+  {seg:'england',name:'Eurostar — Amsterdam → St Pancras',type:'transport',detail:'17 Jul · Depart 14:40 GMT+2 · Arrive 17:57 GMT+1'},
+  {seg:'england',name:'Brighton Airbnb — 76 Rutland Road',type:'hotel',detail:'17–20 Jul · Check-in 19:01 · Check-out 11:00 · Brighton BN3 5FE'},
+  {seg:'england',name:'Vintry & Mercer Hotel',type:'hotel',detail:'20–22 Jul · Check-in 14:00 · Check-out 10:00 · 20 Garlick Hill, City of London EC4V 2AU',conf:'5314869391'},
   {seg:'england',name:'MH3 LHR→KUL',type:'flight',detail:'22 Jul · Departs 11:00 · Terminal 4 · Seat 07A',conf:'EUMSMQ'},
   {seg:'england',name:'MH133 KUL→AKL',type:'flight',detail:'23 Jul · Departs 08:40 · Terminal 1 · Seat 07A · Arrives 22:50 NZST',conf:'EUMSMQ'},
 ];
@@ -1247,7 +1264,7 @@ const TRIP_Q = [
 ];
 // England final-week specific prompts
 const ENGLAND_Q = [
-  {l:'📅 Plan our 5 nights', q:'We have 5 nights in England (London base) before flying home on 22 Jul. We\'ve just done 5 weeks in Europe. Suggest a relaxed but rewarding plan — a couple of good meals, things Ollie will enjoy, and some time for Alex and Sophie. Nothing too hectic.'},
+  {l:'📅 Plan our 5 nights', q:'We have 5 nights in England before flying home on 22 Jul. 3 nights in Brighton (17–20 Jul, Airbnb on Rutland Road), then 2 nights in London. We\'ve just done 5 weeks in Europe. Suggest a relaxed but rewarding plan — Brighton on the first 3 days, then London. A couple of good meals, things Ollie will enjoy, easy pace.'},
   {l:'🍽 Final dinner', q:'Recommend the best dinner for our last night in London before flying home. Should be special — somewhere Alex and Sophie will love that also works for Ollie. Worth booking now.'},
   {l:'🛍 Shopping day', q:'Best areas for a shopping day in London for the three of us — Alex likes books and tailoring, Sophie likes jewellery and fashion, Ollie wants streetwear (Stüssy, Kith, that world).'},
   {l:'✈ Heathrow logistics', q:'We fly MH3 from LHR Terminal 4 at 11:00 on Wednesday 22 Jul. Three people with luggage. What\'s the best way to get to Heathrow and when should we leave?'},
@@ -1383,28 +1400,39 @@ DATES: ${fmtShort(seg.start)} – ${fmtShort(seg.end)} (${seg.nights})
 STAYING: ${seg.hotel}
 NOTES: ${seg.notes}${savedStr}
 
-FULL ITINERARY:
-23–25 Jun: London — Montcalm Piccadilly Townhouse, Shaftesbury Avenue W1D 6EX
-25 Jun–7 Jul: Corsica — Domaine Pozzo di Mastri, Figari (25–27 Jun) then Airbnb villa Serra-di-Ferro, sea view, heated pool (27 Jun–7 Jul). Europcar hired. Ferry Figari→Marseille 7 Jul 18:00 overnight.
-8–10 Jul: Lyon — Hotel Globe et Cecil, 21 rue Gasparin. Dinner booked: Burgundy by Matthieu, 9 Jul 19:15.
-10–13 Jul: Strasbourg — Hôtel Tandem, 2 place de la Gare. Bastille Day 14 Jul — they leave 13 Jul.
-13–15 Jul: Freiburg — Friedrich Boutique-Apartments. 2 nights, early checkout 09:00 on 15 Jul.
-15–17 Jul: Amsterdam — staying with Matt Francis, Alex's university friend. No hotel. Leaving 17 Jul.
-17–22 Jul: England (London base) — open, TBC. 5 nights. Must be at LHR by 08:00 on 22 Jul for MH3 at 11:00.
+FULL CONFIRMED ITINERARY:
+22 Jun night: Depart AKL 23:45 MH132 → KUL (conf EUMSMQ, seat 07A). Layover KUL → LHR MH4, arrive 16:35.
+23–25 Jun: London — Montcalm Piccadilly Townhouse, Shaftesbury Avenue W1D 6EX (conf 5151397555). 2 nights.
+25 Jun: Fly LHR→Figari BA358 16:00 T3 (conf Z2XP77). Europcar pickup Figari 20:00.
+25–27 Jun: Corsica — Domaine Pozzo di Mastri, Figari (conf 6528486407). 2 nights.
+27 Jun–7 Jul: Corsica — Airbnb villa Serra-di-Ferro, sea view, heated pool (conf HM8T2D4AQA, check-in 17:00). 10 nights. Europcar hired throughout.
+7 Jul: Check out villa 10:00. Europcar drop-off Figari 15:00. Ferry La Méridionale Figari→Marseille 18:00 overnight.
+8 Jul: SNCF 6850 Marseille→Lyon Part Dieu 10:16, arr 12:10.
+8–10 Jul: Lyon — Hotel Globe et Cecil, 21 rue Gasparin 69002 (conf KB4V1F). 2 nights. Dinner booked: Burgundy by Matthieu, 24 Quai Saint-Antoine, 9 Jul 19:15.
+10 Jul: TGV Lyon→Strasbourg 10:01, arr 13:43.
+10–13 Jul: Strasbourg — Hôtel Tandem, 2 place de la Gare 67000 (conf KB4VH8). 3 nights.
+13 Jul: DB4 Strasbourg→Offenburg 09:52, DB277 Offenburg→Freiburg 10:30, arr 11:01.
+13–15 Jul: Freiburg — Friedrich Boutique-Apartments, Friedrichring 11 79098 (conf 5562573128). 2 nights, checkout 09:00 15 Jul.
+15 Jul: DB372 Freiburg→Frankfurt 10:55, arr 13:09. DB124 Frankfurt→Amsterdam Centraal 13:34, arr 17:29 (Coach 28 seats 53/55/56, conf 784716710199).
+15–17 Jul: Amsterdam — staying with Matt Francis, Alex's university friend. No hotel booked.
+17 Jul: Eurostar Amsterdam Centraal→St Pancras 14:40, arr 17:57. Train St Pancras→Brighton 19:00, arr 20:18.
+17–20 Jul: Brighton — Airbnb, 76 Rutland Road, Brighton BN3 5FE. Check-in 19:01. Check-out 11:00 20 Jul.
+20–22 Jul: London — Vintry & Mercer Hotel (Small Luxury Hotels of the World), 20 Garlick Hill, City of London EC4V 2AU (conf 5314869391). Check-in 14:00. Check-out 10:00 22 Jul.
+22 Jul: Depart LHR 11:00 MH3→KUL T4 Seat 07A (conf EUMSMQ). Arrive Auckland 22:50 NZST 23 Jul.
 
 THE FAMILY:
-Alex Radford, 52. British (Bristol-born, Malvern educated, studied Rotterdam and Newcastle, lived in London 10 years, now Auckland NZ). Semi-fluent French, basic Spanish. Loves food, wine, history, architecture, coffee. Analytical and direct. Knows London and the Netherlands well from living there.
-Sophie Radford, 40. Alex's wife.
-Oliver (Ollie) Radford, 11. Curious, energetic boy. Needs genuinely interesting things — not patronising kids activities, but things that will actually engage an inquisitive pre-teen.
+Alex Radford, 52. British (Bristol-born, Malvern educated, studied Rotterdam and Newcastle, London decade, now Auckland NZ). Semi-fluent French, basic Spanish. Loves food, wine, history, architecture, coffee, books, tailoring. Analytical and direct. Knows London and the Netherlands well.
+Sophie Radford, 40. Alex's wife. Loves jewellery, fashion, accessories.
+Oliver Radford, 11. Curious, energetic boy. Loves streetwear (Stüssy, Kith, Patta), outdoor activities, mountain biking, jumps. Not patronising kids content — genuinely interesting things for an inquisitive pre-teen.
 
 YOUR APPROACH:
 - Name specific places, streets, neighbourhoods, restaurants. No vague advice.
 - Flag advance booking requirements prominently — use [BOOK NOW] for anything that will sell out.
 - Alex's French is strong — use that where relevant (Lyon, Strasbourg especially).
-- Alex knows NL well — no need to over-explain Amsterdam basics.
-- For food: quality and authenticity. Not tourist traps. A real bouchon over a restaurant on TripAdvisor's top 10.
+- Alex knows NL and London well — no need to over-explain basics.
+- For food: quality and authenticity. Not tourist traps. A real bouchon over a TripAdvisor top 10.
 - Format for mobile reading: short paragraphs, bold key names, bullet points.
-- For current events, concerts, festivals: give your best knowledge of what TYPICALLY happens in that city in July, name the specific venues and event series that regularly run, and give the EXACT URL to check the current programme (e.g. timeout.com/london/music, what's-on-in-lyon.com). Never just say "I can't access live schedules" — give them the venue, the typical programme, and the link to check. That is genuinely useful. A dead-end non-answer is not.`;
+- For current events, concerts, festivals: give your best knowledge of what typically happens in that city in July, name specific venues and event series, and give the EXACT URL to check the current programme. Never say you lack live schedules — give the venue, the typical programme, and the link. A dead-end non-answer is not useful.`;
 }
 
 async function sendMsg(text) {
@@ -1456,7 +1484,7 @@ async function sendMsg(text) {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          model: 'claude-sonnet-4-20250514',
+          model: 'claude-sonnet-4-6',
           max_tokens: 1000,
           system: sys,
           messages: [...hist, { role: 'user', content: msg }]
